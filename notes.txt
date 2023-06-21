@@ -1,0 +1,16 @@
+0, Name Category Tag Place;
+1, INIT "dont change" - -;
+2, RPR Drawing Drawing <place>;
+3, Tantrasong_01 Drawing <tag> <place>;
+4, Tantrasong_02 Drawing <tag> <place>;
+5, Tantrasong_03 Drawnig <tag> <place>;
+6, Tantrasong_04 Drawing <tag> <place>;
+7, Tantrasong_07 Drawing <tag> <place>;
+8, Tantrasong_08 Drawing <tag> <place>;
+9, Trantrasong09 Drawing <tag> <place>;
+10, Tantrasong_06 Drawing <tag> <place>;
+11, Tantrasong_07b Drawing <tag> <place>;
+12, Kolam Drawing Choregraphic unknown;
+13, Kiran1 DANCE Archival Germany;
+14, Kiran1-HighFric-HighAcc DANCE Archival Germany;
+15, KiranX Drawing Choreographic CANADA;

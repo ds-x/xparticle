@@ -1,0 +1,104 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 3,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "jit.gen",
+		"rect" : [ 1219.0, 203.0, 914.0, 1156.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 10.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Consolas",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"code" : "luminance(image) \r\n{\r\n\tlumacoeff = vec(0.2999,0.587,0.114,0);\r\n\tlumaimage = dot(image,lumacoeff);\r\n\tlumaimage = clip(lumaimage,0.0001,0.9999);\r\n\treturn lumaimage;\r\n\t\r\n}\r\n\r\nth_transparency(img,thrsh_lo,thrsh_hi,soft) \r\n{\r\n\ttransparency = 0;\r\n\tt1l = thrsh_lo;\r\n\tt2l = thrsh_lo - 0.0001 - soft;\r\n\tt1h = thrsh_hi;\r\n\tt2h = thrsh_hi + 0.0001 + soft;\r\n\t\t\r\n\t\t\t\t\r\n\tlow = smoothstep(t2l,t1l,luminance(img));\r\n\thigh = smoothstep(t2h,t1h,luminance(img));\r\n\trange = low * high;\r\n\t\r\n\ttransparency = vec(img.r,img.g,img.b,range);\r\n\treturn transparency;\r\n}\r\n\r\n/*\r\nth_binary(img,thrsh,invert,soft)\r\n{\t\r\n\tbinary = 0;\r\n\tt1 = thrsh;\r\n\tt2 = thrsh - 0.0001 - soft;\r\n\t\r\n\tif (invert == 0) \r\n\t{\r\n\t\t//binary = step(thrsh,luminance(img));\r\n\t\tbinary = smoothstep(t2,t1,luminance(img));\r\n\t}\r\n\telse\r\n\t{\r\n\t\t//binary = step(luminance(img),thrsh);\r\n\t\tbinary = smoothstep(t1,t2,luminance(img));\r\n\t}\r\n\treturn binary;\r\n}\r\n*/\r\n\r\nth_binary(img,thrsh,invert,soft)\r\n{\t\r\n\tbinary = 0;\r\n\twidth = soft * 0.5 + 0.01;\r\n\tt1 = thrsh + width; //higher limit\r\n\tt2 = thrsh - width; // lower limit\r\n\ttdist = t1 - t2; // distance between limits\r\n\t\r\n\tbinary = clip(luminance(img),t2,t1);\r\n\tbinary -= t2;\r\n\tbinary /= tdist;\r\n\tbinary = smoothstep(0,1,binary);\r\n\t\r\n\tif (invert == 0) \r\n\t{\r\n\t\tbiary = binary; \r\n\t}\r\n\t\r\n\telse \r\n\t{\r\n\t\tbinary = 1 - binary;\r\n\t}\r\n\t\r\n\treturn binary;\r\n}\r\n\r\n\r\nth_tozero(img,thrsh,invert,soft)\r\n{\r\n\ttozero = 0;\r\n\tt1 = thrsh;\r\n\tt2 = thrsh - 0.0001 - soft;\r\n\t\r\n\tif (invert == 0) \r\n\t{\r\n\t\t//tozero = img * step(thrsh,luminance(img));\r\n\t\ttozero = img * smoothstep(t2,t1,luminance(img));\r\n\t}\r\n\telse\r\n\t{\r\n\t\ttozero = img * smoothstep(t1,t2,luminance(img));\r\n\t}\r\n\treturn tozero;\r\n}\r\n\r\n\r\nth_range(img,thrsh_lo,thrsh_hi,soft)\r\n{\r\n\trange = 0;\r\n\t\r\n\ttl_max = clamp(thrsh_lo,0,thrsh_hi);\r\n\tth_max = clamp(thrsh_hi,thrsh_lo,1);\r\n\r\n\tt1l = thrsh_lo;\r\n\tt2l = thrsh_lo - 0.0001 - soft;\r\n\tt1h = thrsh_hi;\r\n\tt2h = thrsh_hi + 0.0001 + soft;\r\n\t\t\r\n\t\t\t\t\r\n\tlow = smoothstep(t2l,t1l,luminance(img));\r\n\thigh = smoothstep(t2h,t1h,luminance(img));\r\n\t\r\n\trange = low * high;\r\n\t\r\n\treturn range;\r\n}\r\n\r\nParam bypass;\r\nParam invert;\r\nParam threshold;\r\nParam threshold2;\r\nParam softness;\r\nParam threshmode;\r\n\r\nsc_softness = scale(softness,0,1,0,1);\r\n\r\n\r\nif (threshmode == 0)\r\n{\r\n\tout1 = th_binary(in1,threshold,invert,sc_softness);\r\n}\r\n\t\r\nelse if (threshmode == 1)\r\n{\r\n\tout1 = th_tozero(in1,threshold,invert,sc_softness);\r\n}\r\n\t\r\nelse if (threshmode == 2)\r\n{\r\n\tout1 = th_range(in1,threshold,threshold2,sc_softness);\r\n}\r\n\t\r\nelse if (threshmode == 3)\r\n{\r\n\tout1 = th_transparency(in1,threshold,threshold2,sc_softness);\r\n}\r\n\t\r\n",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-15",
+					"maxclass" : "codebox",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 39.5, 59.0, 699.0, 988.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 39.5, 17.0, 28.0, 22.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.5, 1065.0, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+ ],
+		"autosave" : 0,
+		"bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
+		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
+	}
+
+}

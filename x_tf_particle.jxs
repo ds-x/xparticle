@@ -1,0 +1,224 @@
+<jittershader name="fill-flat-quads">
+	<description>Default Shader </description>
+	<param name="iPosition" type="vec3" state="POSITION" />
+	<param name="iVelocity" type="vec3" state="NORMAL" />
+	<param name="iOrigin" type="vec3" state="VERTEX_ATTR0" />
+	<param name="iAgeNoise" type="vec4" state="VERTEX_ATTR1" />
+
+	<param name="uPoint" type="vec3" default="0.50 0.50 0.0" />
+	<param name="uForceFlow" type="vec3" default="0.00 0.00 0.0" />
+	<param name="uForceFlow2" type="vec3" default="0.00 0.00 0.0" />
+	<param name="uForceOrigin" type="vec3" default="0.00 0.00 0.0" />
+	<param name="uForcePoint" type="vec3" default="0.00 0.00 0.0" />
+	<param name="uFriction" type="float" default="0.98" />
+	<param name="uAging" type="float" default="0.01" />
+	<param name="uLuminance" type="float" default="0.1" />
+	<param name="uDelMode" type="int" default="0" />
+
+	<param name="texturePlain" type="int" default="0" />
+	<param name="opticalFlow" type="int" default="1" />
+	<param name="opticalFlow2" type="int" default="2" />
+
+	<param name="texDim" type="vec2" default="640.0 360.0" />
+	
+	<language name="glsl" version="1.5">
+		<bind param="iPosition" program="vp" />
+		<bind param="iVelocity" program="vp" />
+		<bind param="iOrigin" program="vp" />
+		<bind param="iAgeNoise" program="vp" />
+		
+		<bind param="uPoint" program="vp" />
+		<bind param="uForceFlow" program="vp" />
+		<bind param="uForceFlow2" program="vp" />
+		<bind param="uForcePoint" program="vp" />
+		<bind param="uForceOrigin" program="vp" />
+		<bind param="uFriction" program="vp" />
+		<bind param="uAging" program="vp" />
+		<bind param="uLuminance" program="vp" />
+		<bind param="uDelMode" program="vp" />
+
+		<bind param="texturePlain" program="vp" />
+		<bind param="opticalFlow" program="vp" />
+		<bind param="opticalFlow2" program="vp" />
+		<bind param="texDim" program="vp" />
+
+		<program name="vp" type="vertex">
+<![CDATA[
+#version 330 core
+
+uniform vec3 	uPoint;
+uniform vec3 	uForceFlow;
+uniform vec3 	uForceFlow2;
+uniform vec3	uForcePoint;
+uniform vec3 	uForceOrigin;
+uniform float 	uFriction;
+uniform float 	uAging;
+uniform float 	uLuminance;
+uniform int		uDelMode;
+
+
+uniform vec2 texDim;	
+uniform sampler2DRect texturePlain;
+uniform sampler2DRect opticalFlow;
+uniform sampler2DRect opticalFlow2;
+
+in vec3 iPosition;
+in vec3 iVelocity;
+in vec3 iOrigin;
+in vec4 iAgeNoise;
+
+out vec3 oOrigin;
+out vec3 oPosition;
+out vec3 oVelocity;	
+out vec4 oAgeNoise;
+
+void Reflect(inout vec3 velocity, inout vec3 position, in vec3 worldsize ) 
+{
+	if (position.x > worldsize.x ) 
+	{
+		position.x = worldsize.x;
+		velocity.x *= -1.0;
+	}
+
+	else if (position.x < -worldsize.x)
+	{
+		position.x = -worldsize.x;
+		velocity.x *= -1.0;
+	}
+
+	if (position.y > worldsize.y ) 
+	{
+		position.y = worldsize.y;
+		velocity.y *= -1.0;
+	}
+
+	else if (position.y < -worldsize.y)
+	{
+		position.y = -worldsize.y;
+		velocity.y *= -1.0;
+	}
+
+	if (position.z > worldsize.z ) 
+	{
+		position.z = worldsize.z;
+		velocity.z *= -1.0;
+	}
+
+	else if (position.z < -worldsize.z)
+	{
+		position.z = -worldsize.z;
+		velocity.z *= -1.0;
+	}
+}
+
+void delete(inout vec3 position, in vec3 worldsize, in vec3 newPos) 
+{
+	position.x = position.x > worldsize.x || position.x < -worldsize.x ? position.x = newPos.x : position.x;
+	position.y = position.y > worldsize.y || position.y < -worldsize.y ? position.y = newPos.y : position.y;
+	position.z = position.z > worldsize.z || position.z < -worldsize.z ? position.z = newPos.z : position.z;
+}
+
+void main() {	
+	vec2 texcoord = ((iPosition.xy + 1.0) / 2.0) * texDim;
+	float ratio = texDim.x / texDim.y;
+
+	// DEFINITIONS
+	vec3 originalPos = iOrigin;
+	vec3 attractionPoint = vec3(uPoint);
+	vec3 worldsize = vec3(ratio,1.0,1.0);
+
+	// Masse ist random von jit.noise (X)
+	float mass = iAgeNoise.y;
+	float aging = iAgeNoise.x;
+
+	// Luminance von Texture
+	vec4 lumatex = texture(texturePlain, texcoord); //iColor.xy * texDim);
+	vec4 lumacoeff = vec4(0.3,0.6,0.1,0.0);
+	float luma = dot(lumatex,lumacoeff);
+
+	//lumatex = vec4(vec3(luma),1.0);
+
+	// FLOW1 : FORCE AND ACCELERATION	
+	vec4 flow = texture(opticalFlow, texcoord); //iColor.xy * texDim);
+	vec3 flowdir = vec3(flow.x - flow.y, flow.z-flow.w,flow.z - flow.y - flow.x);
+	vec3 acc = vec3(0.0);
+	
+	acc = vec3(flowdir.xy * (uForceFlow.xy * 0.001), flowdir.z * (uForceFlow.z * -0.001));
+	acc *= (mass * 0.1 + 0.9);
+
+	// FLOW2 : FORCE AND ACCELERATION	
+	vec4 flow2 = texture(opticalFlow2, texcoord); //iColor.xy * texDim);
+	vec3 flowdir2 = vec3(flow2.x - flow2.y, flow2.z-flow2.w,flow2.z - flow2.y - flow2.x);
+	vec3 acc2 = vec3(0.0);
+	
+	acc2 = flowdir2 * (uForceFlow2 * 0.001);
+	acc2 *= (mass * 0.1 + 0.9);
+
+	// FORCE TO ORIGIN
+	vec3 dirOrigin = originalPos - iPosition;
+	//vec3 dirOrigin = iPosition - oPosition;
+	vec3 normDirOrigin = clamp(normalize(dirOrigin), vec3(-1.0), vec3(1.0));
+	
+	float distOrigin =  clamp(length(dirOrigin),0.0,1.0);
+	vec3 accOrigin = (normDirOrigin * distOrigin) * (uForceOrigin * 0.01);
+	accOrigin *= (mass * 0.1 + 0.9);
+
+	// FORCE TO POINT
+	vec3 dirPoint = uPoint - iPosition;
+	vec3 normDirPoint = clamp(normalize(dirPoint),vec3(-1.0),vec3(1.0));
+	
+	float distPoint = clamp(length(dirPoint),0.0,1.0);
+	vec3 accPoint = (normDirPoint * distPoint) * (uForcePoint * 0.01);
+	accPoint *= (mass * 0.1 + 0.9);
+
+	// VELOCITY
+	// Original Velocity = 0
+
+	//float randomage = iAgeNoise.x * 0.01;
+	//float mass = iAgeNoise.y;
+
+	vec3 randomNumbers = iAgeNoise.yzw * 0.001;
+	float age = iAgeNoise.x;
+
+	
+
+	if(age >= 1.0) {
+
+		oVelocity = iVelocity;
+		age = iAgeNoise.y;
+		oPosition = iOrigin;
+		mass = iAgeNoise.y;
+		
+	} else {
+		age += uAging * 0.01;
+		oVelocity = iVelocity * uFriction;
+		oVelocity += accOrigin;
+		oVelocity += (acc + acc2);
+		oVelocity += accPoint;
+		oPosition = iPosition + oVelocity;
+	}
+
+	if (uDelMode == 1) {
+		delete(oPosition, worldsize, originalPos);
+	} else if (uDelMode == 2) {
+		Reflect(oVelocity,oPosition,worldsize);
+	} else {
+
+	}
+
+	oOrigin = iOrigin;
+	oAgeNoise = vec4(age,iAgeNoise.yzw);
+
+}
+]]>
+		</program>
+		<program name="fp" type="fragment">
+<![CDATA[
+#version 330 core
+
+void main() {
+}	
+]]>
+		</program>
+	</language>
+</jittershader>

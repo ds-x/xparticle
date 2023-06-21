@@ -1,0 +1,117 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 3,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "jit.gen",
+		"rect" : [ 2158.0, 130.0, 831.0, 889.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"code" : "\r\nalpha(in1,in2,b) {\r\n\tf1 = 1-in1.a * b;\t\r\n\tf2 = 1-in2.a * b;\t\r\n\tf3 = mix(in1,in2, f1);\r\n\tf4 = mix(in1,in2, f2);\t\r\n\tf5 = mix(in1,f3,b*2);\t\r\n\tf6 = mix(in2,f4,b*2);\r\n\tblend = clip(mix(f5,f6,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nscreen(in1,in2,b) {\r\n\tt1 = 1-((1-in1)*(1-in2));\t\r\n\tt2 = mix(in1,t1,b*2);\t\r\n\tt3 = mix(in2,t1,(1-b)*2);\t\r\n\tt4 = mix(t2,t3,b);\r\n\tblend = clip(t4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nmultiply(in1,in2,b) {\t\r\n\tf1 = in1 * in2;\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\t\r\n\tf4 = mix(f2,f3,b);\r\n\tblend = clip(f4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\ndifference(in1,in2,b) {\r\n\r\n\tf1 = absdiff(in1,in2);\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\r\n\tblend = clip(mix(f2,f3,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\r\nalpham(in1,in2,b) {\r\n\tf1 = in1;\r\n\tf2 = in2;\r\n\tblend = mix(in1,in2,in2.a);\r\n\treturn blend;\r\n\t}\r\n\r\n\r\nParam blendmode;\r\nParam blendamount;\r\nParam bypass;\r\n\r\nalphablend = alpha(in1,in2,blendamount);\r\nscreenblend = screen(in1,in2,blendamount);\r\nmultblend = multiply(in1,in2,blendamount);\r\ndiffblend = difference(in1,in2,blendamount);\r\nalphamask = alpham(in1,in2,blendamount);\r\n\r\nfinal = selector(blendmode,alphablend,screenblend,multblend,diffblend,alphamask);\r\n\r\nout1 = final;",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 11.0,
+					"id" : "obj-1",
+					"maxclass" : "codebox",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 38.0, 45.0, 717.0, 799.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 38.0, 11.0, 30.0, 22.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 736.0, 11.0, 30.0, 22.0 ],
+					"text" : "in 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 38.0, 866.0, 27.0, 22.0 ],
+					"text" : "out"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 1 ],
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+ ],
+		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
+	}
+
+}
