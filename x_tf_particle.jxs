@@ -182,15 +182,16 @@ void main() {
 
 	
 
-	if(age >= 1.0) {
+	if(age > 1.0) {
 
-		oVelocity = iVelocity;
+		oVelocity = vec3(0.0)  * uFriction;
 		age = iAgeNoise.y;
+		
 		oPosition = iOrigin;
 		mass = iAgeNoise.y;
 		
 	} else {
-		age += uAging * 0.01;
+		age += uAging * 0.001;
 		oVelocity = iVelocity * uFriction;
 		oVelocity += accOrigin;
 		oVelocity += (acc + acc2);

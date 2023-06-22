@@ -150,7 +150,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 2 ],
 					"blendtoinput" : [ 0.5 ],
-					"blendmode" : [ 2 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -201,7 +201,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 0 ],
 					"blendtoinput" : [ 0.0 ],
-					"blendmode" : [ 2 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -252,7 +252,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 0 ],
 					"blendtoinput" : [ 0.0 ],
-					"blendmode" : [ 2 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -303,7 +303,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 2 ],
 					"blendtoinput" : [ 0.5 ],
-					"blendmode" : [ 2 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -354,7 +354,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 2 ],
 					"blendtoinput" : [ 0.5 ],
-					"blendmode" : [ 2 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -405,7 +405,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 2 ],
 					"blendtoinput" : [ 0.49 ],
-					"blendmode" : [ 2 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -456,7 +456,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 0 ],
 					"blendtoinput" : [ 0.13 ],
-					"blendmode" : [ 3 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -507,7 +507,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 0 ],
 					"blendtoinput" : [ 0.0 ],
-					"blendmode" : [ 2 ]
+					"blendmode" : [  ]
 				}
 
 			}
@@ -558,7 +558,7 @@
 					"fluidthreshold" : [ 0.0 ],
 					"colorinput" : [ 2 ],
 					"blendtoinput" : [ 0.0 ],
-					"blendmode" : [ 3 ]
+					"blendmode" : [  ]
 				}
 
 			}

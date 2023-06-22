@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "jit.gen",
-		"rect" : [ 1027.0, 114.0, 1023.0, 1168.0 ],
+		"rect" : [ 775.0, 200.0, 1023.0, 975.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"code" : "// postprocess\r\nParam saturation;\r\nParam gamma;\r\nParam brightness;\r\nParam contrast;\r\nParam finalluminance;\r\nParam v_tintcolor;\r\nParam v_tintamount;\r\n\r\n\r\n// -----------------------------------------------------\r\n\r\n\r\nlumcoeff = vec(0.299,0.7154,0.1544);\r\n\r\ns_tintcolor = hsl2rgb(vec(v_tintcolor,v_tintamount,1-v_tintamount*0.5));\r\n\r\n// -----------------------------------------------------\r\n// define the output\r\ns_lumaimage = dot(in1,lumcoeff);\r\ns_saturation = mix(s_lumaimage,in1,saturation);\r\ns_gamma = pow(s_saturation,(1/gamma));\r\ns_contrast = mix(s_gamma,vec(0.5,0.5,0.5),1-contrast);\r\ns_brightness = s_contrast * brightness;\r\n\r\ns_lumatintimage = dot(s_brightness,lumcoeff);\r\ns_tint = mix(s_brightness,s_lumatintimage * s_tintcolor,v_tintamount);\r\n\r\nout1 = s_tint * finalluminance;",
+					"code" : "// postprocess\r\nParam saturation (1.0);\r\nParam gamma (1.0);\r\nParam brightness (1.0);\r\nParam contrast (1.0);\r\nParam finalluminance (1.0);\r\nParam v_tintcolor;\r\nParam v_tintamount;\r\n\r\n\r\n// -----------------------------------------------------\r\n\r\n\r\nlumcoeff = vec(0.299,0.7154,0.1544);\r\n\r\ns_tintcolor = hsl2rgb(vec(v_tintcolor,v_tintamount,1-v_tintamount*0.5));\r\n\r\n// -----------------------------------------------------\r\n// define the output\r\ns_lumaimage = dot(in1,lumcoeff);\r\ns_saturation = mix(s_lumaimage,in1,saturation);\r\ns_gamma = pow(s_saturation,(1/gamma));\r\ns_contrast = mix(s_gamma,vec(0.5,0.5,0.5),1-contrast);\r\ns_brightness = s_contrast * brightness;\r\n\r\ns_lumatintimage = dot(s_brightness,lumcoeff);\r\ns_tint = mix(s_brightness,s_lumatintimage * s_tintcolor,v_tintamount);\r\n\r\nout1 = s_tint * finalluminance;",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,

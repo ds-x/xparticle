@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "jit.gen",
-		"rect" : [ 2158.0, 130.0, 831.0, 889.0 ],
+		"rect" : [ 1267.0, 337.0, 831.0, 889.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,7 +40,7 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"code" : "\r\nalpha(in1,in2,b) {\r\n\tf1 = 1-in1.a * b;\t\r\n\tf2 = 1-in2.a * b;\t\r\n\tf3 = mix(in1,in2, f1);\r\n\tf4 = mix(in1,in2, f2);\t\r\n\tf5 = mix(in1,f3,b*2);\t\r\n\tf6 = mix(in2,f4,b*2);\r\n\tblend = clip(mix(f5,f6,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nscreen(in1,in2,b) {\r\n\tt1 = 1-((1-in1)*(1-in2));\t\r\n\tt2 = mix(in1,t1,b*2);\t\r\n\tt3 = mix(in2,t1,(1-b)*2);\t\r\n\tt4 = mix(t2,t3,b);\r\n\tblend = clip(t4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nmultiply(in1,in2,b) {\t\r\n\tf1 = in1 * in2;\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\t\r\n\tf4 = mix(f2,f3,b);\r\n\tblend = clip(f4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\ndifference(in1,in2,b) {\r\n\r\n\tf1 = absdiff(in1,in2);\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\r\n\tblend = clip(mix(f2,f3,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\r\nalpham(in1,in2,b) {\r\n\tf1 = in1;\r\n\tf2 = in2;\r\n\tblend = mix(in1,in2,in2.a);\r\n\treturn blend;\r\n\t}\r\n\r\n\r\nParam blendmode;\r\nParam blendamount;\r\nParam bypass;\r\n\r\nalphablend = alpha(in1,in2,blendamount);\r\nscreenblend = screen(in1,in2,blendamount);\r\nmultblend = multiply(in1,in2,blendamount);\r\ndiffblend = difference(in1,in2,blendamount);\r\nalphamask = alpham(in1,in2,blendamount);\r\n\r\nfinal = selector(blendmode,alphablend,screenblend,multblend,diffblend,alphamask);\r\n\r\nout1 = final;",
+					"code" : "\r\nalpha(in1,in2,b) {\r\n\tf1 = 1-in1.a * b;\t\r\n\tf2 = 1-in2.a * b;\t\r\n\tf3 = mix(in1,in2, f1);\r\n\tf4 = mix(in1,in2, f2);\t\r\n\tf5 = mix(in1,f3,b*2);\t\r\n\tf6 = mix(in2,f4,b*2);\r\n\tblend = clip(mix(f5,f6,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nscreen(in1,in2,b) {\r\n\tt1 = 1-((1-in1)*(1-in2));\t\r\n\tt2 = mix(in1,t1,b*2);\t\r\n\tt3 = mix(in2,t1,(1-b)*2);\t\r\n\tt4 = mix(t2,t3,b);\r\n\tblend = clip(t4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nmultiply(in1,in2,b) {\t\r\n\tf1 = in1 * in2;\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\t\r\n\tf4 = mix(f2,f3,b);\r\n\tblend = clip(f4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\ndifference(in1,in2,b) {\r\n\r\n\tf1 = absdiff(in1,in2);\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\r\n\tblend = clip(mix(f2,f3,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\r\nalpham(in1,in2,b) {\r\n\tf1 = in1;\r\n\tf2 = in2;\r\n\tblend = mix(in1,in2,in2.a);\r\n\treturn blend;\r\n\t}\r\n\r\n\r\nParam blendmode;\r\nParam blendamount;\r\nParam bypass;\r\n\r\nalphablend = alpha(in1,in2,blendamount);\r\nscreenblend = screen(in1,in2,blendamount);\r\nmultblend = multiply(in1,in2,blendamount);\r\ndiffblend = difference(in1,in2,blendamount);\r\nalphamask = alpham(in1,in2,blendamount);\r\n\r\nfinal = selector(blendmode,screenblend,multblend,diffblend);\r\n\r\nout1 = final;",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 11.0,
