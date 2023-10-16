@@ -1,0 +1,166 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 3,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "jit.gen",
+		"rect" : [ 1302.0, 207.0, 1017.0, 1051.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Consolas",
+					"fontsize" : 10.0,
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 657.0, 724.0, 36.0, 20.0 ],
+					"text" : "out 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Consolas",
+					"fontsize" : 10.0,
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 59.0, 20.0, 33.0, 20.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Consolas",
+					"fontsize" : 10.0,
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 358.0, 20.0, 33.0, 20.0 ],
+					"text" : "in 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "// ----------------------------------\r\n// MIX MODES\r\n\r\nalpha(in1,in2,mask, t) {\r\n\t\r\n\tt1 = 1-smoothstep(t-1, t, mask);\r\n\tresult = mix(in1,in2,t1);\r\n\treturn result;\r\n\t}\r\n\t\r\nluma(in1,in2,mask, t) {\r\n\tt1 = smoothstep(t,t-1,1-mask);\r\n\tresult = mix(in1,in2,t1);\r\n\treturn result;\r\n\t}\r\n\t\r\nmultiply(in1,in2,mask, t) {\r\n\tt1 = 1-smoothstep(t-1,t,1-mask);\r\n\tt2 = in1 * in2;\r\n\tt3 = mix(in1,t2,t1);\r\n\tresult = mix(in1,t3,t);\r\n\treturn result;\t\r\n\t}\r\n\t\r\ndifference(in1,in2,mask, t) {\r\n\tt1 = smoothstep(1-t,1,mask);\r\n\tt2 = absdiff(in1,in2);\r\n\tt3 = mix(in1,t2,t1);\r\n\tresult = mix(in1,t3,t);\r\n\treturn result;\r\n\t}\r\n\t\r\n// ----------------------------------\r\n// INPUT PARAMETER\r\n\t\t\r\nParam mixamount;\r\nParam mixmode;\r\nParam maskmode;\r\nParam bypass;\r\n\r\n// ----------------------------------\r\n// MASK IMPROVEMNT\r\n// Mask sollten besser einstellbar sein.\r\n// threshold, blur? ueberlegen\r\n\r\nluminance = vec(0.299,0.587,0.114);\r\nlumamask1 = dot(in3,luminance);\r\nlumamask2 = smoothstep(0,mixamount*0.33,lumamask1);\r\nlumamask3 = mix(lumamask1,lumamask2,mixamount);\r\n\r\n// ----------------------------------\r\n// Final Output based on Selector\r\n// Option to have a ook at Mask\r\n\r\nalphamix = alpha(in1,in2,lumamask3,mixamount);\r\nlumamix = luma(in1,in2,lumamask3,mixamount);;\r\nmultmix = multiply(in1,in2,lumamask3,mixamount);\r\ndiffmix = difference(in1,in2,lumamask3,mixamount);\r\n\r\nfinalmix = selector(mixmode,alphamix,lumamix,multmix,diffmix);\r\nfinal = selector(maskmode,finalmix,lumamask3);\r\n\r\nout1 = final;\r\nout2 = in1 - lumamask1; ",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 11.0,
+					"id" : "obj-2",
+					"maxclass" : "codebox",
+					"numinlets" : 3,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 59.0, 53.0, 617.0, 659.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Consolas",
+					"fontsize" : 10.0,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 657.0, 20.0, 33.0, 20.0 ],
+					"text" : "in 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Consolas",
+					"fontsize" : 10.0,
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 59.0, 724.0, 39.0, 20.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 2 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-2", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 1 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+ ],
+		"autosave" : 0,
+		"bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
+		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
+	}
+
+}

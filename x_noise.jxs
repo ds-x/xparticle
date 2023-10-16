@@ -1,0 +1,448 @@
+<jittershader name="Noise Functions"> 
+	<description>Generate Texture Free Noise</description>
+	
+	<param name="iPosition" type="vec3" state="POSITION" />
+	<param name="iTexcoord" type="vec2" state="TEXCOORD" />
+	<param name="iNormal" type="vec3" state="NORMAL" />
+	
+	<param name="uTime" type="float" />
+	<param name="uSize" type="float" default="1.0" />
+	<param name="uRatio" type="float" default="1.0" />
+	<param name="uFade" type="float" default="1.0" />
+	<param name="uZoom" type="float" default="1.0" />
+	<param name="uContrast" type="float" default="1.0" />
+	<param name="uBrightness" type="float" default="1.0" />
+    <param name="uOffsetx" type="float" default="0.0" />
+    <param name="uOffsety" type="float" default="0.0" />
+	<param name="uVariation" type="int" default="2" />
+	<param name="uMode" type="int" default="1" />
+
+	<language name="glsl" version="1.5">
+		<bind param="iPosition" program="vp" />
+		<bind param="iTexcoord" program="vp" />
+		<bind param="iNormal" program="vp" />
+
+		<bind param="uTime" program="fp" />
+		<bind param="uFade" program="fp"  />
+		<bind param="uRatio" program="fp"  />
+		<bind param="uZoom" program="fp"  />
+		<bind param="uSize" program="vp"  />
+		<bind param="uContrast" program="fp"  />
+		<bind param="uBrightness" program="fp" />
+
+		<bind param="uOffsetx" program="fp" />
+        <bind param="uOffsety" program="fp" />
+		
+		<bind param="uMode" program="fp" />
+		<bind param="uVariation" program="fp"  />
+
+		<program name="vp" type="vertex">
+
+<![CDATA[
+
+/*
+----------------------------------------------------------------------------------------------------------------
+VERTEX SHADER
+----------------------------------------------------------------------------------------------------------------
+*/
+
+#version 330
+
+in vec4 iPosition;
+in vec3 iNormal;
+in vec2 iTexcoord;
+
+out VertexData
+{
+    vec4 oPosition;
+    vec3 oNormal;
+    vec2 oTexcoord;
+} outData;
+
+void main(void)
+{
+    // Some drivers don't like position being written here
+    // with the tessellation stages enabled also.
+    // Comment next line when Tess.Eval shader is enabled.
+    gl_Position = iPosition;
+    //vec2 uv = iTexcoord,inData;
+
+    outData.oPosition = gl_Position;
+    outData.oNormal = iNormal;
+    outData.oTexcoord = iTexcoord;
+}
+
+
+]]>
+		</program>
+
+		<program name="fp" type="fragment"> 
+
+<![CDATA[
+
+/*
+----------------------------------------------------------------------------------------------------------------
+FRAGMENT SHADER
+----------------------------------------------------------------------------------------------------------------
+*/
+
+#version 330
+
+uniform float uTime;
+uniform float uZoom;
+uniform float uFade;
+uniform float uSize;
+uniform float uBrightness;
+uniform float uContrast;
+uniform float uRatio;
+uniform float uOffsetx;
+uniform float uOffsety;
+
+uniform int uMode;
+uniform int uVariation;
+
+in VertexData
+{
+    vec4 oPosition;
+    vec3 oNormal;
+    vec2 oTexcoord;
+
+} inData;
+
+out vec4 fragColor;
+
+vec4 FAST32_hash_3D(    vec3 gridcell,
+                        vec3 v1_mask,       //  user definable v1 and v2.  ( 0's and 1's )
+                        vec3 v2_mask )      //  generates 1 random number for each of the 4 3D cell corners.  cell corners:  v0=0,0,0  v3=1,1,1  the other two are user definable
+{
+    //    gridcell is assumed to be an integer coordinate
+
+    //  TODO:   these constants need tweaked to find the best possible noise.
+    //          probably requires some kind of brute force computational searching or something....
+    const vec2 OFFSET = vec2( 50.0, 161.0 );
+    const float DOMAIN = 69.0;
+    const float SOMELARGEFLOAT = 635.298681;
+    const float ZINC = 48.500388;
+
+    //  truncate the domain
+    gridcell.xyz = gridcell.xyz - floor(gridcell.xyz * ( 1.0 / DOMAIN )) * DOMAIN;
+    vec3 gridcell_inc1 = step( gridcell, vec3( DOMAIN - 1.5 ) ) * ( gridcell + 1.0 );
+
+    //  compute x*x*y*y for the 4 corners
+    vec4 P = vec4( gridcell.xy, gridcell_inc1.xy ) + OFFSET.xyxy;
+    P *= P;
+    vec4 V1xy_V2xy = mix( P.xyxy, P.zwzw, vec4( v1_mask.xy, v2_mask.xy ) );     //  apply mask for v1 and v2
+    P = vec4( P.x, V1xy_V2xy.xz, P.z ) * vec4( P.y, V1xy_V2xy.yw, P.w );
+
+    //  get the z mod vals
+    vec2 V1z_V2z = vec2( v1_mask.z < 0.5 ? gridcell.z : gridcell_inc1.z, v2_mask.z < 0.5 ? gridcell.z : gridcell_inc1.z );
+    vec4 mod_vals = vec4( 1.0 / ( SOMELARGEFLOAT + vec4( gridcell.z, V1z_V2z, gridcell_inc1.z ) * ZINC ) );
+
+    //  compute the final hash
+    return fract( P * mod_vals );
+}
+
+void FAST32_hash_3D(    vec3 gridcell,
+                        out vec4 lowz_hash_0,
+                        out vec4 lowz_hash_1,
+                        out vec4 lowz_hash_2,
+                        out vec4 highz_hash_0,
+                        out vec4 highz_hash_1,
+                        out vec4 highz_hash_2   )       //  generates 3 random numbers for each of the 8 cell corners
+{
+    //    gridcell is assumed to be an integer coordinate
+
+    //  TODO:   these constants need tweaked to find the best possible noise.
+    //          probably requires some kind of brute force computational searching or something....
+    const vec2 OFFSET = vec2( 50.0, 161.0 );
+    const float DOMAIN = 69.0;
+    const vec3 SOMELARGEFLOATS = vec3( 635.298681, 682.357502, 668.926525 );
+    const vec3 ZINC = vec3( 48.500388, 65.294118, 63.934599 );
+
+    //  truncate the domain
+    gridcell.xyz = gridcell.xyz - floor(gridcell.xyz * ( 1.0 / DOMAIN )) * DOMAIN;
+    vec3 gridcell_inc1 = step( gridcell, vec3( DOMAIN - 1.5 ) ) * ( gridcell + 1.0 );
+
+    //  calculate the noise
+    vec4 P = vec4( gridcell.xy, gridcell_inc1.xy ) + OFFSET.xyxy;
+    P *= P;
+    P = P.xzxz * P.yyww;
+    vec3 lowz_mod = vec3( 1.0 / ( SOMELARGEFLOATS.xyz + gridcell.zzz * ZINC.xyz ) );
+    vec3 highz_mod = vec3( 1.0 / ( SOMELARGEFLOATS.xyz + gridcell_inc1.zzz * ZINC.xyz ) );
+    lowz_hash_0 = fract( P * lowz_mod.xxxx );
+    highz_hash_0 = fract( P * highz_mod.xxxx );
+    lowz_hash_1 = fract( P * lowz_mod.yyyy );
+    highz_hash_1 = fract( P * highz_mod.yyyy );
+    lowz_hash_2 = fract( P * lowz_mod.zzzz );
+    highz_hash_2 = fract( P * highz_mod.zzzz );
+}
+
+void FAST32_hash_3D(    vec3 gridcell,
+                        out vec4 lowz_hash_0,
+                        out vec4 lowz_hash_1,
+                        out vec4 lowz_hash_2,
+                        out vec4 lowz_hash_3,
+                        out vec4 highz_hash_0,
+                        out vec4 highz_hash_1,
+                        out vec4 highz_hash_2,
+                        out vec4 highz_hash_3   )       //  generates 4 random numbers for each of the 8 cell corners
+{
+    //    gridcell is assumed to be an integer coordinate
+
+    //  TODO:   these constants need tweaked to find the best possible noise.
+    //          probably requires some kind of brute force computational searching or something....
+    const vec2 OFFSET = vec2( 50.0, 161.0 );
+    const float DOMAIN = 69.0;
+    const vec4 SOMELARGEFLOATS = vec4( 635.298681, 682.357502, 668.926525, 588.255119 );
+    const vec4 ZINC = vec4( 48.500388, 65.294118, 63.934599, 63.279683 );
+
+    //  truncate the domain
+    gridcell.xyz = gridcell.xyz - floor(gridcell.xyz * ( 1.0 / DOMAIN )) * DOMAIN;
+    vec3 gridcell_inc1 = step( gridcell, vec3( DOMAIN - 1.5 ) ) * ( gridcell + 1.0 );
+
+    //  calculate the noise
+    vec4 P = vec4( gridcell.xy, gridcell_inc1.xy ) + OFFSET.xyxy;
+    P *= P;
+    P = P.xzxz * P.yyww;
+    lowz_hash_3.xyzw = vec4( 1.0 / ( SOMELARGEFLOATS.xyzw + gridcell.zzzz * ZINC.xyzw ) );
+    highz_hash_3.xyzw = vec4( 1.0 / ( SOMELARGEFLOATS.xyzw + gridcell_inc1.zzzz * ZINC.xyzw ) );
+    lowz_hash_0 = fract( P * lowz_hash_3.xxxx );
+    highz_hash_0 = fract( P * highz_hash_3.xxxx );
+    lowz_hash_1 = fract( P * lowz_hash_3.yyyy );
+    highz_hash_1 = fract( P * highz_hash_3.yyyy );
+    lowz_hash_2 = fract( P * lowz_hash_3.zzzz );
+    highz_hash_2 = fract( P * highz_hash_3.zzzz );
+    lowz_hash_3 = fract( P * lowz_hash_3.wwww );
+    highz_hash_3 = fract( P * highz_hash_3.wwww );
+}
+
+
+
+void FAST32_2_hash_3D(  vec3 gridcell,
+                        out vec4 z0_hash,           //  vec4 == ( x0y0, x1y0, x0y1, x1y1 )
+                        out vec4 z1_hash    )       //  generates a random number for each of the 8 cell corners
+{
+    //  gridcell is assumed to be an integer coordinate
+    const vec3 OFFSET = vec3( 55.882355, 63.167774, 52.941177 );
+    const float DOMAIN = 69.0;      //  NOTE:  this can most likely be extended with some tweaking of the other parameters
+    const float SOMELARGEFLOAT = 69412.070313;
+    const vec3 SCALE = vec3( 0.235142, 0.205890, 0.216449 );
+
+    //  truncate the domain
+    gridcell = gridcell - floor(gridcell * ( 1.0 / DOMAIN )) * DOMAIN;
+    vec3 gridcell_inc1 = step( gridcell, vec3( DOMAIN - 1.5 ) ) * ( gridcell + 1.0 );
+
+    //  calculate the noise
+    gridcell = ( gridcell * SCALE ) + OFFSET;
+    gridcell_inc1 = ( gridcell_inc1 * SCALE ) + OFFSET;
+    gridcell *= gridcell;
+    gridcell_inc1 *= gridcell_inc1;
+
+    vec4 x0y0_x1y0_x0y1_x1y1 = vec4( gridcell.x, gridcell_inc1.x, gridcell.x, gridcell_inc1.x ) * vec4( gridcell.yy, gridcell_inc1.yy );
+
+    z0_hash = fract( x0y0_x1y0_x0y1_x1y1 * gridcell.zzzz * ( 1.0 / SOMELARGEFLOAT ) );
+    z1_hash = fract( x0y0_x1y0_x0y1_x1y1 * gridcell_inc1.zzzz * ( 1.0 / SOMELARGEFLOAT ) );
+}
+
+//  Interpolation functions
+//  ( smoothly increase from 0.0 to 1.0 as x increases linearly from 0.0 to 1.0 )
+//  http://briansharpe.wordpress.com/2011/11/14/two-useful-interpolation-functions-for-noise-development/
+//
+float Interpolation_C1( float x ) { return x * x * (3.0 - 2.0 * x); }   //  3x^2-2x^3  ( Hermine Curve.  Same as SmoothStep().  As used by Perlin in Original Noise. )
+vec2 Interpolation_C1( vec2 x ) { return x * x * (3.0 - 2.0 * x); }
+vec3 Interpolation_C1( vec3 x ) { return x * x * (3.0 - 2.0 * x); }
+vec4 Interpolation_C1( vec4 x ) { return x * x * (3.0 - 2.0 * x); }
+
+float Interpolation_C2( float x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }   //  6x^5-15x^4+10x^3  ( Quintic Curve.  As used by Perlin in Improved Noise.  http://mrl.nyu.edu/~perlin/paper445.pdf )
+vec2 Interpolation_C2( vec2 x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }
+vec3 Interpolation_C2( vec3 x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }
+vec4 Interpolation_C2( vec4 x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }
+vec4 Interpolation_C2_InterpAndDeriv( vec2 x ) { return x.xyxy * x.xyxy * ( x.xyxy * ( x.xyxy * ( x.xyxy * vec2( 6.0, 0.0 ).xxyy + vec2( -15.0, 30.0 ).xxyy ) + vec2( 10.0, -60.0 ).xxyy ) + vec2( 0.0, 30.0 ).xxyy ); }
+vec3 Interpolation_C2_Deriv( vec3 x ) { return x * x * (x * (x * 30.0 - 60.0) + 30.0); }
+
+float Interpolation_C2_Fast( float x ) { float x3 = x*x*x; return ( 7.0 + ( x3 - 7.0 ) * x ) * x3; }   //  7x^3-7x^4+x^7   ( Faster than Perlin Quintic.  Not quite as good shape. )
+vec2 Interpolation_C2_Fast( vec2 x ) { vec2 x3 = x*x*x; return ( 7.0 + ( x3 - 7.0 ) * x ) * x3; }
+vec3 Interpolation_C2_Fast( vec3 x ) { vec3 x3 = x*x*x; return ( 7.0 + ( x3 - 7.0 ) * x ) * x3; }
+vec4 Interpolation_C2_Fast( vec4 x ) { vec4 x3 = x*x*x; return ( 7.0 + ( x3 - 7.0 ) * x ) * x3; }
+
+float Interpolation_C3( float x ) { float xsq = x*x; float xsqsq = xsq*xsq; return xsqsq * ( 25.0 - 48.0 * x + xsq * ( 25.0 - xsqsq ) ); }   //  25x^4-48x^5+25x^6-x^10     ( C3 Interpolation function.  If anyone ever needs it... :) )
+vec2 Interpolation_C3( vec2 x ) { vec2 xsq = x*x; vec2 xsqsq = xsq*xsq; return xsqsq * ( 25.0 - 48.0 * x + xsq * ( 25.0 - xsqsq ) ); }
+vec3 Interpolation_C3( vec3 x ) { vec3 xsq = x*x; vec3 xsqsq = xsq*xsq; return xsqsq * ( 25.0 - 48.0 * x + xsq * ( 25.0 - xsqsq ) ); }
+vec4 Interpolation_C3( vec4 x ) { vec4 xsq = x*x; vec4 xsqsq = xsq*xsq; return xsqsq * ( 25.0 - 48.0 * x + xsq * ( 25.0 - xsqsq ) ); }
+
+float noise3D(vec3 p)
+{
+    return fract(sin(dot(p ,vec3(12.9898,78.233,128.852))) * 43758.5453)*2.0-1.0;
+}
+
+float SimplexPerlin3D( vec3 P )
+{
+    //  https://github.com/BrianSharpe/Wombat/blob/master/SimplexPerlin3D.glsl
+
+    //  simplex math constants
+    const float SKEWFACTOR = 1.0/3.0;
+    const float UNSKEWFACTOR = 1.0/6.0;
+    const float SIMPLEX_CORNER_POS = 0.5;
+    const float SIMPLEX_TETRAHADRON_HEIGHT = 0.70710678118654752440084436210485;    // sqrt( 0.5 )
+
+    //  establish our grid cell.
+    P *= SIMPLEX_TETRAHADRON_HEIGHT;    // scale space so we can have an approx feature size of 1.0
+    vec3 Pi = floor( P + dot( P, vec3( SKEWFACTOR) ) );
+
+    //  Find the vectors to the corners of our simplex tetrahedron
+    vec3 x0 = P - Pi + dot(Pi, vec3( UNSKEWFACTOR ) );
+    vec3 g = step(x0.yzx, x0.xyz);
+    vec3 l = 1.0 - g;
+    vec3 Pi_1 = min( g.xyz, l.zxy );
+    vec3 Pi_2 = max( g.xyz, l.zxy );
+    vec3 x1 = x0 - Pi_1 + UNSKEWFACTOR;
+    vec3 x2 = x0 - Pi_2 + SKEWFACTOR;
+    vec3 x3 = x0 - SIMPLEX_CORNER_POS;
+
+    //  pack them into a parallel-friendly arrangement
+    vec4 v1234_x = vec4( x0.x, x1.x, x2.x, x3.x );
+    vec4 v1234_y = vec4( x0.y, x1.y, x2.y, x3.y );
+    vec4 v1234_z = vec4( x0.z, x1.z, x2.z, x3.z );
+
+    // clamp the domain of our grid cell
+    Pi.xyz = Pi.xyz - floor(Pi.xyz * ( 1.0 / 69.0 )) * 69.0;
+    vec3 Pi_inc1 = step( Pi, vec3( 69.0 - 1.5 ) ) * ( Pi + 1.0 );
+
+    //  generate the random vectors
+    vec4 Pt = vec4( Pi.xy, Pi_inc1.xy ) + vec2( 50.0, 161.0 ).xyxy;
+    Pt *= Pt;
+    vec4 V1xy_V2xy = mix( Pt.xyxy, Pt.zwzw, vec4( Pi_1.xy, Pi_2.xy ) );
+    Pt = vec4( Pt.x, V1xy_V2xy.xz, Pt.z ) * vec4( Pt.y, V1xy_V2xy.yw, Pt.w );
+    const vec3 SOMELARGEFLOATS = vec3( 635.298681, 682.357502, 668.926525 );
+    const vec3 ZINC = vec3( 48.500388, 65.294118, 63.934599 );
+    vec3 lowz_mods = vec3( 1.0 / ( SOMELARGEFLOATS.xyz + Pi.zzz * ZINC.xyz ) );
+    vec3 highz_mods = vec3( 1.0 / ( SOMELARGEFLOATS.xyz + Pi_inc1.zzz * ZINC.xyz ) );
+    Pi_1 = ( Pi_1.z < 0.5 ) ? lowz_mods : highz_mods;
+    Pi_2 = ( Pi_2.z < 0.5 ) ? lowz_mods : highz_mods;
+    vec4 hash_0 = fract( Pt * vec4( lowz_mods.x, Pi_1.x, Pi_2.x, highz_mods.x ) ) - 0.49999;
+    vec4 hash_1 = fract( Pt * vec4( lowz_mods.y, Pi_1.y, Pi_2.y, highz_mods.y ) ) - 0.49999;
+    vec4 hash_2 = fract( Pt * vec4( lowz_mods.z, Pi_1.z, Pi_2.z, highz_mods.z ) ) - 0.49999;
+
+    //  evaluate gradients
+    vec4 grad_results = inversesqrt( hash_0 * hash_0 + hash_1 * hash_1 + hash_2 * hash_2 ) * ( hash_0 * v1234_x + hash_1 * v1234_y + hash_2 * v1234_z );
+
+    //  Normalization factor to scale the final result to a strict 1.0->-1.0 range
+    //  http://briansharpe.wordpress.com/2012/01/13/simplex-noise/#comment-36
+    const float FINAL_NORMALIZATION = 37.837227241611314102871574478976;
+
+    //  evaulate the kernel weights ( use (0.5-x*x)^3 instead of (0.6-x*x)^4 to fix discontinuities )
+    vec4 kernel_weights = v1234_x * v1234_x + v1234_y * v1234_y + v1234_z * v1234_z;
+    kernel_weights = max(0.5 - kernel_weights, 0.0);
+    kernel_weights = kernel_weights*kernel_weights*kernel_weights;
+
+    //  sum with the kernel and return
+    return dot( kernel_weights, grad_results ) * FINAL_NORMALIZATION;
+}
+
+float noisedrift(vec2 p,vec2 o, float s)
+    {
+    float f,drift;
+
+    for (float i = 0.0; i<4.0; i+=1.0)
+        {
+        float ti = mod(i,4.0); // returns 0. -3.9999
+        float e = pow(2.,ti); // == 2. hoch 0.-3.9999 = 0 - 4095.98
+        s = s;
+
+        f += SimplexPerlin3D(vec3((p + o) * e,s)) * (1.0-(ti/4.0))*(ti/4.0);
+        f +=0.125;
+        f *=1.0;
+        drift = f;
+        }
+
+    return drift;
+    }
+
+
+float noisezoom(vec2 p, float z, float s)
+    {
+    float f,r;
+    for (float i = 0.0; i<4.0; i+=1.0)
+        {
+        float ti = mod(z+i,4.0); // returns 0. -3.9999
+        float l = z-ti; // returns uTime - t
+        float e = pow(2.,ti); // == 2. hoch 0.-3.9999 = 0 - 4095.98
+        float x = (1.0-(ti/4.0))*(ti/4.0);
+
+        f = f + SimplexPerlin3D(vec3(p*e,s) + vec3(sin(l),cos(l),0.0)) * x ;
+        f = f + 0.0125;
+        f *=1.20;
+        r = f;
+        }
+
+    return r;
+    }
+
+
+
+
+
+void main( void )
+        {
+        vec2 offset = vec2(uOffsetx,uOffsety);
+        vec2 uv = (inData.oTexcoord - 0.5)  * uSize * vec2(uRatio,1.0);
+        float t = uTime;
+		//vec2 offset = offset;
+        float n = 0.0;
+
+        switch (uMode) {
+        
+            case 0:
+                switch (uVariation) 
+                
+                {
+                case 0:
+                    n = noisedrift(uv,offset,uTime);
+                    break;
+                case 1:
+                    n = noisedrift(uv * 12.0,offset,uTime);
+                    break;
+                case 2:
+                    n = noisedrift(uv *12,offset,uTime);
+                    break;
+                default:
+                    n = noisedrift(uv,offset,uTime);
+                }
+                
+            break;
+            
+            case 1:
+            switch (uVariation) 
+                
+                {
+                case 0:
+                    n = noisezoom(uv * 2.0,uZoom,uTime);
+                    break;
+                case 1:
+                    n = noisezoom(uv * 4,uZoom,uTime);
+                    break;
+                case 2:
+                    n = noisezoom(uv *8,uZoom,uTime);
+                    break;
+                default:
+                    n = noisezoom(uv *12,uZoom,uTime);
+                }
+            
+            break;
+            
+           
+            }
+
+        float brightness = n * uBrightness;
+        float contrast = mix(0.5,brightness,uContrast);
+        //fragColor = vec4(1.0,1.0,0.0,1.0);
+        //gl_FragColor = SimplexPerlin3D(vec3((uv*256.),uTime));
+        fragColor = uFade * vec4(vec3(contrast),1.0);
+        }
+
+]]>
+		</program>
+
+	</language> 
+
+</jittershader> 

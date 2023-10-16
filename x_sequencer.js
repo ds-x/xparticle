@@ -54,19 +54,25 @@ function read()
     settings = t.getnamed('settings');
     playlist = t.getnamed('playlist');
     
-    var movievalues = new Array('recentFile', 'recentFile2');
-    var postvalues = new Array('gamma', 'volume', 'finalluminance', 'tintcolor', 'saturation', 'brightness', 'contrast', 'tintamount','blendtoinput','blendmode');
-    var threshvalues = new Array('threshold','threshmode', 'preblur');
-    var blurvalues = new Array('preblur', 'postblur');
-    var flowvalues = new Array('scale', 'offset','lambda','gradientscale','velocity1', 'velocitygain','velocity2', 'fluidthreshold');
-    var partvalues = new Array('colorinput', 'countmode', 'count', 'size','friction','attpx','attpy','attpz','px','py','pz','accelx','accely','accelz','attx','atty','attz','aging','del_movement','del_brightness','rotate','brightnesstoalpha','movementtobrightness');
+    var movievalues = new Array('recentFile','recentFile2','volume');
+    var noisevalues = new Array('noisesize','noisespeed','noisebrightness','noisecontrast','noisezoom','noisedriftx','noisedrifty','noisevariant','noisemode');
+    var postvalues = new Array('gamma','volume','finalluminance','brightness','contrast');
+    var threshvalues = new Array('threshold','threshmix','preblur','threshinvert', 'threshscale');
+    var blendvalues = new Array('colormode','blendsource','blendmode','blendtoinput','tintamount','tintcolor','saturation');
+    var blurvalues = new Array('preblur','postblur');
+    var inputflowvalues = new Array('scale','offset','lambda','gradientscale','velocity1','velocitygain','velocity2','fluidthreshold');
+    var noiseflowvalues = new Array('nf_scale','nf_offset','nf_lambda','nf_gradientscale','nf_vel1','nf_velgain','nf_vel2','fluidthreshold');
+    var partvalues = new Array('colorinput','countmode','count','size','friction','attpx','attpy','attpz','px','py','pz','accelx','accely','accelz','accelx2','accely2','accelz2','attx','atty','attz','aging','del_movement','del_brightness','rotate','brightnesstoalpha','movementtobrightness');
   
     sequencer.message('subscribe', movievalues);
+    sequencer.message('subscribe', noisevalues);
     sequencer.message('subscribe', postvalues);
     sequencer.message('subscribe', threshvalues);
     sequencer.message('subscribe', blurvalues);
-    sequencer.message('subscribe', flowvalues);
+    sequencer.message('subscribe', inputflowvalues);
+    sequencer.message('subscribe', noiseflowvalues);
     sequencer.message('subscribe', partvalues);
+    sequencer.message('subscribe', blendvalues);
 
     sequencer.message('read', './sequencer.json');
     sequencer.message('getslotlist');

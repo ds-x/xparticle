@@ -135,7 +135,8 @@ void main() {
 	}
 
 	
-	float movementcolor = length(jit_in.velocity) * 180.0;
+	float movementcolor = length(jit_in.velocity) * 1000.0;
+	
 	texColor = useMovement == 0 ? texColor : texColor * movementcolor;
 
 	vec4 otherColor = mix(texColor, vec4(texColor.rgb*0.3,luminance) + secondColor, movementcolor);
