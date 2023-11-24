@@ -46,14 +46,17 @@ function enable(i) {
 }
 */
 
-function read()
+function read(f)
 {
     notes = t.getnamed('notes');
     editor = t.getnamed('editor');
     sequencer = t.getnamed('sequencer');
     settings = t.getnamed('settings');
     playlist = t.getnamed('playlist');
-    
+
+    var file = f;
+    var filename = f.substr(0,f.lastIndexOf("."));
+        
     var movievalues = new Array('recentFile','recentFile2','volume');
     var noisevalues = new Array('noisesize','noisespeed','noisebrightness','noisecontrast','noisezoom','noisedriftx','noisedrifty','noisevariant','noisemode');
     var postvalues = new Array('gamma','volume','finalluminance','brightness','contrast');
@@ -74,10 +77,12 @@ function read()
     sequencer.message('subscribe', partvalues);
     sequencer.message('subscribe', blendvalues);
 
-    sequencer.message('read', './sequencer.json');
+    //sequencer.message('read', './sequencer.json');
+    sequencer.message('read', file);
     sequencer.message('getslotlist');
     sequencer.message('getslotnamelist');
-    notes.message('read', './notes.txt');
+    //notes.message('read', './notes.txt');
+    notes.message('read', filename+'_notes.txt');
     playlist.message('refer', 'notes');
     playlist.message('select', 1, 1);
 

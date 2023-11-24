@@ -5,14 +5,12 @@
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
-					"windowborder" : [ 0 ],
+					"windowborder" : [ 1 ],
 					"fps" : [ 0 ],
-					"loopmode" : [ 0 ],
-					"windowwidth" : [ 960 ],
-					"windowheight" : [ 1080 ],
 					"fpsinfo" : [ 1 ],
-					"recentFile" : [ "C:/Users/matth/Documents/DATA/Kiran/_Dance/KDance1.wmv" ],
 					"hidecursor" : [ 0 ],
+					"windowwidth" : [ 1080 ],
+					"windowheight" : [ 1080 ],
 					"windowposy" : [ 20 ],
 					"windowposx" : [ 20 ]
 				}

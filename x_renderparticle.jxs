@@ -117,13 +117,27 @@ void main() {
 
 	{
 		case 0:
+
+			// WHITE except Black
 			white.a = uAlpha == 0 ? 1.0 : luminance; 
-			texColor = white;
+
+			if (luminance > 0.05) {
+				texColor = white;
+			} else {
+				discard;
+			}
+
+			
 			break;
 		
 		case 1:
-		
-			texColor = vec4(vec3(luminance),luminance);
+
+			// BRIGHTNESS
+			if (luminance > 0.05) {
+				texColor = vec4(vec3(luminance),luminance);
+			} else { discard; };
+
+			
 			break;
 
 		case 2:

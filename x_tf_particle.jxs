@@ -125,7 +125,7 @@ void main() {
 	// DEFINITIONS
 	vec3 originalPos = iOrigin;
 	vec3 attractionPoint = vec3(uPoint);
-	vec3 worldsize = vec3(ratio,1.0,1.0);
+	vec3 worldsize = vec3(1.0,1.0,1.0);
 
 	// Masse ist random von jit.noise (X)
 	float mass = iAgeNoise.y;
