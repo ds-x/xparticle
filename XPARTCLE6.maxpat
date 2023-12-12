@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 844.0, 124.0, 1453.0, 1179.0 ],
+		"rect" : [ 761.0, 554.0, 1453.0, 730.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -320,7 +320,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, -150.0 ],
-					"outlettype" : [ "" ],
+					"outlettype" : [ "jit_gl_texture" ],
 					"patching_rect" : [ 36.0, 382.0, 528.0, 148.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 40.0, 900.0, 148.0 ],
@@ -4166,7 +4166,7 @@
 					"patching_rect" : [ 2287.943908999999621, 1465.369506999999885, 106.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 737.0, 708.0, 44.0, 18.0 ],
-					"text" : "60.07",
+					"text" : "60.08",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ]
 				}
 
@@ -6081,7 +6081,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 0.0, 2278.0, 201.0, 20.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10612,7 +10612,7 @@
 						"storage_rect" : [ 144, 457, 901, 1355 ]
 					}
 ,
-					"subscribe" : [ "countmode", "threshinvert", "offset", "threshscale", "nf_lambda", "fadeup", "nf_velgain", "lambda", "del_brightness", "tintcolor", "accelx2", "colorinput", "postblur", "velocity1", "aging", "finalluminance", "scale", "atty", "threshmix", "flickersaturation", "velocity2", "nf_vel1", "rotate", "blackframes", "noisedriftx", "del_movement", "gradientscale", "noisezoom", "count", "accelz", "py", "attpz", "fluidthreshold", "movementtobrightness", "nf_offset", "flickercolor", "tintamount", "noisebrightness", "threshmode", "noisesize", "accely", "noisevariant", "brightness", "preblur", "attpx", "attz", "gamma", "jsobject", "colormode", "blendsource", "threshold", "volume", "nf_gradientscale", "flickeramount", "nf_vel2", "blendtoinput", "brightnesstoalpha", "", "blendtowhite", "noisedrifty", "velocitygain", "accelx", "saturation", "accelz2", "size", "pz", "contrast", "attx", "friction", "whiteframes", "nf_scale", "fadedown", "noisecontrast", "recentFile", "blendmode", "recentFile2", "noisespeed", "noisemode", "accely2", "px", "attpy" ],
+					"subscribe" : [ "accelx2", "colorinput", "postblur", "offset", "aging", "blendtoinput", "velocitygain", "atty", "scale", "threshmix", "fadeup", "brightness", "nf_vel1", "threshmode", "rotate", "noisedriftx", "recentFile2", "brightnesstoalpha", "noisezoom", "accelz", "tintamount", "py", "countmode", "attpz", "saturation", "blackframes", "nf_offset", "noisebrightness", "whiteframes", "movementtobrightness", "noisesize", "contrast", "accely", "noisevariant", "preblur", "attpx", "volume", "velocity1", "gradientscale", "attz", "blendsource", "threshold", "del_brightness", "nf_gradientscale", "count", "blendmode", "flickeramount", "nf_vel2", "noisedrifty", "velocity2", "accelx", "gamma", "accelz2", "pz", "attx", "threshinvert", "", "friction", "recentFile", "lambda", "flickercolor", "nf_scale", "fluidthreshold", "size", "fadedown", "noisecontrast", "jsobject", "finalluminance", "colormode", "noisespeed", "del_movement", "noisemode", "accely2", "tintcolor", "px", "attpy", "threshscale", "nf_lambda", "flickersaturation", "nf_velgain", "blendtowhite" ],
 					"text" : "pattrstorage sequencer @subscribemode 1 @changemode 1 @fileusagemode 1",
 					"varname" : "sequencer"
 				}
@@ -12139,7 +12139,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 20.0, 284.0, 50.0, 20.0 ],
-									"text" : "110"
+									"text" : "-6"
 								}
 
 							}
@@ -12403,7 +12403,7 @@
 						"storage_rect" : [ 144, 457, 901, 1355 ]
 					}
 ,
-					"subscribe" : [ "midiindev", "ccfinalluminance", "ccflickercolor", "cpos", "windowborder", "ccflickersaturation", "midichannel", "midioutdev", "apppos", "recentMidiFile", "fpsinfo", " windowwidth", "breaktime", "windowposy", "cwidth", "hidecursor", "ccstop", "fps", "cctintcolor", " windowheight", "maskl", "ccrewind", "windowwidth", "cctintamount", "ccblendtowhite", "maskt", "ccsaturation", "maskb", "ccgamma", "ccflickeramount", "cccontrast", "windowposx", "displaysync", "loopmode", "ccblackframes", "ccstart", "startminute", "starthour", "ccbrightness", "recentFile", "maskr", "windowheight", "playlistenable", "ccwhiteframes" ],
+					"subscribe" : [ "ccsaturation", "displaysync", "fps", "ccbrightness", "cpos", "recentMidiFile", "windowposy", "cctintcolor", "ccblendtowhite", "ccflickeramount", "startminute", "ccfinalluminance", "ccwhiteframes", "midioutdev", "windowwidth", "cwidth", "ccrewind", "maskb", "ccblackframes", "maskr", "ccflickersaturation", " windowwidth", "windowposx", " windowheight", "maskt", "hidecursor", "cccontrast", "starthour", "ccflickercolor", "recentFile", "apppos", "windowheight", "ccstop", "cctintamount", "ccgamma", "loopmode", "ccstart", "midiindev", "playlistenable", "midichannel", "windowborder", "breaktime", "fpsinfo", "maskl" ],
 					"text" : "pattrstorage settings @savemode 3 @greedy 1 @fileusagemode 1 @subscribemode 1",
 					"varname" : "settings"
 				}
@@ -15613,14 +15613,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-101", 0 ],
 					"source" : [ "obj-423", 4 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-422", 0 ],
-					"midpoints" : [ 327.0, 1984.007448434829712, 1317.5, 1984.007448434829712 ],
-					"source" : [ "obj-423", 1 ]
 				}
 
 			}

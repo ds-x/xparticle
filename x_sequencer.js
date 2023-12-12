@@ -46,20 +46,25 @@ function enable(i) {
 }
 */
 
-function read(f)
-{
+function init() {
+
     notes = t.getnamed('notes');
     editor = t.getnamed('editor');
     sequencer = t.getnamed('sequencer');
     settings = t.getnamed('settings');
     playlist = t.getnamed('playlist');
 
+}
+
+function read(f)
+{
+   
     var file = f;
     var filename = f.substr(0,f.lastIndexOf("."));
         
     var movievalues = new Array('recentFile','recentFile2','volume');
     var noisevalues = new Array('noisesize','noisespeed','noisebrightness','noisecontrast','noisezoom','noisedriftx','noisedrifty','noisevariant','noisemode');
-    var postvalues = new Array('gamma','volume','finalluminance','brightness','contrast');
+    var postvalues = new Array('gamma','volume','finalluminance','brightness','contrast','final_tint','final_color');
     var threshvalues = new Array('threshold','threshmix','preblur','threshinvert', 'threshscale');
     var blendvalues = new Array('colormode','blendsource','blendmode','blendtoinput','tintamount','tintcolor','saturation');
     var blurvalues = new Array('preblur','postblur');
@@ -232,6 +237,7 @@ function writeFiles() {
 
 function loadbang() {
 
-   read();
+  // read();
+  init();
 
 }

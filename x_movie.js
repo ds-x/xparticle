@@ -13,8 +13,6 @@ var setcursor;
 var hide;
 declareattribute('hide');
 		
-var mov_length;
-
 var pos = 0;
 
 
@@ -43,12 +41,9 @@ function tickstoms(ticks) {
 // Player Functions
 // -------------------------------------------------
 
-
-
-function fileread() {
+function init() {
 	
 	// fileread initializes the variabes
-	
 	plane			= t.getnamed('outputplane');
 	//world			= t.getnamed('world');
 	key_32 			= t.getnamed('trigspace');
@@ -56,15 +51,23 @@ function fileread() {
 	mov 			= t.getnamed('movie');
 	setcursor		= t.getnamed('setcursor');
 
-	var d_movfps 	= t.getnamed('display_moviefps');
-	var d_movname 	= t.getnamed('display_moviename');
-	var d_movlength = t.getnamed('display_movielength');
+
 	//var mov_setw	= t.getnamed('set_w');
 	//var mov_seth	= t.getnamed('set_h');
+
+
+}
+
+function fileread() {
+	
+	var d_movfps 	= t.getnamed('display_moviefps');
+	var d_movdim 	= t.getnamed('display_moviedim');
+	var d_movname 	= t.getnamed('display_moviename');
+	var d_movlength = t.getnamed('display_movielength');
 	
 	// ask values
 	var mov_fps 	= mov.getattr('fps');
-	mov_length 		= mov.getattr('milliseconds');
+	var mov_length 	= mov.getattr('milliseconds');
 	var mov_name 	= mov.getattr('moviefile');
 	var mov_size 	= mov.getattr('dim');
 	var mov_ratio 	= mov_size[0] / mov_size[1];
@@ -77,6 +80,7 @@ function fileread() {
 	// show file info 
 	d_movname.message('set', mov_name);
 	d_movfps.message('set','FPS:', mov_fps);
+	d_movdim.message('set','SIZE:', mov_size);
 	d_movlength.message('set', 'LENGTH: ', mov_frames, ' FRAMES');
 
 	// set w and h in player 
@@ -211,7 +215,7 @@ function getinfo() {
 	
 function loadbang() {
 	
- 
+	init();
 
 
 	}

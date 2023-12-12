@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 597.0, 164.0, 1269.0, 895.0 ],
+		"rect" : [ 51.0, 98.0, 1019.0, 908.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
@@ -39,6 +39,55 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 854.0, 252.0, 74.0, 20.0 ],
+					"text" : "loadmess set"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 0.0 ],
+					"fontface" : 1,
+					"fontname" : "Consolas",
+					"fontsize" : 11.0,
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 650.999999999999886, 390.0, 118.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 2.0, 81.0, 74.0, 19.0 ],
+					"text" : "Volume",
+					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
+					"varname" : "display_moviefps[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 0.0 ],
+					"fontface" : 1,
+					"fontname" : "Consolas",
+					"fontsize" : 11.0,
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 646.0, 328.350096999999892, 118.0, 19.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 262.0, 61.0, 192.0, 19.0 ],
+					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
+					"varname" : "display_moviedim"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "newobj",
@@ -81,14 +130,12 @@
 					"fontname" : "Consolas",
 					"fontsize" : 11.0,
 					"id" : "obj-230",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2790.944885249999516, 1647.41943399999991, 116.0, 32.0 ],
+					"patching_rect" : [ 641.0, 357.0, 116.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 111.0, 63.0, 203.0, 19.0 ],
-					"text" : "LENGTH:  9039  FRAMES",
+					"presentation_rect" : [ 111.0, 61.0, 142.0, 19.0 ],
 					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
 					"varname" : "display_movielength"
 				}
@@ -104,10 +151,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2790.944885249999516, 1623.0, 118.0, 19.0 ],
+					"patching_rect" : [ 650.999999999999886, 304.199950999999885, 118.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 63.0, 108.0, 19.0 ],
-					"text" : "FPS: 30",
+					"presentation_rect" : [ 2.0, 61.0, 108.0, 19.0 ],
 					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
 					"varname" : "display_moviefps"
 				}
@@ -120,14 +166,12 @@
 					"fontname" : "Consolas",
 					"fontsize" : 11.0,
 					"id" : "obj-228",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2789.943908999999621, 1596.865402000000131, 118.0, 32.0 ],
+					"patching_rect" : [ 656.943908999999621, 315.350096999999892, 118.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 41.0, 378.0, 19.0 ],
-					"text" : "Shamita_01_slow.mov",
+					"presentation_rect" : [ 1.0, 41.0, 365.0, 19.0 ],
 					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
 					"varname" : "display_moviename"
 				}
@@ -143,9 +187,9 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2605.09997599999997, 1920.899902000000111, 128.0, 128.0 ],
+					"patching_rect" : [ 60.943908999999621, 133.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 41.0, 379.0, 19.0 ],
+					"presentation_rect" : [ 1.0, 41.0, 523.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -161,9 +205,9 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2590.09997599999997, 1905.899902000000111, 128.0, 128.0 ],
+					"patching_rect" : [ 45.943908999999621, 118.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 112.0, 61.0, 268.0, 19.0 ],
+					"presentation_rect" : [ 112.0, 61.0, 149.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -179,7 +223,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2575.09997599999997, 1890.899902000000111, 128.0, 128.0 ],
+					"patching_rect" : [ 30.943908999999621, 103.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 2.0, 61.0, 109.0, 19.0 ],
 					"proportion" : 0.39,
@@ -218,7 +262,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 693.0, 612.200317000000041, 62.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 262.0, 81.0, 56.0, 21.0 ],
+					"presentation_rect" : [ 105.5, 80.0, 56.0, 21.0 ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"tricolor" : [ 0.32156862745098, 0.341176470588235, 0.368627450980392, 1.0 ],
 					"triscale" : 0.5,
@@ -282,7 +326,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 194.390197999999941, 639.700317000000041, 96.0, 20.0 ],
-					"restore" : [ "C:/Users/matth/Desktop/Shamita_01_slow.mov" ],
+					"restore" : [ "" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -483,7 +527,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 120.440124999999966, 701.700317000000041, 89.0, 20.0 ],
+					"patching_rect" : [ 120.440124999999966, 741.700317000000041, 89.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -511,14 +555,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-281",
-					"linecount" : 2,
 					"maxclass" : "textedit",
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 120.440124999999966, 675.800293000000011, 230.559875000000034, 16.40002400000003 ],
-					"text" : "C:/Users/matth/Desktop/Shamita_01_slow.mov",
+					"patching_rect" : [ 120.440124999999966, 675.800293000000011, 234.559875000000034, 42.40002400000003 ],
 					"varname" : "textedit"
 				}
 
@@ -710,8 +752,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 807.0, 694.200317000000041, 112.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 408.0, 23.0, 116.0, 19.0 ],
-					"text" : "20925",
+					"presentation_rect" : [ 324.0, 21.0, 116.0, 19.0 ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"textjustification" : 1
 				}
@@ -926,8 +967,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 777.0, 668.200317000000041, 115.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 291.0, 23.0, 116.0, 19.0 ],
-					"text" : "00:02:55",
+					"presentation_rect" : [ 207.0, 21.0, 116.0, 19.0 ],
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"textjustification" : 1
 				}
@@ -1053,27 +1093,9 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2715.09997599999997, 1819.899902000000111, 128.0, 128.0 ],
+					"patching_rect" : [ 71.440124999999966, 36.899902000000111, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 81.0, 82.0, 19.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ],
-					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
-					"id" : "obj-445",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 2805.09997599999997, 1909.899902000000111, 128.0, 128.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 203.0, 81.0, 116.0, 19.0 ],
+					"presentation_rect" : [ 2.0, 81.0, 164.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -1089,9 +1111,45 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2700.09997599999997, 1804.899902000000111, 128.0, 128.0 ],
+					"patching_rect" : [ 56.440124999999966, 21.899902000000111, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 85.0, 81.0, 117.0, 19.0 ],
+					"presentation_rect" : [ 262.0, 61.0, 262.0, 19.0 ],
+					"proportion" : 0.39,
+					"rounded" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ],
+					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
+					"id" : "obj-5",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 205.0, 24.0, 128.0, 128.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 207.0, 21.0, 317.0, 19.0 ],
+					"proportion" : 0.39,
+					"rounded" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ],
+					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
+					"id" : "obj-11",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 641.0, 294.350096999999892, 128.0, 128.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 167.0, 81.0, 357.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -1123,6 +1181,54 @@
 				"patchline" : 				{
 					"destination" : [ "obj-241", 0 ],
 					"source" : [ "obj-119", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-226", 0 ],
+					"order" : 3,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-228", 0 ],
+					"order" : 2,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-230", 0 ],
+					"order" : 5,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-330", 0 ],
+					"order" : 0,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-37", 0 ],
+					"order" : 1,
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"order" : 4,
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
