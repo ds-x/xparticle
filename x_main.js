@@ -96,6 +96,9 @@ function setheight(h)
 // -------------------------------------------------
 
 var gett = new Task(getinfo,this);
+var takt = new Task(setFrame, this);
+var currentframe = 0;
+
 
 // ask current position
 function getinfo() {
@@ -105,12 +108,35 @@ function getinfo() {
 	getms.message('bang');
 
 }	
+
+function setFrame() {
+	
+	var framedisplay = t.getnamed('framenr');
+	currentframe += 1;
+	framedisplay.message('set', currentframe);
+
+}
+
+function SF() {
+	takt.interval = 33;
+	takt.repeat();	
+}
+
 	
 // -------------------------------------------------	
 // LOADBANG Functions	
 // -------------------------------------------------
 
-	
+function init() {
+	var settings = t.getnamed('settings');
+	var setvalues = 	new Array('windowposx', 'windowposy', 'windowwidth', 'windowheight',
+							'displaysync', 'fpsinfo', 'fps', 'windowborder', 'playlistenable', 'loopmode',
+							'hidecursor', 'previewchoice','oscpport', 'outputchoice');
+
+	settings.message('subscribe', setvalues);
+
+}
+/*	
 function loadbang() {
 	
 	var settings = t.getnamed('settings');
@@ -122,3 +148,5 @@ function loadbang() {
 
 
 	}
+
+	*/

@@ -1,5 +1,0 @@
-0, Name Category Tag Place;
-1, INIT "dont change" - -;
-2, SquareAlbers <category> <tag> <place>;
-3, SquareAlbersWithGlobal <category> <tag> <place>;
-4, <name> <category> <tag> <place>;

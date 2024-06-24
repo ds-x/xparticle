@@ -14,10 +14,13 @@
 	<param name="uAging" type="float" default="0.01" />
 	<param name="uLuminance" type="float" default="0.1" />
 	<param name="uDelMode" type="int" default="0" />
+	<param name="uZFactor" type="float" default="1" />
+	<param name="uZSource" type="float" default="0.5" />
 
-	<param name="texturePlain" type="int" default="0" />
-	<param name="opticalFlow" type="int" default="1" />
-	<param name="opticalFlow2" type="int" default="2" />
+	<param name="txInput1" type="int" default="0" />
+	<param name="txInput2" type="int" default="1" />
+	<param name="opticalFlow" type="int" default="2" />
+	<param name="opticalFlow2" type="int" default="3" />
 
 	<param name="texDim" type="vec2" default="640.0 360.0" />
 	
@@ -36,8 +39,11 @@
 		<bind param="uAging" program="vp" />
 		<bind param="uLuminance" program="vp" />
 		<bind param="uDelMode" program="vp" />
+		<bind param="uZFactor" program="vp" />
+		<bind param="uZSource" program="vp" />
 
-		<bind param="texturePlain" program="vp" />
+		<bind param="txInput1" program="vp" />
+		<bind param="txInput2" program="vp" />
 		<bind param="opticalFlow" program="vp" />
 		<bind param="opticalFlow2" program="vp" />
 		<bind param="texDim" program="vp" />
@@ -54,11 +60,14 @@ uniform vec3 	uForceOrigin;
 uniform float 	uFriction;
 uniform float 	uAging;
 uniform float 	uLuminance;
+uniform float	uZFactor;
+uniform float 	uZSource;
 uniform int		uDelMode;
 
 
 uniform vec2 texDim;	
-uniform sampler2DRect texturePlain;
+uniform sampler2DRect txInput1;
+uniform sampler2DRect txInput2;
 uniform sampler2DRect opticalFlow;
 uniform sampler2DRect opticalFlow2;
 
@@ -122,8 +131,22 @@ void main() {
 	vec2 texcoord = ((iPosition.xy + 1.0) / 2.0) * texDim;
 	float ratio = texDim.x / texDim.y;
 
-	// DEFINITIONS
-	vec3 originalPos = iOrigin;
+	// Luminance von Textures
+	vec4 lumacoeff = vec4(0.299,0.587,0.114,0.);
+	
+	vec4 lumatexIn1 = texture(txInput1, texcoord);
+	vec4 lumatexIn2 = texture(txInput2, texcoord);
+	
+	float luma1 = dot(lumatexIn1,lumacoeff);
+	float luma2 = dot(lumatexIn2,lumacoeff);
+	float lidar = lumatexIn2.a;
+
+	// Depth Option
+	float zpos = 0;
+	zpos += mix(luma1,lidar,uZSource);
+	zpos *= uZFactor;
+
+	vec3 originalPos = vec3(iOrigin.xy,zpos);
 	vec3 attractionPoint = vec3(uPoint);
 	vec3 worldsize = vec3(1.0,1.0,1.0);
 
@@ -131,10 +154,7 @@ void main() {
 	float mass = iAgeNoise.y;
 	float aging = iAgeNoise.x;
 
-	// Luminance von Texture
-	vec4 lumatex = texture(texturePlain, texcoord); //iColor.xy * texDim);
-	vec4 lumacoeff = vec4(0.3,0.6,0.1,0.0);
-	float luma = dot(lumatex,lumacoeff);
+	
 
 	//lumatex = vec4(vec3(luma),1.0);
 

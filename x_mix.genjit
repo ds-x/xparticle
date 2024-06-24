@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 3,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "jit.gen",
-		"rect" : [ 1302.0, 207.0, 1017.0, 1051.0 ],
+		"rect" : [ 115.0, 271.0, 802.0, 1053.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 657.0, 724.0, 36.0, 20.0 ],
+					"patching_rect" : [ 657.0, 982.0, 36.0, 18.0 ],
 					"text" : "out 2"
 				}
 
@@ -60,7 +60,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 59.0, 20.0, 33.0, 20.0 ],
+					"patching_rect" : [ 59.0, 20.0, 33.0, 18.0 ],
 					"text" : "in 1"
 				}
 
@@ -74,14 +74,14 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 358.0, 20.0, 33.0, 20.0 ],
+					"patching_rect" : [ 358.0, 20.0, 33.0, 18.0 ],
 					"text" : "in 2"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"code" : "// ----------------------------------\r\n// MIX MODES\r\n\r\nalpha(in1,in2,mask, t) {\r\n\t\r\n\tt1 = 1-smoothstep(t-1, t, mask);\r\n\tresult = mix(in1,in2,t1);\r\n\treturn result;\r\n\t}\r\n\t\r\nluma(in1,in2,mask, t) {\r\n\tt1 = smoothstep(t,t-1,1-mask);\r\n\tresult = mix(in1,in2,t1);\r\n\treturn result;\r\n\t}\r\n\t\r\nmultiply(in1,in2,mask, t) {\r\n\tt1 = 1-smoothstep(t-1,t,1-mask);\r\n\tt2 = in1 * in2;\r\n\tt3 = mix(in1,t2,t1);\r\n\tresult = mix(in1,t3,t);\r\n\treturn result;\t\r\n\t}\r\n\t\r\ndifference(in1,in2,mask, t) {\r\n\tt1 = smoothstep(1-t,1,mask);\r\n\tt2 = absdiff(in1,in2);\r\n\tt3 = mix(in1,t2,t1);\r\n\tresult = mix(in1,t3,t);\r\n\treturn result;\r\n\t}\r\n\t\r\n// ----------------------------------\r\n// INPUT PARAMETER\r\n\t\t\r\nParam mixamount;\r\nParam mixmode;\r\nParam maskmode;\r\nParam bypass;\r\n\r\n// ----------------------------------\r\n// MASK IMPROVEMNT\r\n// Mask sollten besser einstellbar sein.\r\n// threshold, blur? ueberlegen\r\n\r\nluminance = vec(0.299,0.587,0.114);\r\nlumamask1 = dot(in3,luminance);\r\nlumamask2 = smoothstep(0,mixamount*0.33,lumamask1);\r\nlumamask3 = mix(lumamask1,lumamask2,mixamount);\r\n\r\n// ----------------------------------\r\n// Final Output based on Selector\r\n// Option to have a ook at Mask\r\n\r\nalphamix = alpha(in1,in2,lumamask3,mixamount);\r\nlumamix = luma(in1,in2,lumamask3,mixamount);;\r\nmultmix = multiply(in1,in2,lumamask3,mixamount);\r\ndiffmix = difference(in1,in2,lumamask3,mixamount);\r\n\r\nfinalmix = selector(mixmode,alphamix,lumamix,multmix,diffmix);\r\nfinal = selector(maskmode,finalmix,lumamask3);\r\n\r\nout1 = final;\r\nout2 = in1 - lumamask1; ",
+					"code" : "// ----------------------------------\r\n// MIX MODES\r\n\r\nalpha(in1,in2,mask, t) {\r\n\t\r\n\tt1 = 1-smoothstep(t-1, t, mask);\r\n\tresult = mix(in1,in2,t1);\r\n\treturn result;\r\n\t}\r\n\t\r\nluma(in1,in2,mask, t) {\r\n\tt1 = smoothstep(t,t-1,1-mask);\r\n\tresult = mix(in1,in2,t1);\r\n\treturn result;\r\n\t}\r\n\t\r\nmultiply(in1,in2,mask, t) {\r\n\tt1 = 1-smoothstep(t-1,t,1-mask);\r\n\tt2 = in1 * in2;\r\n\tt3 = mix(in1,t2,t1);\r\n\tresult = mix(in1,t3,t);\r\n\treturn result;\t\r\n\t}\r\n\t\r\ndifference(in1,in2,mask, t) {\r\n\tt1 = smoothstep(1-t,1,mask);\r\n\tt2 = absdiff(in1,in2);\r\n\tt3 = mix(in1,t2,t1);\r\n\tresult = mix(in1,t3,t);\r\n\treturn result;\r\n\t}\r\n\t\r\n// ----------------------------------\r\n// BLEND MODES\r\n\r\nblend_alpha(in1,in2,t) {\r\n\tresult = mix(in1,in2,in1.a * t);\r\n\treturn result;\r\n\r\n}\r\n\r\nblend_mult(in1,in2,t) {\r\n\tt1 = in1 * in2;\r\n\tresult = mix(in1,t1,t);\r\n\treturn result;\r\n\r\n}\r\n\r\nblend_add(in1,in2,t) {\r\n\tt1 = in1 + in2;\r\n\tresult = mix(in1,t1,t);\r\n\treturn result;\r\n}\r\n\r\nblend_screen(in1,in2,t)  {\r\n\tt1 = max(in1,in2);\r\n\tresult = mix(in1,t1,t);\r\n\treturn result;\r\n}\r\n\r\nblend_diff(in1,in2,t) {\r\n\tt1 = in1 - in2;\r\n\tresult = mix(in1,t1,t);\r\n\treturn result;\r\n}\r\n\t\t\r\n\r\n// ----------------------------------\r\n// INPUT PARAMETER\r\n\t\t\r\nParam amount;\r\nParam mode;\r\nParam maskmode;\r\nParam bypass;\r\n\r\n// ----------------------------------\r\n// MASK IMPROVEMNT\r\n// Mask sollten besser einstellbar sein.\r\n// threshold, blur? ueberlegen\r\n\r\nluminance \t= vec(0.299,0.587,0.114);\r\nlumamask1 \t= dot(in3,luminance);\r\nlumamask2 \t= smoothstep(0,amount*0.33,lumamask1);\r\nlumamask3 \t= mix(lumamask1,lumamask2,amount);\r\n\r\n// ----------------------------------\r\n// Final Output based on Selector\r\n\r\nalphamix \t= alpha(in1,in2,lumamask3,amount);\r\nlumamix \t= luma(in1,in2,lumamask3,amount);;\r\nmultmix \t= multiply(in1,in2,lumamask3,amount);\r\ndiffmix \t= difference(in1,in2,lumamask3,amount);\r\n\r\nalphablend \t= blend_alpha(in1,in2,amount);\r\nmultiblend \t= blend_mult(in1,in2,amount);\r\naddblend\t= blend_add(in1,in2,amount);\r\nscreenblend\t= blend_screen(in1,in2,amount);\r\ndiffblend\t= blend_diff(in1,in2,amount);\r\n\r\n\r\nfinalblend \t= selector(mode,alphablend,screenblend,multiblend,diffblend);\r\nfinalmix \t= selector(mode,alphamix,lumamix,multmix,diffmix);\r\nfinal \t\t= selector(maskmode,finalblend,finalmix,lumamask3);\r\n\r\nout1 \t\t= final;\r\nout2 \t\t= in1 - lumamask1; ",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 11.0,
@@ -90,7 +90,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 59.0, 53.0, 617.0, 659.0 ]
+					"patching_rect" : [ 59.0, 53.0, 617.0, 882.0 ]
 				}
 
 			}
@@ -103,7 +103,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 657.0, 20.0, 33.0, 20.0 ],
+					"patching_rect" : [ 657.0, 20.0, 33.0, 18.0 ],
 					"text" : "in 3"
 				}
 
@@ -116,7 +116,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 59.0, 724.0, 39.0, 20.0 ],
+					"patching_rect" : [ 59.0, 982.0, 39.0, 18.0 ],
 					"text" : "out 1"
 				}
 
@@ -158,7 +158,6 @@
 
 			}
  ],
-		"autosave" : 0,
 		"bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
 		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
 	}

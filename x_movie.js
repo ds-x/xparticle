@@ -1,14 +1,11 @@
+autowatch = 1;
 inlets = 1;
 outlets = 2;
 
-t = this.patcher;
-
+var t;
 var state;
 var key_32;
 var mov;
-var plane;
-var world;
-var setcursor;
 
 var hide;
 declareattribute('hide');
@@ -44,21 +41,16 @@ function tickstoms(ticks) {
 function init() {
 	
 	// fileread initializes the variabes
-	plane			= t.getnamed('outputplane');
-	//world			= t.getnamed('world');
+	t = this.patcher;
 	key_32 			= t.getnamed('trigspace');
 	state 			= t.getnamed('state');
 	mov 			= t.getnamed('movie');
-	setcursor		= t.getnamed('setcursor');
-
-
-	//var mov_setw	= t.getnamed('set_w');
-	//var mov_seth	= t.getnamed('set_h');
-
 
 }
 
 function fileread() {
+	
+	init();
 	
 	var d_movfps 	= t.getnamed('display_moviefps');
 	var d_movdim 	= t.getnamed('display_moviedim');
@@ -70,12 +62,7 @@ function fileread() {
 	var mov_length 	= mov.getattr('milliseconds');
 	var mov_name 	= mov.getattr('moviefile');
 	var mov_size 	= mov.getattr('dim');
-	var mov_ratio 	= mov_size[0] / mov_size[1];
 	var mov_frames	= Math.floor((mov_length / 1000) * mov_fps);
-	
-	// change world to moviedim
-	//world.message('size', mov_size);
-	//plane.message('scale', mov_ratio, 1.0, 1.0);
 	
 	// show file info 
 	d_movname.message('set', mov_name);
@@ -83,13 +70,8 @@ function fileread() {
 	d_movdim.message('set','SIZE:', mov_size);
 	d_movlength.message('set', 'LENGTH: ', mov_frames, ' FRAMES');
 
-	// set w and h in player 
-	//mov_setw.message('set', mov_size[0]);
-	//mov_seth.message('set', mov_size[1]);
-	
 	// start internal timing function
 	state.message(0);
-
 
 	//post('\n', mov_fps);
 	}
@@ -97,6 +79,7 @@ function fileread() {
 
 
 function PLAY() {
+	init();
 	gett.interval = 1000;
 	gett.repeat();	
 	mov.message('unique', 1);
@@ -112,6 +95,7 @@ function PLAY() {
 	}
 
 function STOP() {
+	init();
 	mov.message('unique', 0);
 	mov.message('stop');
 	gett.cancel();
@@ -151,8 +135,6 @@ function position(f)
 // -------------------------------------------------
 
 
-
-
 var framecount = 0;
 var loopmode;
 
@@ -160,18 +142,16 @@ function setloop(i)
 {
 	if (i == 0) {
 		loopmode = 0;
-		post('\n', 'Loop disabled');
+		//post('\n', 'Loop disabled');
 		}
 	
 	else {
 		loopmode = 1;
-		post('\n', 'Loop enabled');
+		//post('\n', 'Loop enabled');
 		}		
 
 return loopmode;
 }
-
-
 
 function endreached() 
 {
@@ -186,7 +166,7 @@ function endreached()
 	else {
 		
 		STOP();
-		post('\n', 'FINISHED');
+		//post('\n', 'FINISHED');
 		}
 		
 }
@@ -215,7 +195,7 @@ function getinfo() {
 	
 function loadbang() {
 	
-	init();
+	//init();
 
 
 	}

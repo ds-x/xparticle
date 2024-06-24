@@ -1,9 +1,7 @@
 inlets = 1;
 outlets = 4;
 
-t = this.patcher;
-
-var mov = t.getnamed('movie');
+var t;
 var mov_ms;
 var mov_fps;
 
@@ -26,10 +24,10 @@ function tickstoms(ticks) {
 	
 function fileread() {
 
-	mov = t.getnamed('movie');
-	mov_ms = mov.getattr('milliseconds');
+	t = this.patcher;
+	mov 	= t.getnamed('movie');
+	mov_ms	= mov.getattr('milliseconds');
 	mov_fps = mov.getattr('fps');
-
 	}
 
 function position(ms) {	
