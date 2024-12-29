@@ -5,6 +5,7 @@
 	<param name="position" type="vec3" state="POSITION" />
 	<param name="texcoord" type="vec2" state="TEXCOORD" />
 	<param name="velocity" type="vec3" state="NORMAL" />
+	
 	<param name="tex0" type="int" default="0" />
 	<param name="textureMatrix0" type="mat4" state="TEXTURE0_MATRIX" />
 	<param name="modelViewProjectionMatrix" type="mat4" state="MODELVIEW_PROJECTION_MATRIX" />
@@ -12,16 +13,22 @@
 
 	<param name="pointSize" type="float" default="1.0" />
 	<param name="hsv" type="vec3" default="1.0 1.0 1.0" />
-	<param name="useSecondColor" type="int" default="0" />
+
 	<param name="useMovement" type="int" default="0" /> 
 	<param name="uMovement" type="float" default="0.0" />
 	<param name="uLuminance" type="float" default="0.0" />  
 	<param name="uColormode" type="int" default="0" /> 
-	<param name="uAlpha" type="int" default="0" /> 
+	<param name="uAlpha" type="int" default="1" /> 
+
+	<param name="uDrawMode" type="int" default="0" />
+	<param name="uLuminanceSize" type="int" default="0" />
+	<param name="uInvertLuminance" type="int" default="0" />
+	<param name="uSoft" type="int" default="0" />
 
 	<language name="glsl" version="1.5">
 		<bind param="position" program="vp" />
 		<bind param="texcoord" program="vp" />
+		<bind param="tex0" program="vp" />
 		<bind param="tex0" program="fp" />
 		<bind param="textureMatrix0" program="vp" />
 		<bind param="modelViewProjectionMatrix" program="vp" />
@@ -30,13 +37,17 @@
 
 		<bind param="pointSize" program="vp" />
 		<bind param="hsv" program="fp" />
-		<bind param="useSecondColor" program="fp" />
+		
 		<bind param="useMovement" program="fp" /> 
 		<bind param="uMovement" program="fp" />
 		<bind param="uLuminance" program="fp" />  
 		<bind param="uColormode" program="fp" />
 		<bind param="uAlpha" program="fp" />
-		
+
+		<bind param="uDrawMode" program="fp" />
+		<bind param="uLuminanceSize" program="vp" />
+		<bind param="uInvertLuminance" program="vp" />
+		<bind param="uSoft" program="fp" />
 
 		<program name="vp" type="vertex">
 			<![CDATA[
@@ -46,11 +57,16 @@ uniform mat4 modelViewProjectionMatrix;
 
 uniform mat4 textureMatrix0;
 uniform float pointSize;
+uniform sampler2DRect tex0;
+uniform int uLuminanceSize;
+uniform int uInvertLuminance;
 
 in vec3 position;
 in vec4 color;
 in vec2 texcoord;
 in vec3 velocity;
+
+const vec4 lumcoeff = vec4(0.2125,0.7154,0.0721,0.0);
 
 out jit_PerVertex {
 	flat vec4 color;
@@ -64,8 +80,27 @@ void main() {
 	jit_out.texcoord0 = vec2(textureMatrix0*vec4(texcoord, 0., 1.));
 
 	jit_out.velocity = velocity.xyz;
+	
+	vec4 texColor = texture(tex0, jit_out.texcoord0);
+	
+	float partSize;
 
-	gl_PointSize = pointSize;
+	
+	if (uLuminanceSize == 1) {
+		float luminance = dot(texColor, lumcoeff);
+
+		if (uInvertLuminance == 1) {
+			luminance = 1-luminance;
+		}
+		
+		luminance *= pointSize; // 1 - 10
+		luminance += 1.0; // 1-2
+		partSize = luminance;
+	} else {
+		partSize = pointSize;
+	}
+
+	gl_PointSize = partSize;
 }
 
 
@@ -84,12 +119,14 @@ out vec4 color;
 
 uniform sampler2DRect tex0;
 uniform vec3 hsv;
-uniform int useSecondColor;
+
 uniform int useMovement; 
 uniform int uColormode;
 uniform float uMovement;
 uniform float uLuminance;
 uniform int uAlpha;
+uniform int uDrawMode;
+uniform int uSoft;
 
 const vec4 lumcoeff = vec4(0.2125,0.7154,0.0721,0.0);
 
@@ -108,10 +145,6 @@ void main() {
 	color = jit_in.color;
 	
 	vec4 textureColor = texture(tex0, jit_in.texcoord0);
-
-	vec4 secondColor = vec4(hsv2rgb(hsv),1.0);
-	
-	
 	vec4 white = vec4(1.0,1.0,1.0,1.0);	
 	float luminance = dot(textureColor, lumcoeff);
 	vec4 texColor = white;
@@ -133,7 +166,7 @@ void main() {
 			}
 			
 			
-			break;
+		break;
 		
 		case 1:
 
@@ -145,14 +178,14 @@ void main() {
 				discard; 
 			}
 
-			break;
+		break;
 
 		case 2:
 
 			textureColor.a = uAlpha == 0 ? 1.0 : luminance;
 			texColor = textureColor;
 			
-			break;
+		break;
 		
 
 	}
@@ -161,23 +194,36 @@ void main() {
 	float movementcolor = length(jit_in.velocity) * 1000.0;
 	
 	texColor = useMovement == 0 ? texColor : texColor * movementcolor;
-
-	vec4 otherColor = mix(texColor, vec4(texColor.rgb*0.3,luminance) + secondColor, movementcolor);
-	texColor = useSecondColor == 0 ? texColor : otherColor;
-
 	color = texColor;
 
 	
 
 	float len = length(gl_PointCoord - 0.5);
 
-	if (len >= 0.5) discard;
+	// Selector for different DrawModes of Particles
+	// Size is set in VP of better GP?
+
+	switch(uDrawMode) {
+		case 0:
+			if (len >= 0.5) discard;
+			if (uSoft == 1) {
+				color.a = smoothstep(0.5,0.0,len);
+			}
+		break;
+		case 1:
+			//color.a = smoothstep(0.5,0.0,len);
+		break;
+		case 2:
+		break;
+	}
+
+	
 	if (movementcolor < uMovement) discard;
 	if (luminance < uLuminance) discard;
 
 	
 
-	//color.a = smoothstep(0.5,0.0,len);
+	
 }	
 
 ]]>

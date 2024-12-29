@@ -2,45 +2,19 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
+			"major" : 9,
+			"minor" : 0,
 			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "jit.gen",
-		"rect" : [ 775.0, 200.0, 1023.0, 975.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 642.0, 393.0, 1023.0, 974.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"code" : "// postprocess\r\nParam saturation (1.0);\r\nParam gamma (1.0);\r\nParam brightness (1.0);\r\nParam contrast (1.0);\r\nParam finalluminance (1.0);\r\nParam v_tintcolor;\r\nParam v_tintamount;\r\n\r\n\r\n// -----------------------------------------------------\r\n\r\n\r\nlumcoeff = vec(0.299,0.7154,0.1544);\r\n\r\ns_tintcolor = hsl2rgb(vec(v_tintcolor,v_tintamount,1-v_tintamount*0.5));\r\n\r\n// -----------------------------------------------------\r\n// define the output\r\ns_lumaimage = dot(in1,lumcoeff);\r\ns_saturation = mix(s_lumaimage,in1,saturation);\r\ns_gamma = pow(s_saturation,(1/gamma));\r\ns_contrast = mix(s_gamma,vec(0.5,0.5,0.5),1-contrast);\r\ns_brightness = s_contrast * brightness;\r\n\r\ns_lumatintimage = dot(s_brightness,lumcoeff);\r\ns_tint = mix(s_brightness,s_lumatintimage * s_tintcolor,v_tintamount);\r\n\r\nout1 = s_tint * finalluminance;",
+					"code" : "// postprocess\r\nParam saturation (1.0);\r\nParam gamma (1.0);\r\nParam brightness (1.0);\r\nParam contrast (1.0);\r\n\r\nParam v_tintamount;\r\nParam v_tintr;\r\nParam v_tintg;\r\nParam v_tintb;\r\n\r\n// -----------------------------------------------------\r\n\r\nlumcoeff = vec(0.299,0.7154,0.1544,0);\r\n\r\n// -----------------------------------------------------\r\n// define the output\r\ns_lumaimage = dot(in1,lumcoeff);\r\ns_saturation = mix(s_lumaimage,in1,saturation);\r\ns_gamma = pow(s_saturation,(1/gamma));\r\ns_contrast = mix(s_gamma,vec(0.5,0.5,0.5),1-contrast);\r\ns_brightness = s_contrast * brightness;\r\n\r\ns_lumatintimage = dot(s_brightness,lumcoeff);\r\n//r = v_tintr * (0.5 + sin((PI*s_lumatintimage) - 0.5 * PI) * 0.5);\r\n//g = v_tintg * (0.5 + sin((PI*s_lumatintimage) - 0.5 * PI) * 0.5);\r\n//b = v_tintb * (0.5 + sin((PI*s_lumatintimage) - 0.5 * PI) * 0.5);\r\n\r\n//r = pow(s_lumatintimage,0.5+(v_tintg+v_tintb));\r\n//g = pow(s_lumatintimage,0.5+(v_tintr+v_tintb));\r\n//b = pow(s_lumatintimage,0.5+(v_tintr+v_tintg));\r\n\r\nxr = clamp(v_tintg+v_tintb,0,1);\r\nxg = clamp(v_tintr+v_tintb,0,1);\r\nxb = clamp(v_tintr+v_tintg,0,1);\r\n\r\nr = pow(s_lumatintimage,1.0/(1-xr));\r\ng = pow(s_lumatintimage,1.0/(1-xg));\r\nb = pow(s_lumatintimage,1.0/(1-xb));\r\n\r\ns_tintimage = vec(r,g,b);\r\ns_tint = mix(s_brightness,s_tintimage,v_tintamount);\r\n\r\nout1 = s_tint;",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -96,7 +70,7 @@
 
 			}
  ],
-		"autosave" : 0,
+		"originid" : "pat-1612",
 		"bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ],
 		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
 	}

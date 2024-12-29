@@ -3,7 +3,19 @@
 		"name" : "settings",
 		"slots" : 		{
 			"1" : 			{
-				"id" : 1
+				"id" : 1,
+				"data" : 				{
+					"windowborder" : [ 1 ],
+					"fps" : [ 0 ],
+					"fpsinfo" : [ 1 ],
+					"hidecursor" : [ 0 ],
+					"windowwidth" : [ 2560 ],
+					"windowheight" : [ 1080 ],
+					"previewchoice" : [ 1 ],
+					"windowposy" : [ 38 ],
+					"windowposx" : [ 845 ]
+				}
+
 			}
 
 		}

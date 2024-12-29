@@ -129,9 +129,8 @@ function SF() {
 
 function init() {
 	var settings = t.getnamed('settings');
-	var setvalues = 	new Array('windowposx', 'windowposy', 'windowwidth', 'windowheight',
-							'displaysync', 'fpsinfo', 'fps', 'windowborder', 'playlistenable', 'loopmode',
-							'hidecursor', 'previewchoice','oscpport', 'outputchoice');
+	var setvalues = 	new Array('run','windowposx', 'windowposy', 'windowwidth', 'windowheight',
+							'fpsinfo', 'fps', 'windowborder','previewchoice','oscpport');
 
 	settings.message('subscribe', setvalues);
 

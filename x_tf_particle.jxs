@@ -15,12 +15,17 @@
 	<param name="uLuminance" type="float" default="0.1" />
 	<param name="uDelMode" type="int" default="0" />
 	<param name="uZFactor" type="float" default="1" />
-	<param name="uZSource" type="float" default="0.5" />
+	<param name="uZSource" type="int" default="0" />
+	<param name="uLumaToAcc" type="int" default="0" />
+	<param name="uLumaToPoint" type="int" default="0" />
+	<param name="uLumaToOrigin" type="int" default="0" />
+	<param name="uLumaSource" type="int" default="0" />	
 
 	<param name="txInput1" type="int" default="0" />
 	<param name="txInput2" type="int" default="1" />
 	<param name="opticalFlow" type="int" default="2" />
 	<param name="opticalFlow2" type="int" default="3" />
+	<param name="txMix" type="int" default="4" />
 
 	<param name="texDim" type="vec2" default="640.0 360.0" />
 	
@@ -41,11 +46,16 @@
 		<bind param="uDelMode" program="vp" />
 		<bind param="uZFactor" program="vp" />
 		<bind param="uZSource" program="vp" />
-
+		<bind param="uLumaToAcc" program="vp" />
+		<bind param="uLumaToPoint" program="vp" />
+		<bind param="uLumaToOrigin" program="vp" />
+		<bind param="uLumaSource" program="vp" />
+		
 		<bind param="txInput1" program="vp" />
 		<bind param="txInput2" program="vp" />
 		<bind param="opticalFlow" program="vp" />
 		<bind param="opticalFlow2" program="vp" />
+		<bind param="txMix" program="vp" />
 		<bind param="texDim" program="vp" />
 
 		<program name="vp" type="vertex">
@@ -61,15 +71,19 @@ uniform float 	uFriction;
 uniform float 	uAging;
 uniform float 	uLuminance;
 uniform float	uZFactor;
-uniform float 	uZSource;
+uniform int 	uZSource;
 uniform int		uDelMode;
-
+uniform int		uLumaToAcc;
+uniform int		uLumaToOrigin;
+uniform int		uLumaToPoint;
+uniform int		uLumaSource;
 
 uniform vec2 texDim;	
 uniform sampler2DRect txInput1;
 uniform sampler2DRect txInput2;
 uniform sampler2DRect opticalFlow;
 uniform sampler2DRect opticalFlow2;
+uniform sampler2DRect txMix;
 
 in vec3 iPosition;
 in vec3 iVelocity;
@@ -120,6 +134,45 @@ void Reflect(inout vec3 velocity, inout vec3 position, in vec3 worldsize )
 	}
 }
 
+void overflow(inout vec3 position, in vec3 worldsize ) 
+{
+	if (position.x >= worldsize.x ) 
+	{
+		position.x = -worldsize.x;
+		
+	}
+
+	else if (position.x <= -worldsize.x)
+	{
+		position.x = worldsize.x;
+		
+	}
+
+	if (position.y >= worldsize.y ) 
+	{
+		position.y = -worldsize.y;
+		
+	}
+
+	else if (position.y <= -worldsize.y)
+	{
+		position.y = worldsize.y;
+		
+	}
+
+	if (position.z >= worldsize.z ) 
+	{
+		position.z = -worldsize.z;
+		
+	}
+
+	else if (position.z <= -worldsize.z)
+	{
+		position.z = worldsize.z;
+		
+	}
+}
+
 void delete(inout vec3 position, in vec3 worldsize, in vec3 newPos) 
 {
 	position.x = position.x > worldsize.x || position.x < -worldsize.x ? position.x = newPos.x : position.x;
@@ -130,20 +183,52 @@ void delete(inout vec3 position, in vec3 worldsize, in vec3 newPos)
 void main() {	
 	vec2 texcoord = ((iPosition.xy + 1.0) / 2.0) * texDim;
 	float ratio = texDim.x / texDim.y;
+	vec4 texIn1 = texture(txInput1, texcoord);
+	vec4 texIn2 = texture(txInput2, texcoord);
+	vec4 texMix = texture(txMix, texcoord);
 
 	// Luminance von Textures
-	vec4 lumacoeff = vec4(0.299,0.587,0.114,0.);
-	
-	vec4 lumatexIn1 = texture(txInput1, texcoord);
-	vec4 lumatexIn2 = texture(txInput2, texcoord);
-	
-	float luma1 = dot(lumatexIn1,lumacoeff);
-	float luma2 = dot(lumatexIn2,lumacoeff);
-	float lidar = lumatexIn2.a;
+	vec4 lumacoeff = vec4(0.299,0.587,0.114,0.);	
+	float luma1 = dot(texIn1,lumacoeff);
+	float luma2 = dot(texIn2,lumacoeff);
+	float lumamix = dot(texMix,lumacoeff);
+	float alpha1 = texIn1.a;
+	float alpha2 = texIn2.a;
 
 	// Depth Option
+	// perfect would be to include some kind of depthtexture in alpha channel of movies
 	float zpos = 0;
-	zpos += mix(luma1,lidar,uZSource);
+	float d;
+
+	switch(uZSource) {
+		
+	
+		case 0:
+			d = luma1;
+			if (d <= 0.5) {
+				zpos += (1. - d);
+			} else {
+				zpos -= d;
+			}
+			
+		break;
+		case 1:
+			d = luma2 - 0.5;
+			zpos += luma2;
+		break;
+		case 2:
+			d = alpha1 - 0.5;
+			zpos += alpha1;
+		break;
+		case 3:
+			d = alpha2 - 0.5;
+			zpos += alpha2;
+		break;
+		default:
+			zpos += 0;
+		break;
+	
+	}
 	zpos *= uZFactor;
 
 	vec3 originalPos = vec3(iOrigin.xy,zpos);
@@ -151,12 +236,27 @@ void main() {
 	vec3 worldsize = vec3(1.0,1.0,1.0);
 
 	// Masse ist random von jit.noise (X)
-	float mass = iAgeNoise.y;
-	float aging = iAgeNoise.x;
+	//float mass = iAgeNoise.y;
+	//float aging = iAgeNoise.x;
 
-	
+	float mass;
 
-	//lumatex = vec4(vec3(luma),1.0);
+	switch(uLumaSource) {
+		case 0:
+		mass = luma1;
+		break;
+		case 1:
+		mass = luma2;
+		break;
+		case 2:
+		mass = lumamix;
+		break;
+		default:
+		break;
+	}
+
+	mass *= 0.95; // bright luma == grosse masse
+	mass += 0.05; // dark luminance == wenig masse
 
 	// FLOW1 : FORCE AND ACCELERATION	
 	vec4 flow = texture(opticalFlow, texcoord); //iColor.xy * texDim);
@@ -164,32 +264,34 @@ void main() {
 	vec3 acc = vec3(0.0);
 	
 	acc = vec3(flowdir.xy * (uForceFlow.xy * 0.001), flowdir.z * (uForceFlow.z * -0.001));
-	acc *= (mass * 0.1 + 0.9);
-
+	if (uLumaToAcc == 1) { acc *= mass;	}
+	
 	// FLOW2 : FORCE AND ACCELERATION	
 	vec4 flow2 = texture(opticalFlow2, texcoord); //iColor.xy * texDim);
 	vec3 flowdir2 = vec3(flow2.x - flow2.y, flow2.z-flow2.w,flow2.z - flow2.y - flow2.x);
 	vec3 acc2 = vec3(0.0);
 	
 	acc2 = flowdir2 * (uForceFlow2 * 0.001);
-	acc2 *= (mass * 0.1 + 0.9);
+	if (uLumaToAcc == 1) { acc2 *= mass; }
 
 	// FORCE TO ORIGIN
 	vec3 dirOrigin = originalPos - iPosition;
 	//vec3 dirOrigin = iPosition - oPosition;
 	vec3 normDirOrigin = clamp(normalize(dirOrigin), vec3(-1.0), vec3(1.0));
-	
 	float distOrigin =  clamp(length(dirOrigin),0.0,1.0);
 	vec3 accOrigin = (normDirOrigin * distOrigin) * (uForceOrigin * 0.01);
-	accOrigin *= (mass * 0.1 + 0.9);
+	if (uLumaToOrigin == 1) { accOrigin *= mass; }
 
 	// FORCE TO POINT
+	float randx = iAgeNoise.z * 2.0 - 1.0;
 	vec3 dirPoint = uPoint - iPosition;
 	vec3 normDirPoint = clamp(normalize(dirPoint),vec3(-1.0),vec3(1.0));
-	
 	float distPoint = clamp(length(dirPoint),0.0,1.0);
 	vec3 accPoint = (normDirPoint * distPoint) * (uForcePoint * 0.01);
-	accPoint *= (mass * 0.1 + 0.9);
+	if (uLumaToPoint == 1) { 
+		accPoint *= mass; 
+		//accPoint *= randx;
+	}
 
 	// VELOCITY
 	// Original Velocity = 0
@@ -197,21 +299,25 @@ void main() {
 	//float randomage = iAgeNoise.x * 0.01;
 	//float mass = iAgeNoise.y;
 
-	vec3 randomNumbers = iAgeNoise.yzw * 0.001;
+	//vec3 randomNumbers = iAgeNoise.yzw * 0.001;
 	float age = iAgeNoise.x;
-
 	
+
+	// mass (0.05 - 1.0) basiert auf Luminance / Black Paricles = 0.05, white = 1.0
+	// friction (0.0 - 1.0) 
+	// friction += mass * 0.1 // 0.005 - 0.1
 
 	if(age > 1.0) {
 
-		oVelocity = vec3(0.0)  * uFriction;
-		age = iAgeNoise.y;
+		//oVelocity = vec3(0.0) * uFriction;
+		oVelocity = iVelocity * uFriction;
+		age = 0.0;
 		
 		oPosition = iOrigin;
-		mass = iAgeNoise.y;
+		mass = mass;
 		
 	} else {
-		age += uAging * 0.001;
+		age += (uAging * mass) * 0.001;
 		oVelocity = iVelocity * uFriction;
 		oVelocity += accOrigin;
 		oVelocity += (acc + acc2);
@@ -223,9 +329,11 @@ void main() {
 		delete(oPosition, worldsize, originalPos);
 	} else if (uDelMode == 2) {
 		Reflect(oVelocity,oPosition,worldsize);
-	} else {
+	} else if (uDelMode == 3) {
+		overflow(oPosition,worldsize);
+	} else {}
 
-	}
+	
 
 	oOrigin = iOrigin;
 	oAgeNoise = vec4(age,iAgeNoise.yzw);

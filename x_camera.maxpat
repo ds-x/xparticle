@@ -2,42 +2,19 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 304.0, 301.0, 1257.0, 1056.0 ],
-		"bglocked" : 0,
+		"rect" : [ 1339.0, 257.0, 1257.0, 1056.0 ],
 		"openinpresentation" : 1,
 		"default_fontsize" : 11.0,
-		"default_fontface" : 0,
 		"default_fontname" : "Geneva",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontface" : 1,
@@ -49,8 +26,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 101.666666666666671, 927.0, 133.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 204.5, 87.0, 144.0, 16.0 ],
-					"text" : "Resolution Out:  1280 591",
+					"presentation_rect" : [ 205.0, 129.0, 144.0, 16.0 ],
+					"text" : "Resolution Out:  512 512",
+					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"textjustification" : 2
 				}
 
@@ -66,8 +44,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 162.0, 869.0, 131.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 86.5, 131.0, 16.0 ],
-					"text" : "Resolution In:  320 240"
+					"presentation_rect" : [ 1.0, 128.0, 131.0, 16.0 ],
+					"text" : "Resolution In:  320 240",
+					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
 
 			}
@@ -103,7 +82,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1.0, 87.0, 110.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 107.0, 69.0, 16.0 ],
+					"presentation_rect" : [ 2.0, 87.0, 69.0, 16.0 ],
 					"text" : "Scale Input",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -121,7 +100,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 2523.143401500000436, 960.969544000000042, 110.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 167.0, 129.0, 69.0, 16.0 ],
+					"presentation_rect" : [ 167.0, 108.0, 69.0, 16.0 ],
 					"text" : "Offset",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -139,7 +118,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 2326.642729500000314, 1032.419738999999936, 112.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 128.0, 70.0, 16.0 ],
+					"presentation_rect" : [ 1.5, 108.0, 70.0, 16.0 ],
 					"text" : "Scale",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -157,9 +136,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1974.0, 523.319640999999933, 108.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 2.5, 108.0, 16.0 ],
+					"presentation_rect" : [ 2.0, 3.0, 108.0, 16.0 ],
 					"text" : "CAMERA",
-					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
+					"textcolor" : [ 0.780392156862745, 0.564705882352941, 0.019607843137255, 1.0 ]
 				}
 
 			}
@@ -211,42 +190,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "jit.gen",
 						"rect" : [ 59.0, 106.0, 600.0, 450.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-1",
@@ -278,7 +231,8 @@
 								}
 
 							}
- ]
+ ],
+						"originid" : "pat-746"
 					}
 ,
 					"patching_rect" : [ 72.0, 669.0, 86.0, 22.0 ],
@@ -302,7 +256,7 @@
 				"box" : 				{
 					"bgcolor" : [ 0.32156862745098, 0.341176470588235, 0.368627450980392, 0.0 ],
 					"contrastactivetab" : 0,
-					"fontface" : 1,
+					"fontface" : 0,
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
 					"htabcolor" : [ 0.278099328279495, 0.278099328279495, 0.278099328279495, 1.0 ],
@@ -316,13 +270,13 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 719.0, 722.0, 135.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 137.0, 106.0, 213.0, 20.0 ],
+					"presentation_rect" : [ 137.0, 85.0, 213.0, 20.0 ],
 					"rounded" : 0.0,
 					"spacing_x" : 1.0,
 					"spacing_y" : 1.0,
 					"style" : "dsx.tab3",
 					"tabcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"tabs" : [ "Global", "GlobalMapped", "Movie" ],
+					"tabs" : [ "GLOBAL", "MAPPED", "CAMERA" ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"varname" : "tab"
 				}
@@ -333,7 +287,7 @@
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
 					"format" : 6,
-					"htricolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 1.0 ],
+					"htricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"id" : "obj-42",
 					"maxclass" : "flonum",
 					"maximum" : 1.0,
@@ -345,10 +299,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 542.0, 701.0, 61.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 80.0, 127.0, 51.0, 18.0 ],
+					"presentation_rect" : [ 81.0, 107.0, 51.0, 18.0 ],
 					"style" : "dsx.flonum",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"tricolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
+					"tricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"triscale" : 0.5,
 					"varname" : "scale"
 				}
@@ -359,7 +313,7 @@
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
 					"format" : 6,
-					"htricolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 1.0 ],
+					"htricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"id" : "obj-88",
 					"maxclass" : "flonum",
 					"maximum" : 1.0,
@@ -371,10 +325,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 459.0, 730.0, 62.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 294.0, 127.0, 51.0, 18.0 ],
+					"presentation_rect" : [ 294.0, 107.0, 51.0, 18.0 ],
 					"style" : "dsx.flonum",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"tricolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
+					"tricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"triscale" : 0.5,
 					"varname" : "ofsy"
 				}
@@ -385,7 +339,7 @@
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
 					"format" : 6,
-					"htricolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 1.0 ],
+					"htricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"id" : "obj-8",
 					"maxclass" : "flonum",
 					"maximum" : 1.0,
@@ -397,10 +351,10 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 400.0, 701.0, 62.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 241.0, 127.0, 51.0, 18.0 ],
+					"presentation_rect" : [ 241.0, 107.0, 51.0, 18.0 ],
 					"style" : "dsx.flonum",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"tricolor" : [ 0.223529411764706, 0.23921568627451, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
+					"tricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"triscale" : 0.5,
 					"varname" : "ofsx"
 				}
@@ -414,7 +368,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 627.0, 678.0, 203.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -494,7 +448,7 @@
 				"box" : 				{
 					"bgcolor" : [ 0.32156862745098, 0.341176470588235, 0.368627450980392, 0.0 ],
 					"contrastactivetab" : 0,
-					"fontface" : 1,
+					"fontface" : 0,
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
 					"htabcolor" : [ 0.278099328279495, 0.278099328279495, 0.278099328279495, 1.0 ],
@@ -551,7 +505,7 @@
 					"fontname" : "Consolas",
 					"fontsize" : 11.0,
 					"id" : "obj-41",
-					"items" : [ "640x480 - 640 x 480", ",", "640x480p60 - 640 x 480", ",", "1280x720 - 1280 x 720", ",", "1280x720p60 - 1280 x 720", ",", "1920x1080 - 1920 x 1080", ",", "1920x1080p60 - 1920 x 1080", ",", "1920x1440 - 1920 x 1440", ",", "1920x1440p60 - 1920 x 1440" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -559,7 +513,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 418.0, 529.5, 180.0, 19.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 203.0, 22.5, 147.0, 19.0 ],
+					"presentation_rect" : [ 203.0, 23.0, 147.0, 19.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
@@ -580,7 +534,7 @@
 					"fontname" : "Consolas",
 					"fontsize" : 11.0,
 					"id" : "obj-31",
-					"items" : [ "FaceTime HD Camera", ",", "OBS Virtual Camera", ",", "IP Camera" ],
+					"items" : "FaceTime HD Camera",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -605,7 +559,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 2519.714476999999988, 1790.199828999999909, 54.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 24.5, 40.0, 16.0 ],
+					"presentation_rect" : [ 2.0, 25.0, 40.0, 16.0 ],
 					"text" : "Model",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -687,11 +641,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 821.0, 7.0, 30.0, 30.0 ]
 				}
 
@@ -748,7 +702,7 @@
 				"box" : 				{
 					"bgcolor" : [ 0.32156862745098, 0.341176470588235, 0.368627450980392, 0.0 ],
 					"contrastactivetab" : 0,
-					"fontface" : 1,
+					"fontface" : 0,
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
 					"htabcolor" : [ 0.278099328279495, 0.278099328279495, 0.278099328279495, 1.0 ],
@@ -761,7 +715,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 258.0, 128.0, 200.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 135.5, 43.0, 215.0, 20.0 ],
+					"presentation_rect" : [ 136.0, 43.0, 215.0, 20.0 ],
 					"rounded" : 0.0,
 					"spacing_x" : 1.0,
 					"spacing_y" : 0.0,
@@ -793,42 +747,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "jit.gen",
 						"rect" : [ 879.0, 344.0, 661.0, 594.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-19",
@@ -1236,7 +1164,8 @@
 								}
 
 							}
- ]
+ ],
+						"originid" : "pat-748"
 					}
 ,
 					"patching_rect" : [ 73.0, 494.0, 37.0, 22.0 ],
@@ -1271,7 +1200,7 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"bgoncolor" : [ 0.278099328279495, 0.278099328279495, 0.278099328279495, 1.0 ],
+					"bgoncolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
 					"fontface" : 1,
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
@@ -1283,11 +1212,11 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 789.0, 349.0, 100.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 228.0, 1.0, 122.0, 19.0 ],
-					"text" : "Update CameraList",
+					"presentation_rect" : [ 228.0, 1.0, 122.0, 20.0 ],
+					"text" : "UPDATE CAMERALIST",
 					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
 					"texton" : "Invert ",
-					"textoncolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
+					"textoncolor" : [ 0.780392156862745, 0.564705882352941, 0.019607843137255, 1.0 ],
 					"usebgoncolor" : 1,
 					"varname" : "textbutton[4]"
 				}
@@ -1341,42 +1270,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 34.0, 79.0, 580.0, 303.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-4",
@@ -1626,15 +1529,13 @@
 								}
 
 							}
- ]
+ ],
+						"originid" : "pat-750"
 					}
 ,
 					"patching_rect" : [ 232.0, 493.5, 205.0, 23.0 ],
 					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
+						"globalpatchername" : ""
 					}
 ,
 					"text" : "p vdev/format"
@@ -1681,7 +1582,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1722,7 +1623,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 0.0,
-					"bgcolor" : [ 0.537254901960784, 0.537254901960784, 0.537254901960784, 1.0 ],
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
 					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
 					"id" : "obj-57",
 					"maxclass" : "panel",
@@ -1740,7 +1641,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 0.0,
-					"bgcolor" : [ 0.537254901960784, 0.537254901960784, 0.537254901960784, 1.0 ],
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
 					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
 					"id" : "obj-51",
 					"maxclass" : "panel",
@@ -1748,24 +1649,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1943.0, 777.0, 128.0, 128.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 106.0, 349.0, 20.0 ],
-					"proportion" : 0.39,
-					"rounded" : 2
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.537254901960784, 0.537254901960784, 0.537254901960784, 1.0 ],
-					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
-					"id" : "obj-48",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1928.0, 762.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 85.0, 349.0, 20.0 ],
 					"proportion" : 0.39,
@@ -1776,14 +1659,14 @@
 , 			{
 				"box" : 				{
 					"angle" : 0.0,
-					"bgcolor" : [ 0.537254901960784, 0.537254901960784, 0.537254901960784, 1.0 ],
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
 					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
-					"id" : "obj-55",
+					"id" : "obj-48",
 					"maxclass" : "panel",
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1764.0, 864.0, 128.0, 128.0 ],
+					"patching_rect" : [ 1928.0, 762.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 127.0, 349.0, 20.0 ],
 					"proportion" : 0.39,
@@ -1794,7 +1677,25 @@
 , 			{
 				"box" : 				{
 					"angle" : 0.0,
-					"bgcolor" : [ 0.537254901960784, 0.537254901960784, 0.537254901960784, 1.0 ],
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
+					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
+					"id" : "obj-55",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1764.0, 864.0, 128.0, 128.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1.0, 106.0, 349.0, 20.0 ],
+					"proportion" : 0.39,
+					"rounded" : 2
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
 					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
 					"id" : "obj-56",
 					"maxclass" : "panel",
@@ -1812,7 +1713,7 @@
 , 			{
 				"box" : 				{
 					"angle" : 0.0,
-					"bgcolor" : [ 0.537254901960784, 0.537254901960784, 0.537254901960784, 1.0 ],
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
 					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
 					"id" : "obj-58",
 					"maxclass" : "panel",
@@ -1839,7 +1740,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1411.357270499999686, 354.899902000000111, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 0.5, 349.0, 20.0 ],
+					"presentation_rect" : [ 1.0, 1.0, 349.0, 20.0 ],
 					"proportion" : 0.39,
 					"rounded" : 2
 				}
@@ -2223,6 +2124,23 @@
 
 			}
  ],
+		"originid" : "pat-744",
+		"dependency_cache" : [ 			{
+				"name" : "scalingfunctions.js",
+				"bootpath" : "~/Nextcloud/dsx.package/_js",
+				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "x_renderchain.js",
+				"bootpath" : "~/GitHub/xparticle",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "dsx.comment.left",
 				"default" : 				{

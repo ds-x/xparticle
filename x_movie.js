@@ -76,7 +76,7 @@ function fileread() {
 	//post('\n', mov_fps);
 	}
 
-
+	
 
 function PLAY() {
 	init();
