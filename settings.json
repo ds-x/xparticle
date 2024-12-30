@@ -9,9 +9,9 @@
 					"fps" : [ 0 ],
 					"fpsinfo" : [ 1 ],
 					"hidecursor" : [ 0 ],
-					"windowwidth" : [ 3000 ],
-					"windowheight" : [ 1280 ],
-					"previewchoice" : [ 4 ],
+					"windowwidth" : [ 1920 ],
+					"windowheight" : [ 1080 ],
+					"previewchoice" : [ 1 ],
 					"windowposy" : [ 38 ],
 					"windowposx" : [ 200 ]
 				}
