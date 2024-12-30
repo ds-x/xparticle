@@ -1,5 +1,5 @@
 inlets = 1;
-outlets = 1;
+outlets = 3;
 
 var currentsystem;
 var t = this.patcher;
@@ -25,18 +25,22 @@ function init() {
 
 	if (currentsystem == 'windows') {
 		
-		destroy()
+		destroy();
 		glshare = t.newdefault(677, 524, "jit.gl.spoutreceiver");
-		//glshare.setattr('name','gl-share');
-		//glshare.setattr('sendername','spout_XPARTICLE');
-		post('spout created');
+		glshare.message('getavailablesenders');
+		outlet(2,'set','sendername');
+		outlet(1,'set','getavailablesenders');
+		outlet(0,'SpoutSender');
+		post('spout client created');
 
 	} else {
 
 		destroy();
 		glshare = t.newdefault(677, 524, "jit.gl.syphonclient");
-		//glshare.setattr('name','gl-share');
-		//glshare.setattr('servername','syphon_XPARTICLE');
+		glshare.message('getavailableservers');
+		outlet(2,'set','servername');
+		outlet(1,'set','getavailableservers');
+		outlet(0,'servername');
 		post('syphon client created');
 	}
 
@@ -45,7 +49,7 @@ function init() {
 	t.connect(mes_servername,0,glshare,0);
 	t.connect(glshare,0,switch_output,2);
 	t.connect(glshare,1,mes_info,0);
-	glshare.message('getavailableservers');
+	
 	}
 
 function destroy() {
