@@ -7,13 +7,13 @@
 				"data" : 				{
 					"windowborder" : [ 1 ],
 					"fps" : [ 0 ],
-					"fpsinfo" : [ 1 ],
+					"fpsinfo" : [ 0 ],
 					"hidecursor" : [ 0 ],
 					"windowwidth" : [ 1920 ],
-					"windowheight" : [ 1080 ],
+					"windowheight" : [ 1085 ],
 					"previewchoice" : [ 1 ],
-					"windowposy" : [ 38 ],
-					"windowposx" : [ 200 ]
+					"windowposy" : [ 0 ],
+					"windowposx" : [ 0 ]
 				}
 
 			}

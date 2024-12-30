@@ -204,17 +204,13 @@ void main() {
 		
 	
 		case 0:
-			d = luma1;
-			if (d <= 0.5) {
-				zpos += (1. - d);
-			} else {
-				zpos -= d;
-			}
+			d = luma1 * 2.0 - 1.0;
+			zpos += d;
 			
 		break;
 		case 1:
-			d = luma2 - 0.5;
-			zpos += luma2;
+			d = luma2 * 2.0 - 1.0;
+			zpos += d;
 		break;
 		case 2:
 			d = alpha1 - 0.5;
