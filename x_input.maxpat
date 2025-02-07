@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 279.0, 155.0, 1600.0, 1262.0 ],
+		"rect" : [ 279.0, 93.0, 1600.0, 1262.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
@@ -185,11 +185,11 @@
 
 							}
  ],
-						"originid" : "pat-1300"
+						"originid" : "pat-320"
 					}
 ,
-					"patching_rect" : [ 43.0, 1287.0, 140.0, 22.0 ],
-					"text" : "jit.gl.pix player @adapt 0"
+					"patching_rect" : [ 43.0, 1287.0, 173.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE @adapt 0"
 				}
 
 			}
@@ -220,11 +220,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-6",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 893.0, 46.0, 30.0, 30.0 ]
 				}
 
@@ -245,7 +245,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -295,7 +295,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -478,134 +478,7 @@
 
 			}
  ],
-		"originid" : "pat-1274",
-		"dependency_cache" : [ 			{
-				"name" : "OpenSoundControl.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "easingfunctions.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "getid.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jit.gl.syphonclient.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.ndi.receive~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "o.route.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "scalingfunctions.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "slidelist.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "x_camera.maxpat",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_imgseq.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_imgseq.maxpat",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_imgseq_fileseq.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_movie.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_movie.maxpat",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_noise.maxpat",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_pencil.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_pencil.maxpat",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_position.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_renderchain.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_sharedcontext.maxpat",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
+		"originid" : "pat-292",
 		"styles" : [ 			{
 				"name" : "dsx.comment.left",
 				"default" : 				{

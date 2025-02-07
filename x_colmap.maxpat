@@ -721,11 +721,11 @@
 
 							}
  ],
-						"originid" : "pat-814"
+						"originid" : "pat-1439"
 					}
 ,
-					"patching_rect" : [ 433.0, 801.0, 156.0, 22.0 ],
-					"text" : "jit.gl.pix player @adapt 0"
+					"patching_rect" : [ 433.0, 801.0, 173.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE @adapt 0"
 				}
 
 			}
@@ -947,11 +947,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 1382.0, 4.0, 30.0, 30.0 ]
 				}
 
@@ -960,7 +960,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -975,8 +975,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 422.5, 237.0, 42.0, 22.0 ],
-					"text" : "r draw"
+					"patching_rect" : [ 422.5, 237.0, 29.0, 22.0 ],
+					"text" : "r db"
 				}
 
 			}
@@ -1017,8 +1017,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 422.5, 400.0, 177.0, 20.0 ],
-					"text" : "jit.gl.pix player @adapt 0 @gen x_solid",
+					"patching_rect" : [ 422.5, 400.0, 197.0, 20.0 ],
+					"text" : "jit.gl.pix XPARTICLE @adapt 0 @gen x_solid",
 					"varname" : "gensolid"
 				}
 
@@ -1376,23 +1376,7 @@
 
 			}
  ],
-		"originid" : "pat-812",
-		"dependency_cache" : [ 			{
-				"name" : "x_gradient.genjit",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "gJIT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_solid.genjit",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "gJIT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
+		"originid" : "pat-1437",
 		"styles" : [ 			{
 				"name" : "dsx.comment.left",
 				"default" : 				{

@@ -306,8 +306,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 764.0, 511.0, 42.0, 22.0 ],
-					"text" : "r draw"
+					"patching_rect" : [ 764.0, 511.0, 29.0, 22.0 ],
+					"text" : "r db"
 				}
 
 			}
@@ -351,11 +351,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-13",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 1251.0, 112.0, 30.0, 30.0 ]
 				}
 
@@ -547,7 +547,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -808,7 +808,7 @@
 
 							}
  ],
-						"originid" : "pat-664"
+						"originid" : "pat-1395"
 					}
 ,
 					"patching_rect" : [ 120.440124999999966, 741.700317000000041, 89.0, 22.0 ],
@@ -936,8 +936,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 393.0, 683.000305000000026, 815.0, 22.0 ],
-					"text" : "jit.movie @adapt 1 @autostart 0 @loop 0 @engine viddll @output_texture 1 @drawto player @cache_size 0.1 @unique 1 @automatic 0 @loopreport 1",
+					"patching_rect" : [ 393.0, 683.000305000000026, 848.0, 22.0 ],
+					"text" : "jit.movie @adapt 1 @autostart 0 @loop 0 @engine viddll @output_texture 1 @drawto XPARTICLE @cache_size 0.1 @unique 1 @automatic 0 @loopreport 1",
 					"varname" : "movie"
 				}
 
@@ -2009,37 +2009,7 @@
 
 			}
  ],
-		"originid" : "pat-662",
-		"dependency_cache" : [ 			{
-				"name" : "scalingfunctions.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_movie.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_position.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_renderchain.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
+		"originid" : "pat-1393",
 		"styles" : [ 			{
 				"name" : "dsx.comment.left",
 				"default" : 				{

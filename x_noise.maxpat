@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1104.0, 457.0, 1301.0, 903.0 ],
+		"rect" : [ 1056.0, 189.0, 1301.0, 903.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
@@ -123,8 +123,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 263.0, 715.0, 261.0, 22.0 ],
-					"text" : "jit.gl.bfg player @adapt 0 @basis noise.simplex"
+					"patching_rect" : [ 263.0, 715.0, 294.0, 22.0 ],
+					"text" : "jit.gl.bfg XPARTICLE @adapt 0 @basis noise.simplex"
 				}
 
 			}
@@ -275,11 +275,11 @@
 
 							}
  ],
-						"originid" : "pat-1574"
+						"originid" : "pat-1367"
 					}
 ,
-					"patching_rect" : [ 263.0, 861.0, 85.0, 22.0 ],
-					"text" : "jit.gl.pix player"
+					"patching_rect" : [ 263.0, 861.0, 117.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE"
 				}
 
 			}
@@ -329,9 +329,9 @@
 					"patching_rect" : [ 1769.0, 54.0, 56.0, 22.0 ],
 					"restore" : 					{
 						"noisebrightness" : [ 0.5 ],
-						"noisecontrast" : [ 0.5 ],
-						"noiseratio" : [ 0.0 ],
-						"noisesize" : [ 1.0 ],
+						"noisecontrast" : [ 0.87 ],
+						"noiseratio" : [ 0.5 ],
+						"noisesize" : [ 0.02 ],
 						"noisespeed" : [ 0.0 ]
 					}
 ,
@@ -368,11 +368,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 376.0, 390.0, 30.0, 30.0 ]
 				}
 
@@ -716,8 +716,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 477.0, 475.0, 42.0, 22.0 ],
-					"text" : "r draw"
+					"patching_rect" : [ 477.0, 475.0, 29.0, 22.0 ],
+					"text" : "r db"
 				}
 
 			}
@@ -725,7 +725,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -786,8 +786,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 165.0, 110.0, 18.0 ],
-									"text" : "jit.time @drawto player"
+									"patching_rect" : [ 50.0, 175.0, 138.0, 18.0 ],
+									"text" : "jit.time @drawto XPARTICLE"
 								}
 
 							}
@@ -858,7 +858,7 @@
 
 							}
  ],
-						"originid" : "pat-1576"
+						"originid" : "pat-1369"
 					}
 ,
 					"patching_rect" : [ 263.0, 518.0, 58.5, 22.0 ],
@@ -980,7 +980,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 746.0, 82.0, 217.0, 18.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1188,9 +1188,7 @@
 
 			}
  ],
-		"originid" : "pat-1572",
-		"dependency_cache" : [  ],
-		"autosave" : 0,
+		"originid" : "pat-1365",
 		"styles" : [ 			{
 				"name" : "dsx.flonum",
 				"default" : 				{

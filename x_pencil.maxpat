@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1427.0, 1374.0, 1044.0, 1184.0 ],
+		"rect" : [ 322.0, 152.0, 1044.0, 1184.0 ],
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
 		"default_fontname" : "Consolas",
@@ -97,11 +97,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-38",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 1628.0, 35.0, 30.0, 30.0 ]
 				}
 
@@ -122,7 +122,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-132",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -137,8 +137,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 492.0, 520.0, 41.0, 18.0 ],
-					"text" : "r draw"
+					"patching_rect" : [ 492.0, 520.0, 26.0, 18.0 ],
+					"text" : "r db"
 				}
 
 			}
@@ -2102,12 +2102,12 @@
 
 							}
  ],
-						"originid" : "pat-262",
+						"originid" : "pat-1399",
 						"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 405.000000000000057, 582.0, 183.0, 18.0 ],
-					"text" : "jit.gl.pix player @type float32 @adapt 0",
+					"patching_rect" : [ 405.000000000000057, 582.0, 210.0, 18.0 ],
+					"text" : "jit.gl.pix XPARTICLE @type float32 @adapt 0",
 					"varname" : "gendraw"
 				}
 
@@ -2237,11 +2237,11 @@
 
 							}
  ],
-						"originid" : "pat-264"
+						"originid" : "pat-1401"
 					}
 ,
-					"patching_rect" : [ 478.0, 663.0, 115.0, 18.0 ],
-					"text" : "jit.gl.pix player"
+					"patching_rect" : [ 478.0, 663.0, 99.0, 18.0 ],
+					"text" : "jit.gl.pix XPARTICLE"
 				}
 
 			}
@@ -2504,12 +2504,12 @@
 
 							}
  ],
-						"originid" : "pat-266",
+						"originid" : "pat-1403",
 						"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 405.000000000000057, 705.500031000000035, 136.0, 18.0 ],
-					"text" : "jit.gl.pix player @type float32"
+					"patching_rect" : [ 405.000000000000057, 705.500031000000035, 164.0, 18.0 ],
+					"text" : "jit.gl.pix XPARTICLE @type float32"
 				}
 
 			}
@@ -3296,7 +3296,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-72", 1 ],
-					"midpoints" : [ 487.5, 685.899993999999992, 531.5, 685.899993999999992 ],
+					"midpoints" : [ 487.5, 685.899993999999992, 559.5, 685.899993999999992 ],
 					"source" : [ "obj-71", 0 ]
 				}
 
@@ -3443,42 +3443,7 @@
 
 			}
  ],
-		"originid" : "pat-260",
-		"dependency_cache" : [ 			{
-				"name" : "OpenSoundControl.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "getid.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "o.route.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "scalingfunctions.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "slidelist.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "x_pencil.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
+		"originid" : "pat-1397",
 		"styles" : [ 			{
 				"name" : "dsx.button",
 				"default" : 				{

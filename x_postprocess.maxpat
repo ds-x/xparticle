@@ -431,8 +431,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 198.0, 389.0, 228.0, 18.0 ],
-					"text" : "jit.gl.pix player @gen x_particle.genjit"
+					"patching_rect" : [ 198.0, 389.0, 201.0, 18.0 ],
+					"text" : "jit.gl.pix XPARTICLE @gen x_particle.genjit"
 				}
 
 			}
@@ -740,7 +740,7 @@
 
 			}
  ],
-		"originid" : "pat-1610"
+		"originid" : "pat-74"
 	}
 
 }

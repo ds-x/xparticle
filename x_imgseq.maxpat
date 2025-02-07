@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -105.0, 255.0, 2333.0, 1219.0 ],
+		"rect" : [ 34.0, 136.0, 2333.0, 1219.0 ],
 		"openinpresentation" : 1,
 		"default_fontsize" : 10.0,
 		"default_fontface" : 1,
@@ -194,7 +194,7 @@
 
 							}
  ],
-						"originid" : "pat-1406"
+						"originid" : "pat-1373"
 					}
 ,
 					"patching_rect" : [ 1506.0, 159.0, 89.0, 18.0 ],
@@ -318,7 +318,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 64.0, 24.0, 78.0, 16.0 ],
 					"style" : "dsx.comment.left",
-					"text" : "25  Pictures",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ]
 				}
 
@@ -960,11 +959,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-13",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 28.0, 37.299950785423334, 30.0, 30.0 ]
 				}
 
@@ -976,8 +975,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 42.0, 138.299950785423334, 42.0, 18.0 ],
-					"text" : "r draw"
+					"patching_rect" : [ 42.0, 138.299950785423334, 27.0, 18.0 ],
+					"text" : "r db"
 				}
 
 			}
@@ -1329,11 +1328,11 @@
 
 							}
  ],
-						"originid" : "pat-1398"
+						"originid" : "pat-1375"
 					}
 ,
-					"patching_rect" : [ 1446.166626000000178, 882.5, 336.0, 18.0 ],
-					"text" : "jit.gl.pix player",
+					"patching_rect" : [ 1446.0, 882.5, 336.166626000000178, 18.0 ],
+					"text" : "jit.gl.pix XPARTICLE",
 					"varname" : "image"
 				}
 
@@ -1495,13 +1494,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-1",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 1763.166626000000178, 771.0, 260.0, 28.0 ],
-					"text" : "jit.gl.texture player @automatic 0 @defaultimage black",
+					"patching_rect" : [ 1763.166626000000178, 771.0, 295.0, 18.0 ],
+					"text" : "jit.gl.texture XPARTICLE @automatic 0 @defaultimage black",
 					"varname" : "t2"
 				}
 
@@ -1509,13 +1507,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-165",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 1446.166626000000178, 776.243286000000126, 260.0, 28.0 ],
-					"text" : "jit.gl.texture player @automatic 0 @defaultimage black",
+					"patching_rect" : [ 1446.166626000000178, 776.243286000000126, 295.0, 18.0 ],
+					"text" : "jit.gl.texture XPARTICLE @automatic 0 @defaultimage black",
 					"varname" : "t1"
 				}
 
@@ -1803,7 +1800,7 @@
 				"box" : 				{
 					"comment" : "Faded",
 					"id" : "obj-2",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -2006,7 +2003,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"midpoints" : [ 1354.000000000000455, 833.25, 1455.666626000000178, 833.25 ],
+					"midpoints" : [ 1354.000000000000455, 833.25, 1455.5, 833.25 ],
 					"source" : [ "obj-106", 0 ]
 				}
 
@@ -2028,7 +2025,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
-					"midpoints" : [ 1455.666626000000178, 924.5, 114.821550571428588, 924.5 ],
+					"midpoints" : [ 1455.5, 924.5, 114.821550571428588, 924.5 ],
 					"source" : [ "obj-11", 0 ]
 				}
 
@@ -2632,7 +2629,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"midpoints" : [ 793.666666666666856, 833.25, 1455.666626000000178, 833.25 ],
+					"midpoints" : [ 793.666666666666856, 833.25, 1455.5, 833.25 ],
 					"source" : [ "obj-89", 2 ]
 				}
 
@@ -2673,55 +2670,7 @@
 
 			}
  ],
-		"originid" : "pat-1396",
-		"dependency_cache" : [ 			{
-				"name" : "easingfunctions.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "getid.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "o.route.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "scalingfunctions.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_imgseq.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_imgseq_fileseq.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_renderchain.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
+		"originid" : "pat-1371",
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
