@@ -22,7 +22,7 @@ function init() {
 	if (currentsystem == 'windows') {
 		
 		destroy()
-		glshare = t.newdefault(400, 3060, "jit.gl.spoutsender","player");
+		glshare = t.newdefault(400, 3060, "jit.gl.spoutsender","XPARTICLE");
 		glshare.setattr('name','gl-share');
 		glshare.setattr('sendername','spout_XPARTICLE');
 		post('spout created');
@@ -30,7 +30,7 @@ function init() {
 	} else {
 
 		destroy();
-		glshare = t.newdefault(400, 3060, "jit.gl.syphonserver","player");
+		glshare = t.newdefault(400, 3060, "jit.gl.syphonserver","XPARTICLE");
 		glshare.setattr('name','gl-share');
 		glshare.setattr('servername','syphon_XPARTICLE');
 		post('syphon server created');

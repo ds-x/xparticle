@@ -21,13 +21,14 @@
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
 					"id" : "obj-20",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 101.666666666666671, 927.0, 133.0, 16.0 ],
+					"patching_rect" : [ 101.666666666666671, 927.0, 133.0, 26.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 205.0, 129.0, 144.0, 16.0 ],
-					"text" : "Resolution Out:  512 512",
+					"text" : "Resolution Out:  1920 1080",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"textjustification" : 2
 				}
@@ -232,11 +233,11 @@
 
 							}
  ],
-						"originid" : "pat-746"
+						"originid" : "pat-1385"
 					}
 ,
-					"patching_rect" : [ 72.0, 669.0, 86.0, 22.0 ],
-					"text" : "jit.gl.pix player"
+					"patching_rect" : [ 72.0, 669.0, 111.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE"
 				}
 
 			}
@@ -534,7 +535,7 @@
 					"fontname" : "Consolas",
 					"fontsize" : 11.0,
 					"id" : "obj-31",
-					"items" : "FaceTime HD Camera",
+					"items" : [ "FaceTime HD Camera", ",", "OBS Virtual Camera", ",", "IP Camera" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -641,11 +642,11 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 821.0, 7.0, 30.0, 30.0 ]
 				}
 
@@ -1165,7 +1166,7 @@
 
 							}
  ],
-						"originid" : "pat-748"
+						"originid" : "pat-1387"
 					}
 ,
 					"patching_rect" : [ 73.0, 494.0, 37.0, 22.0 ],
@@ -1530,7 +1531,7 @@
 
 							}
  ],
-						"originid" : "pat-750"
+						"originid" : "pat-1389"
 					}
 ,
 					"patching_rect" : [ 232.0, 493.5, 205.0, 23.0 ],
@@ -1582,7 +1583,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-3",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -1597,8 +1598,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 136.0, 224.0, 42.0, 22.0 ],
-					"text" : "r draw"
+					"patching_rect" : [ 136.0, 224.0, 30.0, 22.0 ],
+					"text" : "r db"
 				}
 
 			}
@@ -2124,23 +2125,7 @@
 
 			}
  ],
-		"originid" : "pat-744",
-		"dependency_cache" : [ 			{
-				"name" : "scalingfunctions.js",
-				"bootpath" : "~/Nextcloud/dsx.package/_js",
-				"patcherrelativepath" : "../../Nextcloud/dsx.package/_js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "x_renderchain.js",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
+		"originid" : "pat-1383",
 		"styles" : [ 			{
 				"name" : "dsx.comment.left",
 				"default" : 				{

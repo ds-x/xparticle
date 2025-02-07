@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1128.0, 119.0, 1455.0, 807.0 ],
+		"rect" : [ 52.0, 104.0, 1456.0, 808.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 6.0, 2.0 ],
 		"gridsnaponopen" : 2,
@@ -20,74 +20,13 @@
 		"enablevscroll" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"format" : 6,
-					"id" : "obj-123",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 2340.0, 1932.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-118",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 2340.0, 1966.0, 92.0, 22.0 ],
-					"text" : "prepend source"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-102",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "jit_matrix", "jit_matrix", "jit_matrix", "" ],
-					"patching_rect" : [ 2430.0, 1792.0, 175.0, 22.0 ],
-					"text" : "jit.unpack 3 @jump 3 @offset 0"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-98",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 2646.0, 1838.0, 22.0, 22.0 ],
-					"text" : "t b"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-97",
+					"id" : "obj-90",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 2646.0, 1804.0, 63.0, 22.0 ],
-					"text" : "route read"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-92",
-					"maxclass" : "message",
-					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 2430.0, 1720.0, 33.0, 22.0 ],
-					"text" : "read"
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 628.0, 2476.0, 29.5, 22.0 ],
+					"text" : "+ 1"
 				}
 
 			}
@@ -95,11 +34,26 @@
 				"box" : 				{
 					"id" : "obj-77",
 					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 294.0, 2418.0, 78.0, 22.0 ],
+					"text" : "r threshmask"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-599",
+					"maxclass" : "jit.fpsgui",
+					"mode" : 3,
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 2430.0, 1760.0, 235.0, 22.0 ],
-					"text" : "jit.gl.model @matrixoutput 1 @automatic 0"
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 852.0, 2494.0, 80.0, 35.0 ]
 				}
 
 			}
@@ -519,7 +473,7 @@
 
 							}
  ],
-						"originid" : "pat-71"
+						"originid" : "pat-1317"
 					}
 ,
 					"patching_rect" : [ 1764.0, 1322.0, 133.5, 22.0 ],
@@ -551,7 +505,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1052.0, 2279.0, 215.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -632,7 +586,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1953.943908999999621, 782.0, 273.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -689,7 +643,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ -231.0, 2015.0, 255.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -763,7 +717,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 996.0, 657.0, 222.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1353,7 +1307,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ -237.0, 2266.0, 246.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1742,7 +1696,7 @@
 					"spacing_x" : 1.0,
 					"spacing_y" : 0.0,
 					"tabcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"tabs" : [ "INPUT1", "INPUT2", "A.IN1", "A.IN2" ],
+					"tabs" : [ "INPUT1", "INPUT2", "A.IN1", "A.IN2", "PLY" ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"varname" : "tab[16]"
 				}
@@ -2391,7 +2345,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 120.0, 943.0, 213.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2634,7 +2588,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 625.0, 2477.0, 121.0, 21.0 ],
+					"patching_rect" : [ 630.0, 2408.0, 121.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 202.0, 668.0, 300.0, 19.0 ],
 					"rounded" : 0.0,
@@ -2642,7 +2596,7 @@
 					"spacing_y" : 1.0,
 					"style" : "dsx.tab.horizontal",
 					"tabcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"tabs" : [ "INPUT1", "INPUT2" ],
+					"tabs" : [ "INPUT1", "INPUT2", "MASK" ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"varname" : "tab[12]"
 				}
@@ -2656,7 +2610,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 524.0, 2374.0, 228.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2674,7 +2628,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 316.0, 2507.0, 49.0, 22.0 ],
+					"patching_rect" : [ 282.0, 2488.0, 49.0, 22.0 ],
 					"text" : "r input2"
 				}
 
@@ -2867,7 +2821,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1122.0, 1616.0, 211.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2912,7 +2866,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 711.0, 1836.0, 198.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3046,7 +3000,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1270.0, 1504.0, 190.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3106,7 +3060,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ -65.0, 678.0, 211.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3257,11 +3211,11 @@
 
 							}
  ],
-						"originid" : "pat-73"
+						"originid" : "pat-1319"
 					}
 ,
-					"patching_rect" : [ 36.0, 800.0, 85.0, 22.0 ],
-					"text" : "jit.gl.pix player"
+					"patching_rect" : [ 36.0, 800.0, 117.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE"
 				}
 
 			}
@@ -3596,11 +3550,11 @@
 				"box" : 				{
 					"id" : "obj-267",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 138.0, 2551.0, 197.0, 22.0 ],
-					"text" : "jit.gl.pix player @gen x_final_blend"
+					"patching_rect" : [ 138.0, 2578.0, 227.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE @gen x_final_blend"
 				}
 
 			}
@@ -3636,7 +3590,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 362.0, 2403.0, 222.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3666,7 +3620,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 227.0, 2507.0, 49.0, 22.0 ],
+					"patching_rect" : [ 198.0, 2492.0, 49.0, 22.0 ],
 					"text" : "r input1"
 				}
 
@@ -3850,19 +3804,19 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "adapt", 1 ], [ "bypass", 1 ], [ "enable", 1 ] ],
+					"embedstate" : [ [ "adapt", 1 ], [ "bypass", 0 ], [ "enable", 1 ] ],
 					"filename" : "jit.fx.slide.js",
 					"id" : "obj-203",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_gl_texture" ],
-					"patching_rect" : [ 138.0, 2086.0, 94.0, 22.0 ],
+					"patching_rect" : [ 138.0, 2086.0, 127.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "jit.fx.slide player",
+					"text" : "jit.fx.slide XPARTICLE",
 					"textfile" : 					{
 						"filename" : "jit.fx.slide.js",
 						"flags" : 0,
@@ -3966,11 +3920,11 @@
 
 							}
  ],
-						"originid" : "pat-77"
+						"originid" : "pat-1323"
 					}
 ,
-					"patching_rect" : [ 138.0, 2236.0, 85.0, 22.0 ],
-					"text" : "jit.gl.pix player"
+					"patching_rect" : [ 138.0, 2236.0, 117.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE"
 				}
 
 			}
@@ -4007,12 +3961,12 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_gl_texture" ],
-					"patching_rect" : [ 204.0, 2186.0, 130.0, 22.0 ],
+					"patching_rect" : [ 204.0, 2186.0, 163.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "jit.fx.cf.gaussian player",
+					"text" : "jit.fx.cf.gaussian XPARTICLE",
 					"textfile" : 					{
 						"filename" : "jit.fx.cf.gaussian.js",
 						"flags" : 0,
@@ -4217,11 +4171,11 @@
 
 							}
  ],
-						"originid" : "pat-79"
+						"originid" : "pat-1325"
 					}
 ,
-					"patching_rect" : [ 564.0, 820.0, 282.0, 22.0 ],
-					"text" : "jit.gl.pix player"
+					"patching_rect" : [ 564.0, 820.0, 117.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE"
 				}
 
 			}
@@ -4270,12 +4224,12 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_gl_texture" ],
-					"patching_rect" : [ 564.0, 694.0, 130.0, 22.0 ],
+					"patching_rect" : [ 564.0, 694.0, 163.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "jit.fx.cf.gaussian player",
+					"text" : "jit.fx.cf.gaussian XPARTICLE",
 					"textfile" : 					{
 						"filename" : "jit.fx.cf.gaussian.js",
 						"flags" : 0,
@@ -4307,12 +4261,12 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_gl_texture" ],
-					"patching_rect" : [ 564.0, 492.0, 130.0, 22.0 ],
+					"patching_rect" : [ 564.0, 492.0, 163.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "jit.fx.cf.gaussian player",
+					"text" : "jit.fx.cf.gaussian XPARTICLE",
 					"textfile" : 					{
 						"filename" : "jit.fx.cf.gaussian.js",
 						"flags" : 0,
@@ -4354,7 +4308,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1778.0, 1150.0, 200.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4484,7 +4438,7 @@
 					"spacing_y" : 1.0,
 					"style" : "dsx.tab3",
 					"tabcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"tabs" : [ "RESOLUTION", "CUSTOM" ],
+					"tabs" : [ "RESOLUTION", "CUSTOM", "PLY" ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"varname" : "tab"
 				}
@@ -4523,7 +4477,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1035.0, 350.0, 217.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4586,7 +4540,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "jit_gl_texture" ],
-					"patching_rect" : [ 138.0, 2760.0, 402.0, 140.0 ],
+					"patching_rect" : [ 282.0, 2752.0, 402.0, 140.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 502.0, 647.0, 402.0, 160.0 ],
 					"varname" : "x_stereo",
@@ -4775,7 +4729,7 @@
 					"patching_rect" : [ 572.0, -176.0, 130.0, 16.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 120.0, 23.0, 69.0, 16.0 ],
-					"text" : "Render Size",
+					"text" : "Resolution",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
 
@@ -4917,11 +4871,11 @@
 
 							}
  ],
-						"originid" : "pat-99"
+						"originid" : "pat-1345"
 					}
 ,
-					"patching_rect" : [ 138.0, 3010.0, 85.0, 22.0 ],
-					"text" : "jit.gl.pix player",
+					"patching_rect" : [ 138.0, 3010.0, 117.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE",
 					"varname" : "finalout"
 				}
 
@@ -4933,8 +4887,8 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1207.0, 2108.0, 107.0, 22.0 ],
-					"text" : "scale 0. 1. -90. 90."
+					"patching_rect" : [ 1207.0, 2108.0, 121.0, 22.0 ],
+					"text" : "scale 0. 1. -180. 180."
 				}
 
 			}
@@ -5058,7 +5012,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1098.0, 2120.0, 78.0, 22.0 ],
+					"patching_rect" : [ 1062.0, 2098.0, 78.0, 22.0 ],
 					"text" : "r threshmask"
 				}
 
@@ -5122,7 +5076,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 509.0, 17.0, 173.0, 22.0 ],
-					"restore" : [ 3 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -5368,7 +5322,7 @@
 
 							}
  ],
-						"originid" : "pat-101"
+						"originid" : "pat-1347"
 					}
 ,
 					"patching_rect" : [ 452.0, 84.0, 72.0, 22.0 ],
@@ -5641,7 +5595,7 @@
 
 							}
  ],
-						"originid" : "pat-103"
+						"originid" : "pat-1349"
 					}
 ,
 					"patching_rect" : [ 17.0, 88.0, 72.0, 22.0 ],
@@ -5724,7 +5678,6 @@
 					"fps" : 30.0,
 					"id" : "obj-58",
 					"maxclass" : "jit.pworld",
-					"name" : "u037003737",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
@@ -5933,11 +5886,11 @@
 
 											}
  ],
-										"originid" : "pat-107"
+										"originid" : "pat-1353"
 									}
 ,
-									"patching_rect" : [ 217.0, 492.0, 84.0, 21.0 ],
-									"text" : "jit.gl.pix player"
+									"patching_rect" : [ 196.0, 541.0, 109.0, 21.0 ],
+									"text" : "jit.gl.pix XPARTICLE"
 								}
 
 							}
@@ -6062,11 +6015,11 @@
 
 											}
  ],
-										"originid" : "pat-109"
+										"originid" : "pat-1355"
 									}
 ,
-									"patching_rect" : [ 115.0, 492.0, 84.0, 21.0 ],
-									"text" : "jit.gl.pix player"
+									"patching_rect" : [ 81.0, 541.0, 109.0, 21.0 ],
+									"text" : "jit.gl.pix XPARTICLE"
 								}
 
 							}
@@ -6117,8 +6070,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_gl_texture", "" ],
-									"patching_rect" : [ 81.0, 363.0, 342.0, 21.0 ],
-									"text" : "jit.gl.slab player @file ab.hsflow.jxs @dimscale 1 1 @type float32",
+									"patching_rect" : [ 81.0, 363.0, 374.0, 21.0 ],
+									"text" : "jit.gl.slab XPARTICLE @file ab.hsflow.jxs @dimscale 1 1 @type float32",
 									"textfile" : 									{
 										"filename" : "ab.hsflow.jxs",
 										"flags" : 0,
@@ -6139,8 +6092,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_gl_texture", "" ],
-									"patching_rect" : [ 404.0, 327.0, 165.0, 21.0 ],
-									"text" : "jit.gl.slab player @type float32",
+									"patching_rect" : [ 436.0, 327.0, 195.0, 21.0 ],
+									"text" : "jit.gl.slab XPARTICLE @type float32",
 									"textfile" : 									{
 										"text" : "<jittershader name=\"default\">\n\t<description>Default Slab </description>\n\t<param name=\"scale\" type=\"float\" default=\"1.0\" />\n\t<param name=\"tex0\" type=\"int\" default=\"0\" />\n\t<param name=\"modelViewProjectionMatrix\" type=\"mat4\" state=\"MODELVIEW_PROJECTION_MATRIX\" />\n\t<param name=\"textureMatrix0\" type=\"mat4\" state=\"TEXTURE0_MATRIX\" />\n\t<param name=\"position\" type=\"vec3\" state=\"POSITION\" />\n\t<param name=\"texcoord\" type=\"vec2\" state=\"TEXCOORD\" />\n\t<param name=\"color\" type=\"vec4\" state=\"COLOR0\" />\n\t<language name=\"glsl\" version=\"1.5\">\n\t\t<bind param=\"scale\" program=\"fp\" />\n\t\t<bind param=\"tex0\" program=\"fp\" />\n\t\t<bind param=\"modelViewProjectionMatrix\" program=\"vp\" />\n\t\t<bind param=\"textureMatrix0\" program=\"vp\" />\n\t\t<bind param=\"position\" program=\"vp\" />\n\t\t<bind param=\"texcoord\" program=\"vp\" />\n\t\t<bind param=\"color\" program=\"vp\" />\n\t\t<program name=\"vp\" type=\"vertex\"  >\n\t\t<![CDATA[\n\t\t\t#version 330 core\n\t\t\t\n\t\t\tin vec3 position;\n\t\t\tin vec2 texcoord;\n\t\t\tout jit_PerVertex {\n\t\t\t\tvec2 texcoord;\n\t\t\t\tvec4 color;\n\t\t\t} jit_out;\n\t\t\tuniform mat4 modelViewProjectionMatrix;\n\t\t\tuniform mat4 textureMatrix0;\n\t\t\tuniform vec4 color;\n\t\t\t\n\t\t\tvoid main(void) {\n\t\t\t\tgl_Position = modelViewProjectionMatrix*vec4(position, 1.);\n\t\t\t\tjit_out.texcoord = vec2(textureMatrix0*vec4(texcoord, 0., 1.));\n\t\t\t\tjit_out.color = color;\n\t\t\t}\n\t\t]]>\n\t\t</program>\n\t\t\n\t\t<program name=\"fp\" type=\"fragment\"  >\n\t\t<![CDATA[\n\t\t\t#version 330 core\n\t\t\t\n\t\t\tin jit_PerVertex {\n\t\t\t\tvec2 texcoord;\n\t\t\t\tvec4 color;\n\t\t\t} jit_in;\n\t\t\tlayout (location = 0) out vec4 outColor;\n\t\t\t\n\t\t\tuniform samplerJit0 tex0;\n\t\t\tuniform float scale;\n\t\t\tvoid main(void) {\n\t\t\t\toutColor = texture(tex0, jit_in.texcoord) * jit_in.color * scale;\n\t\t\t}\n\t\t]]>\n\t\t</program>\n\t</language>\n</jittershader>\n",
 										"filename" : "none",
@@ -6232,7 +6185,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-163", 0 ],
-									"midpoints" : [ 59.5, 229.0, 413.5, 229.0 ],
+									"midpoints" : [ 59.5, 229.0, 445.5, 229.0 ],
 									"source" : [ "obj-164", 0 ]
 								}
 
@@ -6328,7 +6281,7 @@
 
 							}
  ],
-						"originid" : "pat-105"
+						"originid" : "pat-1351"
 					}
 ,
 					"patching_rect" : [ 1482.0, 740.5, 144.0, 21.0 ],
@@ -6430,11 +6383,11 @@
 
 											}
  ],
-										"originid" : "pat-113"
+										"originid" : "pat-1359"
 									}
 ,
-									"patching_rect" : [ 168.0, 553.0, 84.0, 21.0 ],
-									"text" : "jit.gl.pix player"
+									"patching_rect" : [ 168.0, 553.0, 109.0, 21.0 ],
+									"text" : "jit.gl.pix XPARTICLE"
 								}
 
 							}
@@ -6559,11 +6512,11 @@
 
 											}
  ],
-										"originid" : "pat-115"
+										"originid" : "pat-1361"
 									}
 ,
-									"patching_rect" : [ 66.0, 553.0, 84.0, 21.0 ],
-									"text" : "jit.gl.pix player"
+									"patching_rect" : [ 66.0, 574.0, 109.0, 21.0 ],
+									"text" : "jit.gl.pix XPARTICLE"
 								}
 
 							}
@@ -6653,8 +6606,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_gl_texture", "" ],
-									"patching_rect" : [ 66.0, 391.0, 342.0, 21.0 ],
-									"text" : "jit.gl.slab player @file ab.hsflow.jxs @dimscale 1 1 @type float32",
+									"patching_rect" : [ 66.0, 391.0, 374.0, 21.0 ],
+									"text" : "jit.gl.slab XPARTICLE @file ab.hsflow.jxs @dimscale 1 1 @type float32",
 									"textfile" : 									{
 										"filename" : "ab.hsflow.jxs",
 										"flags" : 0,
@@ -6675,8 +6628,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_gl_texture", "" ],
-									"patching_rect" : [ 389.0, 327.0, 165.0, 21.0 ],
-									"text" : "jit.gl.slab player @type float32",
+									"patching_rect" : [ 389.0, 327.0, 195.0, 21.0 ],
+									"text" : "jit.gl.slab XPARTICLE @type float32",
 									"textfile" : 									{
 										"text" : "<jittershader name=\"default\">\n\t<description>Default Slab </description>\n\t<param name=\"scale\" type=\"float\" default=\"1.0\" />\n\t<param name=\"tex0\" type=\"int\" default=\"0\" />\n\t<param name=\"modelViewProjectionMatrix\" type=\"mat4\" state=\"MODELVIEW_PROJECTION_MATRIX\" />\n\t<param name=\"textureMatrix0\" type=\"mat4\" state=\"TEXTURE0_MATRIX\" />\n\t<param name=\"position\" type=\"vec3\" state=\"POSITION\" />\n\t<param name=\"texcoord\" type=\"vec2\" state=\"TEXCOORD\" />\n\t<param name=\"color\" type=\"vec4\" state=\"COLOR0\" />\n\t<language name=\"glsl\" version=\"1.5\">\n\t\t<bind param=\"scale\" program=\"fp\" />\n\t\t<bind param=\"tex0\" program=\"fp\" />\n\t\t<bind param=\"modelViewProjectionMatrix\" program=\"vp\" />\n\t\t<bind param=\"textureMatrix0\" program=\"vp\" />\n\t\t<bind param=\"position\" program=\"vp\" />\n\t\t<bind param=\"texcoord\" program=\"vp\" />\n\t\t<bind param=\"color\" program=\"vp\" />\n\t\t<program name=\"vp\" type=\"vertex\"  >\n\t\t<![CDATA[\n\t\t\t#version 330 core\n\t\t\t\n\t\t\tin vec3 position;\n\t\t\tin vec2 texcoord;\n\t\t\tout jit_PerVertex {\n\t\t\t\tvec2 texcoord;\n\t\t\t\tvec4 color;\n\t\t\t} jit_out;\n\t\t\tuniform mat4 modelViewProjectionMatrix;\n\t\t\tuniform mat4 textureMatrix0;\n\t\t\tuniform vec4 color;\n\t\t\t\n\t\t\tvoid main(void) {\n\t\t\t\tgl_Position = modelViewProjectionMatrix*vec4(position, 1.);\n\t\t\t\tjit_out.texcoord = vec2(textureMatrix0*vec4(texcoord, 0., 1.));\n\t\t\t\tjit_out.color = color;\n\t\t\t}\n\t\t]]>\n\t\t</program>\n\t\t\n\t\t<program name=\"fp\" type=\"fragment\"  >\n\t\t<![CDATA[\n\t\t\t#version 330 core\n\t\t\t\n\t\t\tin jit_PerVertex {\n\t\t\t\tvec2 texcoord;\n\t\t\t\tvec4 color;\n\t\t\t} jit_in;\n\t\t\tlayout (location = 0) out vec4 outColor;\n\t\t\t\n\t\t\tuniform samplerJit0 tex0;\n\t\t\tuniform float scale;\n\t\t\tvoid main(void) {\n\t\t\t\toutColor = texture(tex0, jit_in.texcoord) * jit_in.color * scale;\n\t\t\t}\n\t\t]]>\n\t\t</program>\n\t</language>\n</jittershader>\n",
 										"filename" : "none",
@@ -6865,7 +6818,7 @@
 
 							}
  ],
-						"originid" : "pat-111",
+						"originid" : "pat-1357",
 						"styles" : [ 							{
 								"name" : "dsx.flonum",
 								"default" : 								{
@@ -7049,7 +7002,7 @@
 					"name" : "x_input.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"offset" : [ 0.0, -600.0 ],
+					"offset" : [ 0.0, -300.0 ],
 					"outlettype" : [ "jit_gl_texture" ],
 					"patching_rect" : [ 17.0, 111.0, 355.0, 179.0 ],
 					"presentation" : 1,
@@ -7332,7 +7285,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1026.0, 2120.0, 36.0, 22.0 ],
+					"patching_rect" : [ 1008.0, 2120.0, 36.0, 22.0 ],
 					"text" : "r mix"
 				}
 
@@ -7616,7 +7569,7 @@
 
 							}
  ],
-						"originid" : "pat-159"
+						"originid" : "pat-1405"
 					}
 ,
 					"patching_rect" : [ 1524.0, 676.5, 210.0, 22.0 ],
@@ -7671,7 +7624,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1124.0, 631.0, 233.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -7764,8 +7717,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_gl_texture", "jit_gl_texture", "" ],
-					"patching_rect" : [ 931.0, 786.0, 136.0, 20.0 ],
-					"text" : "jit.gl.pix player @gen x_mix"
+					"patching_rect" : [ 931.0, 786.0, 148.0, 20.0 ],
+					"text" : "jit.gl.pix XPARTICLE @gen x_mix"
 				}
 
 			}
@@ -8089,7 +8042,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 730.0, 544.0, 210.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -8135,29 +8088,29 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 1938.0, -145.0, 58.0, 22.0 ],
 					"restore" : 					{
-						"accelx" : [ 0.0 ],
+						"accelx" : [ 0.8 ],
 						"accelx2" : [ 0.0 ],
-						"accely" : [ 0.0 ],
+						"accely" : [ 0.9 ],
 						"accely2" : [ 0.0 ],
 						"accelz" : [ 0.0 ],
 						"accelz2" : [ 0.0 ],
-						"aging" : [ 0.0 ],
+						"aging" : [ 2.96 ],
 						"attpx" : [ 0.0 ],
-						"attpy" : [ 0.0 ],
+						"attpy" : [ 0.026 ],
 						"attpz" : [ 0.0 ],
-						"attx" : [ 0.0 ],
-						"atty" : [ 0.0 ],
-						"attz" : [ 0.28 ],
-						"count" : [ 152.0 ],
-						"depth_factor" : [ 0.69 ],
-						"editor" : [ "2" ],
+						"attx" : [ 0.033 ],
+						"atty" : [ 0.01 ],
+						"attz" : [ 0.029 ],
+						"count" : [ 458.0 ],
+						"depth_factor" : [ 0.0 ],
+						"editor" : [ "" ],
 						"filter_movement" : [ 0.0 ],
 						"final_blend" : [ 1.0 ],
-						"final_blendamount" : [ 0.0 ],
-						"final_bluramount" : [ 0.5 ],
+						"final_blendamount" : [ 0.77 ],
+						"final_bluramount" : [ 0.0 ],
 						"final_border" : [ 0.0 ],
 						"final_decaydown" : [ 0.0 ],
-						"final_decayup" : [ 0.61 ],
+						"final_decayup" : [ 0.46 ],
 						"flow1_decay" : [ 0.9 ],
 						"flow1_lambda" : [ 0.01 ],
 						"flow1_offset" : [ 0.02 ],
@@ -8166,23 +8119,23 @@
 						"flow2_lambda" : [ 0.01 ],
 						"flow2_offset" : [ 0.5 ],
 						"flow2_scale" : [ 0.5 ],
-						"friction" : [ 0.243 ],
-						"input_blendamount" : [ 0.0 ],
+						"friction" : [ 0.14 ],
+						"input_blendamount" : [ 1.0 ],
 						"luma_filter" : [ 0.0 ],
-						"px" : [ -1.03 ],
-						"py" : [ 0.0 ],
-						"pz" : [ 1.5 ],
-						"rotatey" : [ 0.49 ],
-						"rotatez" : [ 0.497 ],
+						"px" : [ 0.0 ],
+						"py" : [ 0.03 ],
+						"pz" : [ -0.31 ],
+						"rotatey" : [ 0.5 ],
+						"rotatez" : [ 0.5 ],
 						"scenetab" : [ -1 ],
-						"size" : [ 2.4 ],
+						"size" : [ 2.0 ],
 						"tab[17]" : [ 0 ],
 						"textbutton[1]" : [ -1 ],
 						"textbutton[2]" : [ -1 ],
-						"thresh_amount" : [ 0.5 ],
+						"thresh_amount" : [ 0.38 ],
 						"thresh_mix" : [ 1.0 ],
-						"thresh_postblur" : [ 0.018 ],
-						"thresh_preblur" : [ 0.0 ],
+						"thresh_postblur" : [ 0.08 ],
+						"thresh_preblur" : [ 0.034 ],
 						"thresh_scale" : [ 0.333 ]
 					}
 ,
@@ -8594,7 +8547,7 @@
 					"patching_rect" : [ 2287.943908999999621, 1465.369506999999885, 107.0, 16.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 860.0, 2.5, 44.0, 16.0 ],
-					"text" : "59.87",
+					"text" : "49.80",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ]
 				}
 
@@ -8689,7 +8642,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 789.0, 2012.0, 206.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -8752,7 +8705,7 @@
 				"box" : 				{
 					"id" : "obj-468",
 					"maxclass" : "newobj",
-					"numinlets" : 4,
+					"numinlets" : 5,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
 					"patcher" : 					{
@@ -8769,6 +8722,30 @@
 						"rect" : [ 1206.0, 632.0, 817.0, 618.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 4,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 576.0, 212.0, 67.0, 22.0 ],
+									"text" : "vec 1 1 0 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 471.0, 16.0, 28.0, 22.0 ],
+									"text" : "in 5"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
@@ -8894,12 +8871,19 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 5 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
  ],
-						"originid" : "pat-163"
+						"originid" : "pat-1409"
 					}
 ,
-					"patching_rect" : [ 882.0, 2150.0, 234.0, 22.0 ],
-					"text" : "jit.gl.pix player"
+					"patching_rect" : [ 882.0, 2158.0, 234.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE"
 				}
 
 			}
@@ -8927,7 +8911,7 @@
 					"spacing_x" : 1.0,
 					"spacing_y" : 0.0,
 					"tabcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"tabs" : [ "INPUT1", "INPUT2", "MIX", "THRESHMASK" ],
+					"tabs" : [ "INPUT1", "INPUT2", "MIX", "THRESHMASK", "PLY" ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"varname" : "tab[5]"
 				}
@@ -9130,7 +9114,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 1084.0, 21.0, 194.0, 19.0 ],
 					"rounded" : 0.0,
-					"text" : "2",
 					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
 					"varname" : "editor",
 					"wordwrap" : 0
@@ -9281,7 +9264,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 71.0, 21.0, 173.0, 22.0 ],
-					"restore" : [ 4 ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -9783,7 +9766,7 @@
 
 							}
  ],
-						"originid" : "pat-165"
+						"originid" : "pat-1411"
 					}
 ,
 					"patching_rect" : [ 2046.0, 1806.0, 47.0, 22.0 ],
@@ -9834,8 +9817,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 2046.0, 1772.0, 157.0, 22.0 ],
-					"text" : "jit.noise 4 float32 640 360"
+					"patching_rect" : [ 2046.0, 1780.0, 142.0, 22.0 ],
+					"text" : "jit.noise 4 float32 100000"
 				}
 
 			}
@@ -10143,8 +10126,8 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1243.0, 2137.0, 107.0, 22.0 ],
-					"text" : "scale 0. 1. -90. 90."
+					"patching_rect" : [ 1243.0, 2137.0, 121.0, 22.0 ],
+					"text" : "scale 0. 1. -180. 180."
 				}
 
 			}
@@ -10178,7 +10161,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 58.0, 136.0, 521.0, 550.0 ],
+						"rect" : [ 1076.0, 358.0, 521.0, 550.0 ],
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 15.0 ],
 						"subpatcher_template" : "Template_Grid",
@@ -10373,10 +10356,10 @@
 
 											}
  ],
-										"originid" : "pat-169"
+										"originid" : "pat-1415"
 									}
 ,
-									"patching_rect" : [ 50.0, 154.835812568664551, 41.0, 22.0 ],
+									"patching_rect" : [ 50.0, 178.0, 41.0, 22.0 ],
 									"text" : "jit.gen"
 								}
 
@@ -10388,7 +10371,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 50.0, 126.462684512138367, 149.0, 22.0 ],
+									"patching_rect" : [ 50.0, 140.0, 149.0, 22.0 ],
 									"text" : "jit.matrix 2 float32 640 360"
 								}
 
@@ -10456,7 +10439,7 @@
 
 							}
  ],
-						"originid" : "pat-167"
+						"originid" : "pat-1413"
 					}
 ,
 					"patching_rect" : [ 1398.0, 1910.0, 94.0, 22.0 ],
@@ -10629,8 +10612,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1008.0, 1872.0, 267.0, 22.0 ],
-					"text" : "jit.gl.shader player @file x_renderparticle.jxs",
+					"patching_rect" : [ 1008.0, 1872.0, 277.0, 22.0 ],
+					"text" : "jit.gl.shader XPARTICLE @file x_renderparticle.jxs",
 					"textfile" : 					{
 						"filename" : "x_renderparticle.jxs",
 						"flags" : 0,
@@ -10763,8 +10746,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 216.0, 1642.0, 223.0, 22.0 ],
-					"text" : "jit.gl.shader player @file x_tf_particle.jxs",
+					"patching_rect" : [ 216.0, 1642.0, 256.0, 22.0 ],
+					"text" : "jit.gl.shader XPARTICLE @file x_tf_particle.jxs",
 					"textfile" : 					{
 						"filename" : "x_tf_particle.jxs",
 						"flags" : 0,
@@ -10791,7 +10774,7 @@
 				"box" : 				{
 					"id" : "obj-410",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
 					"patcher" : 					{
@@ -10808,6 +10791,18 @@
 						"rect" : [ 501.0, 638.0, 912.0, 601.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 364.0, 175.0, 51.0, 22.0 ],
+									"text" : "mix -1 1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
@@ -10826,7 +10821,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 41.0, 215.0, 607.0, 22.0 ],
+									"patching_rect" : [ 98.0, 266.0, 607.0, 22.0 ],
 									"text" : "mix"
 								}
 
@@ -10839,19 +10834,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 335.0, 59.0, 28.0, 22.0 ],
-									"text" : "in 2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "newobj",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 174.0, 102.0, 19.0, 22.0 ],
-									"text" : "0"
+									"text" : "in 1"
 								}
 
 							}
@@ -10909,7 +10892,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 41.0, 280.0, 35.0, 22.0 ],
+									"patching_rect" : [ 41.0, 311.0, 35.0, 22.0 ],
 									"text" : "out 1"
 								}
 
@@ -10917,29 +10900,15 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 1 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-2", 2 ],
-									"source" : [ "obj-13", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-3", 0 ]
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -10947,6 +10916,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 2 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 1 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -10981,10 +10957,10 @@
 
 							}
  ],
-						"originid" : "pat-171"
+						"originid" : "pat-1417"
 					}
 ,
-					"patching_rect" : [ 2232.0, 1806.0, 48.0, 22.0 ],
+					"patching_rect" : [ 2232.0, 1796.0, 48.0, 22.0 ],
 					"text" : "jit.gen"
 				}
 
@@ -11007,9 +10983,69 @@
 						}
 ,
 						"classnamespace" : "jit.gen",
-						"rect" : [ 685.0, 663.0, 821.0, 629.0 ],
+						"rect" : [ 586.0, 626.0, 821.0, 629.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 284.0, 291.0, 51.0, 22.0 ],
+									"text" : "mix -1 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 202.0, 290.0, 41.0, 22.0 ],
+									"text" : "swiz z"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 477.0, 290.0, 82.0, 22.0 ],
+									"text" : "param source"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 287.0, 156.0, 28.0, 22.0 ],
+									"text" : "in 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 149.0, 467.0, 274.0, 22.0 ],
+									"text" : "mix"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "newobj",
@@ -11074,7 +11110,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 49.999999999999886, 424.0, 35.0, 22.0 ],
+									"patching_rect" : [ 49.999999999999886, 523.0, 35.0, 22.0 ],
 									"text" : "out 1"
 								}
 
@@ -11082,8 +11118,16 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"order" : 0,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -11091,7 +11135,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -11100,6 +11144,27 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 2 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 1 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -11118,10 +11183,10 @@
 
 							}
  ],
-						"originid" : "pat-173"
+						"originid" : "pat-1419"
 					}
 ,
-					"patching_rect" : [ 1674.0, 1806.0, 47.0, 22.0 ],
+					"patching_rect" : [ 1674.0, 1808.0, 47.0, 22.0 ],
 					"text" : "jit.gen"
 				}
 
@@ -11144,7 +11209,7 @@
 						}
 ,
 						"classnamespace" : "jit.gen",
-						"rect" : [ 1145.0, 889.0, 600.0, 450.0 ],
+						"rect" : [ 490.0, 732.0, 600.0, 450.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -11190,10 +11255,10 @@
 
 							}
  ],
-						"originid" : "pat-175"
+						"originid" : "pat-1421"
 					}
 ,
-					"patching_rect" : [ 1860.0, 1806.0, 47.0, 22.0 ],
+					"patching_rect" : [ 1860.0, 1808.0, 47.0, 22.0 ],
 					"text" : "jit.gen"
 				}
 
@@ -11229,8 +11294,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 2232.0, 1710.0, 157.0, 22.0 ],
-					"text" : "jit.noise 3 float32 640 360"
+					"patching_rect" : [ 2232.0, 1710.0, 142.0, 22.0 ],
+					"text" : "jit.noise 3 float32 100000"
 				}
 
 			}
@@ -11280,7 +11345,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_buffer", "" ],
-					"patching_rect" : [ 1674.0, 1842.0, 150.0, 35.0 ],
+					"patching_rect" : [ 1674.0, 1852.0, 150.0, 35.0 ],
 					"text" : "jit.gl.buffer @type position @outname oPosition"
 				}
 
@@ -11306,8 +11371,8 @@
 					"numinlets" : 9,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 776.0, 2224.0, 966.0, 22.0 ],
-					"text" : "jit.gl.mesh player @draw_mode points @color 1 1 1 1 @automatic 0 @point_mode user_shader @blend_enable 1 @depth_enable 0 @transform_reset 4 @position 0. 0. -2.414214"
+					"patching_rect" : [ 776.0, 2224.0, 999.0, 22.0 ],
+					"text" : "jit.gl.mesh XPARTICLE @draw_mode points @color 1 1 1 1 @automatic 0 @point_mode user_shader @blend_enable 1 @depth_enable 0 @transform_reset 4 @position 0. 0. -2.414214"
 				}
 
 			}
@@ -11332,8 +11397,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 1786.0, 44.25, 18.0 ],
-					"text" : "r draw"
+					"patching_rect" : [ 30.0, 1786.0, 26.0, 18.0 ],
+					"text" : "r db"
 				}
 
 			}
@@ -11360,8 +11425,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 138.0, 1992.0, 245.0, 18.0 ],
-					"text" : "jit.gl.texture player @adapt 0 @automatic 0",
+					"patching_rect" : [ 138.0, 1992.0, 228.0, 18.0 ],
+					"text" : "jit.gl.texture XPARTICLE @adapt 0 @automatic 0",
 					"varname" : "texturecapture"
 				}
 
@@ -11645,7 +11710,7 @@
 
 							}
  ],
-						"originid" : "pat-177"
+						"originid" : "pat-1423"
 					}
 ,
 					"patching_rect" : [ 78.0, 880.0, 210.0, 22.0 ],
@@ -11680,8 +11745,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 564.0, 652.0, 195.0, 18.0 ],
-					"text" : "jit.gl.pix player @gen x_threshold"
+					"patching_rect" : [ 564.0, 652.0, 183.0, 18.0 ],
+					"text" : "jit.gl.pix XPARTICLE @gen x_threshold"
 				}
 
 			}
@@ -12250,7 +12315,7 @@
 					"presentation_rect" : [ 932.0, 41.0, 522.0, 506.0 ],
 					"rowhead" : 1,
 					"rowheight" : 21,
-					"rows" : 20,
+					"rows" : 11,
 					"sccolor" : [ 0.6, 0.6, 0.6, 1.0 ],
 					"selmode" : 3,
 					"selsync" : 0,
@@ -12337,6 +12402,7 @@
 			}
 , 			{
 				"box" : 				{
+					"autorestore" : "wood.json",
 					"id" : "obj-344",
 					"interp" : 					{
 						"x_input2::x_movie::scalemode" : [ 0, 0.0 ],
@@ -12389,7 +12455,7 @@
 						"storage_rect" : [ 0, 447, 1471, 1350 ]
 					}
 ,
-					"subscribe" : [ "attpy", "nf_gradientscale", "x_input1::x_noise::noisebrightness", "x_input2::x_noise::noiseratio", "displaceamount1", "draw_softness", "softness2", "x_input1::x_pencil::interpolation", " filter_movement", "velocity2", "recentFile", "luma_toacc", "thresh_preblur", "x_input::x_pencil::interpolation", "depth_factor", "final_color", "x_stereo::stereomode", "x_input2::x_colmap::color", "brightness", "luma_tosize", "x_input1::x_camera::mirror", "postblur", "x_input::_x_movie::volume", "threshscale", "x_input1::x_imgseq::easingfunction", "final_border", "luma_topoint", "x_input::x_pencil::size", "x_stereo::displaceself", "x_input2::x_colmap::saturation", "x_input::x_pencil::softness2", "x_input1::x_camera::ofsx", "x_input2::x_movie::ofsx", "finalblur", "countmode", "flow1_offset", "x_input::x_pencil::dyn_softness", "x_post::contrast", "velocitygain", "x_post::tintcolor", "final_decay_bypass", "flow2_scale", "dyn_color", "nf_vel2", "x_post::tintg", "x_input1::x_pencil::decay", "x_input2::x_noise::noisevariant", "accelx2", "x_input1::x_imgseq::scale", "delmode", "x_input2::x_sharedctx::ofsy", "x_input1::x_imgseq::framehold", "final_tint", "pz", "finalblendmode", "x_input1::x_pencil::softness", "saturation2", "x_input1::x_pencil::dyn_saturation", "aging", "noisedrifty", "lambda", "x_input2::x_noise::noisebrightness", "x_post::finalborder", "depth_source", "x_input1::x_imgseq::ofsy", "x_input1::x_movie::recentFile", "x_input1::x_camera::scalemode", "atty", "x_input::x_pencil::saturation2", "x_input1::x_noise::noisesize", "saturation", "in2_flowdecay", "x_input::x_pencil::color", "x_input1::x_noise::noisevariant", "final_blendamount", "blendmode", "finalluminance", "volume", "x_input2::x_colmap::positionx", "x_stereo::displaceamount2", "zsource", "threshmix", "del_movement", "thresh_invert", "flow1_decay", "zshift", "x_post::finalblend", "decay", "count", "final_blendsource", "x_input::x_pencil::saturation", "x_input2::x_movie::scale", "flow2_bypass", "flow2_lambda", "x_input::x_pencil::color2", "dyn_brightness", "x_input1::x_pencil::color", "x_post::tintamount", "x_input::x_pencil::size2", "x_input2::x_sharedctx::scalemode", "finaldecaydown", "x_input1::x_sharedctx::scale", "noisebrightness", "final_blur_blendmode", "px", "in2_flowscale", "x_input1::x_pencil::size", "in1_preblur", "x_input1::x_pencil::dyn_softness", "accelz", "zfactor", "x_input2::_x_movie::recentFile", "luma_toorigin", "displaceamount2", "in1_flowscale", "x_input1::x_pencil::ipad_port", "attpz", "x_input1::x_noise::noisecontrast", "x_input2::x_noise::noisesize", "x_input::x_pencil::ipad_port", "thresh_scale", "threshold", "contrast", "finalblendamount", "rotatey", "x_input1::x_movie::ofsx", "x_input2::x_colmap::gradientsize", "x_input1::x_sharedctx::scalemode", "in1_flowoffset", "filter_movement", "x_input2::x_noise::noisedriftx", "x_input2::x_noise::noisedrifty", "gamma", "x_input2::x_colmap::size", "color2", "x_input1::x_imgseq::scalemode", "velocity1", "final_decaydown", "color", "x_input1::x_camera::ofsy", "x_input2::x_movie::ofsy", "x_input::x_pencil::decay", "noisemode", "input1", "x_input1::x_pencil::brightness", "x_post::gamma", "final_blendmode", "flow1_source", "brightnesstoalpha", "flow1_scale", "ipad_port", "size", "x_input1::x_sharedctx::ofsx", "x_input2::x_movie::volume", "finalborder", "luma_toalpha", "nf_offset", "blendsource", "dyn_softness", "x_input1::x_pencil::saturation", "x_post::tintr", "thresh_source", "x_input1::x_imgseq::ofsx", "input_blendamount", "x_input1::x_imgseq::transition", "x_input2::x_sharedctx::scale", "in1_flowblur", "x_input2::x_colmap::mode", "accely", "x_input::x_movie::volume", "x_input1::x_pencil::softness2", "noisesize", "nf_lambda", "x_input2::x_noise::noisecontrast", "fluidthreshold", "size2", "x_input1::x_pencil::dyn_brightness", "attpx", "nf_scale", "x_input::x_pencil::dyn_color", "thresh_postblur", "nf_velgain", "x_input1::x_noise::noisespeed", "x_input::x_pencil::dyn_brightness", "x_input1::x_camera::colormode", "attz", "noisevariant", "x_input2::_x_movie::volume", "x_input1::x_movie::scale", "luma_source", "x_input::x_pencil::brightness", "x_stereo::displacemix", "x_input2::x_colmap::positiony", "threshinvert", "x_input1::x_imgseq::blendmode", "final_bluramount", "in2_flowlambda", "colormode", "x_input::x_pencil::dyn_size", "friction", "x_post::brightness", "in2_flowblur", "input_blendmode", "flow1_lambda", "noisedriftx", "x_stereo::zshift", "x_post::tintb", "x_input1::x_pencil::color2", "dyn_saturation", "x_input2::x_noise::noisezoom", "final_blur_bypass", "flow2_offset", "in1_flowdecay", "x_input2::x_sharedctx::ofsx", "x_input2::x_sharedctx::mode", "accelx", "noisezoom", "x_input1::x_pencil::size2", "x_input::_x_movie::recentFile", "noisecontrast", "luma_todepth", "movementtobrightness", "py", " filter_luminance", "input2", "x_input1::x_imgseq::recentFolder", "brightness2", "x_input1::x_pencil::dyn_color", "accelz2", "in2_flowoffset", "offset", "thresh_amount", "recentFile2", "x_input2::x_noise::noisemode", "x_input1::x_noise::noiseratio", "x_input2::x_noise::noisespeed", "displacemix", "x_input1::x_movie::scalemode", "attx", "x_input::x_pencil::brightness2", "rotatez", "x_input1::x_movie::ofsy", "tintamount", "thres_hmix", "blendtoinput", "x_stereo::displaceamount1", "x_input2::x_colmap::invert", "scale", "x_input1::x_sharedctx::mode", "final_blend", "in1_flowsource", "luma_invert", "x_input2::x_movie::recentFile", "x_input1::x_movie::volume", "del_brightness", "in1_flowlambda", "drawmode", "colorinput", "final_decayup", "preblur", "x_input1::x_camera::scale", "x_input::x_movie::recentFile", "x_post::saturation", "x_input1::x_pencil::brightness2", "nf_vel1", "interpolation", "flow1_bypass", "flow2_decay", "softness", "x_input::x_pencil::dyn_saturation", "x_input1::x_sharedctx::ofsy", "rotate", "x_input2::x_movie::scalemode", "tintcolor", "x_input1::x_pencil::saturation2", "x_input2::_x_movie::recentFile2", "dyn_size", "input_mixmode", "luma_filter", "accely2", "x_input::x_pencil::softness", "x_input1::x_imgseq::loopmode", "x_input1::x_pencil::dyn_size", "gradientscale", "finaldecayup", "noisespeed" ],
+					"subscribe" : [ "displaceamount1", "flow2_lambda", "x_input1::x_imgseq::ofsx", "final_blur_bypass", "scale", "x_input::x_pencil::saturation2", "x_input2::x_sharedctx::mode", "nf_vel1", "brightness", "px", "nf_scale", "del_movement", "accelz", "x_input1::x_pencil::color2", "x_input1::x_pencil::dyn_color", "gradientscale", "x_input::x_pencil::brightness", "x_input2::x_sharedctx::ofsx", "thresh_amount", "x_input::x_pencil::size2", "attpz", "dyn_saturation", "x_input1::x_pencil::size2", "movementtobrightness", "x_input1::x_movie::scalemode", "x_post::saturation", "rotate", "x_input::x_pencil::interpolation", "gamma", "size2", "noisedriftx", "x_input1::x_imgseq::recentFolder", "decay", "x_input2::_x_movie::recentFile", "filter_movement", "x_input1::x_sharedctx::mode", "x_input::x_pencil::softness2", " filter_luminance", "x_input1::x_noise::noiseratio", "x_input2::x_noise::noisespeed", "x_input2::x_noise::noisedriftx", "final_decaydown", "x_input1::x_movie::ofsy", "colorinput", "nf_vel2", "thres_hmix", "x_stereo::displaceamount1", "x_input2::x_colmap::invert", "final_blendsource", "flow1_scale", "finalborder", "x_input2::x_movie::recentFile", "x_input1::x_movie::volume", "flow1_bypass", "luma_topoint", "x_post::finalborder", "preblur", "x_input2::x_movie::scalemode", "saturation", "luma_toalpha", "input_blendamount", "nf_lambda", "x_input1::x_camera::scale", "input_mixmode", "recentFile", "x_stereo::displaceself", "finalluminance", "luma_toorigin", "ipad_port", "accely", "luma_source", "x_input1::x_pencil::brightness2", "x_input2::_x_movie::recentFile2", "x_input1::x_pencil::dyn_size", "x_input::x_pencil::dyn_brightness", "x_input1::x_sharedctx::ofsy", "x_input1::x_pencil::interpolation", "luma_toacc", "x_post::contrast", "x_input::x_pencil::saturation", "dyn_brightness", "attpx", "rotatez", "x_input1::x_pencil::saturation2", " filter_movement", "thresh_preblur", "colormode", "x_input::x_pencil::dyn_size", "brightness2", "x_input1::x_imgseq::loopmode", "x_input1::x_camera::mirror", "x_post::tintg", "volume", "in1_preblur", "attz", "x_input1::x_noise::noisebrightness", "x_input2::x_noise::noiseratio", "luma_tosize", "x_input::_x_movie::volume", "in1_flowdecay", "x_input1::x_imgseq::easingfunction", "finalblendamount", "final_bluramount", "x_stereo::stereomode", "x_input2::x_colmap::color", "velocitygain", "friction", "x_input2::x_noise::noisemode", "countmode", "x_input::x_pencil::decay", "flow1_lambda", "x_input2::x_colmap::saturation", "finalblendmode", "del_brightness", "drawmode", "x_input1::x_camera::ofsx", "x_input2::x_movie::ofsx", "final_decay_bypass", "displaceamount2", "threshold", "in1_flowblur", "flow2_offset", "x_input2::x_noise::noisevariant", "in2_flowdecay", "accelx", "x_input::x_pencil::dyn_saturation", "x_input::x_pencil::dyn_color", "noisevariant", "py", "x_input1::x_pencil::decay", "x_input1::x_pencil::dyn_saturation", "zshift", "count", "accelz2", "interpolation", "finaldecayup", "x_input2::x_sharedctx::ofsy", "x_input1::x_imgseq::framehold", "color2", "threshinvert", "tintamount", "x_input1::x_pencil::softness", "x_input1::x_camera::scalemode", "x_post::tintamount", "finaldecaydown", "attx", "softness2", "final_color", "threshscale", "x_input2::x_noise::noisebrightness", "x_stereo::zshift", "x_input1::x_movie::recentFile", "x_input1::x_noise::noisevariant", "noisebrightness", "in1_flowscale", "final_blend", "dyn_size", "noisespeed", "finalblur", "x_input1::x_noise::noisesize", "in2_flowoffset", "thresh_invert", "x_input2::x_noise::noisedrifty", "final_decayup", "x_input1::x_imgseq::scale", "x_input2::x_colmap::positionx", "x_stereo::displaceamount2", "blendtoinput", "flow2_bypass", "nf_offset", "flow2_decay", "x_input1::x_imgseq::ofsy", "blendmode", "x_input2::x_sharedctx::scalemode", "color", "x_input::x_movie::recentFile", "x_input2::x_movie::scale", "final_blur_blendmode", "input1", "fluidthreshold", "luma_filter", "zsource", "x_input1::x_pencil::color", "x_input1::x_pencil::dyn_softness", "size", "accely2", "x_input::x_pencil::softness", "x_input1::x_sharedctx::scale", "x_input2::_x_movie::volume", "attpy", "x_input::x_pencil::color2", "x_input1::x_pencil::size", "x_input1::x_pencil::ipad_port", "x_post::gamma", "draw_softness", "velocity2", "saturation2", "thresh_scale", "final_blendmode", "in2_flowblur", "depth_factor", "lambda", "zfactor", "x_input1::x_sharedctx::scalemode", "dyn_softness", "x_post::tintr", "softness", "x_input::x_pencil::size", "threshmix", "x_input1::x_noise::noisecontrast", "x_input2::x_noise::noisesize", "x_input::_x_movie::recentFile", "final_border", "x_input1::x_movie::ofsx", "in1_flowoffset", "x_input1::x_imgseq::scalemode", "noisesize", "x_post::tintcolor", "x_input2::x_colmap::gradientsize", "x_input::x_pencil::brightness2", "flow1_offset", "flow1_source", "brightnesstoalpha", "noisedrifty", "x_input2::x_colmap::size", "in1_flowlambda", "flow2_scale", "x_input1::x_camera::ofsy", "x_input2::x_movie::ofsy", "blendsource", "thresh_source", "x_input::x_movie::volume", "displacemix", "accelx2", "x_input::x_pencil::color", "x_input1::x_pencil::brightness", "x_input2::x_colmap::mode", "tintcolor", "delmode", "pz", "x_input1::x_sharedctx::ofsx", "x_input2::x_movie::volume", "nf_velgain", "aging", "x_post::finalblend", "rotatey", "x_input1::x_pencil::saturation", "x_input1::x_pencil::dyn_brightness", "x_post::brightness", "nf_gradientscale", "x_input1::x_imgseq::transition", "x_input2::x_sharedctx::scale", "thresh_postblur", "in2_flowlambda", "dyn_color", "atty", "in2_flowscale", "noisemode", "x_input1::x_pencil::softness2", "x_input1::x_camera::colormode", "x_post::tintb", "input2", "postblur", "x_input2::x_noise::noisecontrast", "x_input2::x_noise::noisezoom", "offset", "final_blendamount", "x_input::x_pencil::ipad_port", "x_input1::x_imgseq::blendmode", "noisezoom", "noisecontrast", "luma_invert", "x_input::x_pencil::dyn_softness", "x_input1::x_noise::noisespeed", "recentFile2", "flow1_decay", "contrast", "velocity1", "x_input1::x_movie::scale", "input_blendmode", "final_tint", "depth_source", "x_stereo::displacemix", "x_input2::x_colmap::positiony", "luma_todepth", "in1_flowsource" ],
 					"text" : "pattrstorage sequencer @subscribemode 1 @changemode 1 @fileusagemode 1",
 					"varname" : "sequencer"
 				}
@@ -12401,8 +12467,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2342.443908999999621, 1200.0, 44.0, 22.0 ],
-					"text" : "s draw"
+					"patching_rect" : [ 2358.0, 1220.0, 31.0, 22.0 ],
+					"text" : "s db"
 				}
 
 			}
@@ -12481,7 +12547,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 2135.5, 1217.0, 80.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -12550,7 +12616,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1798.943908999999621, 892.830688000000009, 316.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ -1999 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -12569,7 +12635,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1864.943908999999394, 870.830688000000009, 316.0, 22.0 ],
-					"restore" : [ 605 ],
+					"restore" : [ 100 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -12613,7 +12679,6 @@
 					"htricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"id" : "obj-342",
 					"maxclass" : "number",
-					"minimum" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -13215,7 +13280,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 2442.443908249999367, 912.5, 58.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -13245,8 +13310,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_matrix", "bang", "" ],
-					"patching_rect" : [ 2080.943908999999621, 1135.90002400000003, 547.0, 22.0 ],
-					"text" : "jit.world player @shared 1 @fsaa 1 @erase_color 0 0 0 1 @esc_fullscreen 0 @sync 1 @displaylink 0",
+					"patching_rect" : [ 2080.943908999999621, 1135.90002400000003, 580.0, 22.0 ],
+					"text" : "jit.world XPARTICLE @shared 1 @fsaa 1 @erase_color 0 0 0 1 @esc_fullscreen 0 @sync 1 @displaylink 0",
 					"varname" : "world"
 				}
 
@@ -13335,7 +13400,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 20.0, 284.0, 50.0, 20.0 ],
-									"text" : "115"
+									"text" : "110"
 								}
 
 							}
@@ -13510,7 +13575,7 @@
 
 							}
  ],
-						"originid" : "pat-187"
+						"originid" : "pat-1433"
 					}
 ,
 					"patching_rect" : [ 2588.0, -21.150024000000002, 71.0, 22.0 ],
@@ -13597,7 +13662,7 @@
 						"storage_rect" : [ 0, 447, 1471, 1350 ]
 					}
 ,
-					"subscribe" : [ "windowborder", "fpsinfo", "windowposx", "previewchoice", "outputchoice", "windowwidth", "hidecursor", "displaysync", "fps", "windowposy", "loopmode", "playlistenable", "windowheight", "oscpport" ],
+					"subscribe" : [ "fps", "oscpport", "windowheight", "loopmode", "displaysync", "windowborder", "fpsinfo", "previewchoice", "playlistenable", "windowposx", "windowwidth", "hidecursor", "outputchoice", "windowposy" ],
 					"text" : "pattrstorage settings @savemode 3 @greedy 0 @fileusagemode 1 @subscribemode 1",
 					"varname" : "settings"
 				}
@@ -13682,8 +13747,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 80.0, 3061.0, 316.0, 18.0 ],
-					"text" : "jit.gl.videoplane player @transform_reset 2 @automatic 0"
+					"patching_rect" : [ 80.0, 3061.0, 291.0, 18.0 ],
+					"text" : "jit.gl.videoplane XPARTICLE @transform_reset 2 @automatic 0"
 				}
 
 			}
@@ -14388,7 +14453,7 @@
 					"name" : "x_input2.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"offset" : [ 0.0, -450.0 ],
+					"offset" : [ 0.0, -150.0 ],
 					"outlettype" : [ "jit_gl_texture" ],
 					"patching_rect" : [ 452.0, 110.0, 352.0, 184.0 ],
 					"presentation" : 1,
@@ -14661,8 +14726,58 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 400.0, 3060.0, 141.0, 22.0 ],
-					"text" : "jit.gl.syphonserver player"
+					"patching_rect" : [ 400.0, 3060.0, 174.0, 22.0 ],
+					"text" : "jit.gl.syphonserver XPARTICLE"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-244",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 400.0, 3060.0, 174.0, 22.0 ],
+					"text" : "jit.gl.syphonserver XPARTICLE"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "enable",
+					"id" : "obj-593",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 2025.0, 1874.0, 150.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "layer",
+					"id" : "obj-595",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 624.0, 2320.0, 150.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-118",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 400.0, 3060.0, 174.0, 22.0 ],
+					"text" : "jit.gl.syphonserver XPARTICLE"
 				}
 
 			}
@@ -14673,8 +14788,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 400.0, 3060.0, 141.0, 22.0 ],
-					"text" : "jit.gl.syphonserver player"
+					"patching_rect" : [ 400.0, 3060.0, 174.0, 22.0 ],
+					"text" : "jit.gl.syphonserver XPARTICLE"
 				}
 
 			}
@@ -14690,13 +14805,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-231", 1 ],
 					"source" : [ "obj-100", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-410", 1 ],
-					"source" : [ "obj-102", 0 ]
 				}
 
 			}
@@ -14783,13 +14891,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-410", 0 ],
-					"source" : [ "obj-118", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-176", 0 ],
 					"source" : [ "obj-119", 0 ]
 				}
@@ -14834,13 +14935,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-126", 0 ],
 					"source" : [ "obj-122", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-118", 0 ],
-					"source" : [ "obj-123", 0 ]
 				}
 
 			}
@@ -15025,7 +15119,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-449", 2 ],
-					"midpoints" : [ 573.5, 726.1796875, 1057.5, 726.1796875 ],
+					"midpoints" : [ 573.5, 726.1796875, 1069.5, 726.1796875 ],
 					"order" : 0,
 					"source" : [ "obj-150", 0 ]
 				}
@@ -15190,6 +15284,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-202", 1 ],
+					"order" : 1,
+					"source" : [ "obj-170", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-599", 0 ],
+					"order" : 0,
 					"source" : [ "obj-170", 0 ]
 				}
 
@@ -15381,7 +15484,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"order" : 1,
+					"order" : 3,
 					"source" : [ "obj-194", 0 ]
 				}
 
@@ -15389,7 +15492,23 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-101", 0 ],
+					"order" : 4,
+					"source" : [ "obj-194", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-118", 0 ],
 					"order" : 2,
+					"source" : [ "obj-194", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-244", 0 ],
+					"order" : 1,
 					"source" : [ "obj-194", 0 ]
 				}
 
@@ -15427,6 +15546,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-141", 0 ],
 					"source" : [ "obj-199", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-142", 0 ],
+					"source" : [ "obj-199", 0 ]
 				}
 
 			}
@@ -16171,7 +16297,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-422", 1 ],
-					"midpoints" : [ 1407.5, 2208.5, 903.875, 2208.5 ],
 					"source" : [ "obj-327", 0 ]
 				}
 
@@ -16415,7 +16540,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-366", 0 ],
+					"destination" : [ "obj-90", 0 ],
 					"source" : [ "obj-368", 0 ]
 				}
 
@@ -16737,7 +16862,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-419", 0 ],
-					"midpoints" : [ 456.5, 1893.866823434829712, 1683.5, 1893.866823434829712 ],
+					"midpoints" : [ 456.5, 1912.183229684829712, 1683.5, 1912.183229684829712 ],
 					"source" : [ "obj-409", 0 ]
 				}
 
@@ -16818,7 +16943,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-410", 0 ],
-					"midpoints" : [ 2241.5, 1796.278076000000056, 2241.5, 1796.278076000000056 ],
 					"order" : 0,
 					"source" : [ "obj-416", 0 ]
 				}
@@ -16827,7 +16951,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-411", 0 ],
-					"midpoints" : [ 2241.5, 1749.81640625, 1683.5, 1749.81640625 ],
 					"order" : 2,
 					"source" : [ "obj-416", 0 ]
 				}
@@ -16836,7 +16959,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-413", 0 ],
-					"midpoints" : [ 2241.5, 1754.722235977649689, 1869.5, 1754.722235977649689 ],
+					"midpoints" : [ 2241.5, 1748.136298477649689, 1869.5, 1748.136298477649689 ],
 					"order" : 1,
 					"source" : [ "obj-416", 0 ]
 				}
@@ -17109,7 +17232,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-422", 0 ],
-					"midpoints" : [ 891.5, 2200.0, 785.5, 2200.0 ],
 					"source" : [ "obj-468", 0 ]
 				}
 
@@ -17615,7 +17737,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-155", 1 ],
-					"midpoints" : [ 573.5, 475.5546875, 836.5, 475.5546875 ],
+					"midpoints" : [ 573.5, 475.5546875, 671.5, 475.5546875 ],
 					"order" : 0,
 					"source" : [ "obj-574", 0 ]
 				}
@@ -17702,6 +17824,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-119", 0 ],
 					"source" : [ "obj-591", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-419", 0 ],
+					"source" : [ "obj-593", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-422", 0 ],
+					"source" : [ "obj-595", 0 ]
 				}
 
 			}
@@ -17923,15 +18059,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-102", 0 ],
+					"destination" : [ "obj-267", 3 ],
 					"source" : [ "obj-77", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-97", 0 ],
-					"source" : [ "obj-77", 1 ]
 				}
 
 			}
@@ -17998,6 +18127,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-366", 0 ],
+					"source" : [ "obj-90", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-100", 0 ],
 					"midpoints" : [ 461.5, 1099.58203125, 1027.5, 1099.58203125 ],
 					"order" : 2,
@@ -18017,7 +18153,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-449", 1 ],
-					"midpoints" : [ 461.5, 311.640625, 999.0, 311.640625 ],
+					"midpoints" : [ 461.5, 311.640625, 1005.0, 311.640625 ],
 					"order" : 3,
 					"source" : [ "obj-91", 0 ]
 				}
@@ -18043,35 +18179,13 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"source" : [ "obj-92", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-185", 5 ],
 					"source" : [ "obj-93", 0 ]
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-98", 0 ],
-					"source" : [ "obj-97", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-77", 0 ],
-					"midpoints" : [ 2655.5, 1870.0, 2726.01171875, 1870.0, 2726.01171875, 1750.0, 2439.5, 1750.0 ],
-					"source" : [ "obj-98", 0 ]
-				}
-
-			}
  ],
-		"originid" : "pat-69",
+		"originid" : "pat-1315",
 		"dependency_cache" : [ 			{
 				"name" : "OpenSoundControl.mxo",
 				"type" : "iLaX"
@@ -18119,13 +18233,6 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "notes.txt",
-				"bootpath" : "~/GitHub/xparticle",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "o.route.mxo",
 				"type" : "iLaX"
 			}
@@ -18139,6 +18246,13 @@
 , 			{
 				"name" : "slidelist.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "wood_notes.txt",
+				"bootpath" : "~/Nextcloud/Projekte/Christph Winkler/2503_WhisperersOfWood",
+				"patcherrelativepath" : "../../Nextcloud/Projekte/Christph Winkler/2503_WhisperersOfWood",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "x_camera.maxpat",

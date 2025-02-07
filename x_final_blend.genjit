@@ -4,15 +4,27 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "jit.gen",
-		"rect" : [ 340.0, 338.0, 1059.0, 889.0 ],
+		"rect" : [ 340.0, 338.0, 1230.0, 889.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1040.0, 34.0, 28.0, 22.0 ],
+					"text" : "in 4"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
@@ -28,11 +40,11 @@
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 731.0, 61.0, 225.0, 22.0 ],
-					"text" : "switch"
+					"patching_rect" : [ 731.0, 61.0, 328.0, 22.0 ],
+					"text" : "selector 3"
 				}
 
 			}
@@ -44,7 +56,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 834.0, 34.0, 28.0, 22.0 ],
-					"text" : "in 3"
+					"text" : "in 2"
 				}
 
 			}
@@ -82,8 +94,8 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 937.0, 34.0, 30.0, 22.0 ],
-					"text" : "in 2"
+					"patching_rect" : [ 937.0, 34.0, 28.0, 22.0 ],
+					"text" : "in 3"
 				}
 
 			}
@@ -141,8 +153,15 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 3 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
  ],
-		"originid" : "pat-12",
+		"originid" : "pat-1321",
 		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
 	}
 

@@ -36,15 +36,15 @@ var vp = new JitterObject('jit.gl.videoplane');
 var otx = new JitterObject('jit.gl.texture');
 var itx = new JitterObject('jit.gl.texture');
 
-itx.drawto = 'player';
+itx.drawto = 'XPARTICLE';
 itx.automatic = 0;
 itx.adapt = 1;
 
-otx.drawto = 'player';
+otx.drawto = 'XPARTICLE';
 otx.adapt = 0;
 otx.automatic = 0;
 
-vp.drawto = 'player';
+vp.drawto = 'XPARTICLE';
 vp.transform_reset = 2;
 vp.automatic = 0;
 

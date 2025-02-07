@@ -162,7 +162,7 @@ function setLineCount(x)
 
 function makeTextModules(i) {
 
-    textModules[i] = new JitterObject('jit.gl.text', 'player'); 
+    textModules[i] = new JitterObject('jit.gl.text', 'XPARTICLE'); 
     //textModules[i].text('TextModule', i);
     //textModules[i].text = content[i];
     textModules[i].mode = '3d';

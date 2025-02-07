@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1099.0, 253.0, 1527.0, 1048.0 ],
+		"rect" : [ 276.0, 151.0, 1527.0, 1048.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
@@ -619,7 +619,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -659,11 +659,11 @@
 
 							}
  ],
-						"originid" : "pat-354"
+						"originid" : "pat-80"
 					}
 ,
-					"patching_rect" : [ 750.0, 651.0, 151.0, 22.0 ],
-					"text" : "jit.gl.pix player @adapt 0"
+					"patching_rect" : [ 750.0, 651.0, 173.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE @adapt 0"
 				}
 
 			}
@@ -679,7 +679,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -719,11 +719,11 @@
 
 							}
  ],
-						"originid" : "pat-356"
+						"originid" : "pat-82"
 					}
 ,
-					"patching_rect" : [ 584.0, 651.0, 151.0, 22.0 ],
-					"text" : "jit.gl.pix player @adapt 0"
+					"patching_rect" : [ 584.0, 651.0, 173.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE @adapt 0"
 				}
 
 			}
@@ -751,7 +751,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -845,11 +845,11 @@
 
 							}
  ],
-						"originid" : "pat-358"
+						"originid" : "pat-84"
 					}
 ,
-					"patching_rect" : [ 586.0, 773.0, 183.0, 22.0 ],
-					"text" : "jit.gl.pix player @adapt 0"
+					"patching_rect" : [ 586.0, 773.0, 173.0, 22.0 ],
+					"text" : "jit.gl.pix XPARTICLE @adapt 0"
 				}
 
 			}
@@ -867,7 +867,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -985,11 +985,11 @@
 
 							}
  ],
-						"originid" : "pat-360"
+						"originid" : "pat-86"
 					}
 ,
-					"patching_rect" : [ 584.0, 582.0, 351.0, 18.0 ],
-					"text" : "jit.gl.pix player @adapt 1"
+					"patching_rect" : [ 584.0, 582.0, 146.0, 18.0 ],
+					"text" : "jit.gl.pix XPARTICLE @adapt 1"
 				}
 
 			}
@@ -1519,7 +1519,7 @@
 
 			}
  ],
-		"originid" : "pat-352",
+		"originid" : "pat-78",
 		"styles" : [ 			{
 				"name" : "dsx.flonum",
 				"default" : 				{
