@@ -6,14 +6,14 @@
 				"id" : 1,
 				"data" : 				{
 					"windowborder" : [ 1 ],
-					"fps" : [ 0 ],
-					"fpsinfo" : [ 0 ],
+					"fps" : [ 3 ],
+					"fpsinfo" : [ 1 ],
 					"hidecursor" : [ 0 ],
 					"windowwidth" : [ 1920 ],
-					"windowheight" : [ 1085 ],
-					"previewchoice" : [ 1 ],
+					"windowheight" : [ 1080 ],
+					"previewchoice" : [ 0 ],
 					"windowposy" : [ 0 ],
-					"windowposx" : [ 0 ]
+					"windowposx" : [ 1400 ]
 				}
 
 			}
