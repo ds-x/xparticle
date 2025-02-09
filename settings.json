@@ -11,7 +11,7 @@
 					"hidecursor" : [ 0 ],
 					"windowwidth" : [ 1920 ],
 					"windowheight" : [ 1080 ],
-					"previewchoice" : [ 0 ],
+					"previewchoice" : [ 4 ],
 					"windowposy" : [ 0 ],
 					"windowposx" : [ 1400 ]
 				}

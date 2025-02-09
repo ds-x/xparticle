@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 3,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -62,7 +62,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "\r\nalpha(in1,in2,b) {\r\n\tf1 = 1-in1.a * b;\t\r\n\tf2 = 1-in2.a * b;\t\r\n\tf3 = mix(in1,in2, f1);\r\n\tf4 = mix(in1,in2, f2);\t\r\n\tf5 = mix(in1,f3,b*2);\t\r\n\tf6 = mix(in2,f4,b*2);\r\n\tblend = clip(mix(f5,f6,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nscreen(in1,in2,b) {\r\n\tt1 = in1;\t\r\n\tt2 = 1-((1-in1)*(1-in2));\t\r\n\tt3 = mix(t1,t2,b);\r\n\tblend = clip(t3,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nmultiply(in1,in2,b) {\t\r\n\tf1 = in1 * in2;\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\t\r\n\tf4 = mix(f2,f3,b);\r\n\tblend = clip(f4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\ndifference(in1,in2,b) {\r\n\r\n\tf1 = in1;\r\n\tf2 = absdiff(in1,in2);\r\n\t\r\n\tblend = clip(mix(f1,f2,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\r\nalpham(in1,in2,b) {\r\n\tf1 = in1;\r\n\tf2 = in2;\r\n\tblend = mix(in1,in2,in2.a);\r\n\treturn blend;\r\n\t}\r\n\r\nmaxim(in1,in2,b) {\r\n\tf1 = in1;\r\n\tf2 = max(in1,in2);\r\n\tblend = mix(f1,f2,b);\r\n\treturn blend;\r\n\t}\r\n\r\nParam blendmode;\r\nParam blendamount;\r\n\r\n\r\nalphablend = alpha(in1,in2,blendamount);\r\nscreenblend = screen(in1,in2,blendamount);\r\nmultblend = multiply(in1,in2,blendamount);\r\ndiffblend = difference(in1,in2,blendamount);\r\nalphamask = alpham(in1,in2,blendamount);\r\nmaxblend = maxim(in1,in2,blendamount);\r\n\r\nfinal = selector(blendmode,maxblend,screenblend,multblend,diffblend,alphamask);\r\n\r\nout1 = final;",
+					"code" : "\r\nalpha(in1,in2,b) {\r\n\tf1 = 1-in1.a * b;\t\r\n\tf2 = 1-in2.a * b;\t\r\n\tf3 = mix(in1,in2, f1);\r\n\tf4 = mix(in1,in2, f2);\t\r\n\tf5 = mix(in1,f3,b*2);\t\r\n\tf6 = mix(in2,f4,b*2);\r\n\tblend = clip(mix(f5,f6,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nscreen(in1,in2,b) {\r\n\tt1 = in1;\t\r\n\tt2 = 1-((1-in1)*(1-in2));\t\r\n\tt3 = mix(t1,t2,b);\r\n\tblend = clip(t3,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\nminim(in1,in2,b) {\r\n\tt1 = in1;\r\n\tt2 = in2;\r\n\tt3 = min(t1,t2);\r\n\tblend = mix(t1,t3,b);\r\n\treturn clip(blend,0,1);\r\n\t}\r\n\t\r\nmultiply(in1,in2,b) {\t\r\n\tf1 = in1 * in2;\r\n\tf2 = mix(in1,f1,b*2);\r\n\tf3 = mix(in2,f1,(1-b)*2);\t\r\n\tf4 = mix(f2,f3,b);\r\n\tblend = clip(f4,0,1);\r\n\treturn blend;\r\n\t}\r\n\t\r\ndifference(in1,in2,b) {\r\n\r\n\tf1 = in1;\r\n\tf2 = absdiff(in1,in2);\r\n\t\r\n\tblend = clip(mix(f1,f2,b),0,1);\r\n\treturn blend;\r\n\t}\r\n\r\nalpham(i1,i2,b) {\r\n\tf1 = i1;\r\n\tf2 = i2;\r\n\tblend = mix(i1,i2,b*i2.a);\r\n\treturn blend;\r\n\t}\r\n\r\nmaxim(in1,in2,b) {\r\n\tf1 = in1;\r\n\tf2 = max(in1,in2);\r\n\tblend = mix(f1,f2,b);\r\n\treturn blend;\r\n\t}\r\n\r\nParam blendmode;\r\nParam blendamount;\r\n\r\n\r\nalphablend = alpha(in1,in2,blendamount);\r\nscreenblend = screen(in1,in2,blendamount);\r\nmultblend = multiply(in1,in2,blendamount);\r\ndiffblend = difference(in1,in2,blendamount);\r\nalphamask = alpham(in1,in2,blendamount);\r\nmaxblend = maxim(in1,in2,blendamount);\r\nminblend = minim(in1,in2,blendamount);\r\n\r\n\r\nfinal = selector(blendmode,maxblend,screenblend,multblend,diffblend,minblend,alphamask);\r\n\r\nout1 = final;",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 11.0,
@@ -161,7 +161,7 @@
 
 			}
  ],
-		"originid" : "pat-1321",
+		"originid" : "pat-12",
 		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
 	}
 
