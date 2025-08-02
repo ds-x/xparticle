@@ -38,35 +38,3 @@ function updatesize() {
 	gendraw.message('dim', dim);
 	gendraw.message('ratio', ratio);
 	}
-
-
-// -------------------------------------------------	
-// implement Midi Control
-
-function ctlin(ctlno, ctlvalue) {
-	
-	var limitfar = t.getnamed('limitfar');
-	var cclimitfar = t.getnamed('cclimitfar');
-	var limitnear = t.getnamed('limitnear');
-	var cclimitnear = t.getnamed('cclimitnear');
-	var blur = t.getnamed('blur');
-	var ccblur = t.getnamed('ccblur');
-	
-		
-					
-	if (ctlno == cclimitfar.getvalueof()) {
-		var scaled = normalize(ctlvalue,0,1,0,127);
-		limitfar.setvalueof(scaled);
-	}
-	
-	if (ctlno == cclimitnear.getvalueof()) {
-		var scaled = normalize(ctlvalue,0,1,0,127);
-		limitnear.setvalueof(scaled);
-	}
-	
-	if (ctlno == ccblur.getvalueof()) {
-		var scaled = normalize(ctlvalue,0,1,0,127);
-		blur.setvalueof(scaled);
-	}
-
-	}

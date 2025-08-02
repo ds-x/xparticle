@@ -4,16 +4,69 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 3,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1056.0, 189.0, 1301.0, 903.0 ],
+		"rect" : [ 387.0, 189.0, 1741.0, 1073.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"angle" : 0.0,
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
+					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
+					"id" : "obj-11",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1606.0, 632.0, 128.0, 128.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1.0, 127.0, 349.0, 20.0 ],
+					"proportion" : 0.39,
+					"rounded" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"filename" : "x_osc.js",
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1381.0, 106.0, 68.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0
+					}
+,
+					"text" : "v8 x_osc.js",
+					"textfile" : 					{
+						"filename" : "x_osc.js",
+						"flags" : 0,
+						"embed" : 0,
+						"autowatch" : 1
+					}
+
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1381.0, 42.0, 35.0, 22.0 ],
+					"text" : "r osc"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-49",
 					"maxclass" : "newobj",
@@ -140,7 +193,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -274,8 +327,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-1367"
+ ]
 					}
 ,
 					"patching_rect" : [ 263.0, 861.0, 117.0, 22.0 ],
@@ -328,11 +380,11 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 1769.0, 54.0, 56.0, 22.0 ],
 					"restore" : 					{
-						"noisebrightness" : [ 0.5 ],
-						"noisecontrast" : [ 0.87 ],
+						"noisebrightness" : [ 0.13 ],
+						"noisecontrast" : [ 1.0 ],
 						"noiseratio" : [ 0.5 ],
-						"noisesize" : [ 0.02 ],
-						"noisespeed" : [ 0.0 ]
+						"noisesize" : [ 0.908 ],
+						"noisespeed" : [ 0.2 ]
 					}
 ,
 					"text" : "autopattr",
@@ -757,7 +809,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -857,15 +909,13 @@
 								}
 
 							}
- ],
-						"originid" : "pat-1369"
+ ]
 					}
 ,
 					"patching_rect" : [ 263.0, 518.0, 58.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"fontname" : "Consolas",
-						"fontsize" : 10.0,
-						"globalpatchername" : ""
+						"fontsize" : 10.0
 					}
 ,
 					"text" : "p"
@@ -980,7 +1030,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 746.0, 82.0, 217.0, 18.0 ],
-					"restore" : [ 3 ],
+					"restore" : [ 4 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -988,6 +1038,18 @@
 ,
 					"text" : "pattr noisevariant @default_interp off",
 					"varname" : "noisevariant"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 263.0, 685.0, 99.0, 22.0 ],
+					"text" : "full_source_code"
 				}
 
 			}
@@ -1003,6 +1065,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-112", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-112", 0 ],
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -1187,8 +1256,14 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
  ],
-		"originid" : "pat-1365",
 		"styles" : [ 			{
 				"name" : "dsx.flonum",
 				"default" : 				{

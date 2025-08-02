@@ -1,35 +1,26 @@
-autowatch = 1;
+inlets = 1;
+outlets = 0;
 
 var t = this.patcher;
-include('scalingfunctions.js');
+var id;
+//var parent = t.parentpatcher.box.varname;
 
 
-var filter = jsarguments[1];
-var offset = 0;
-var oscval = 0;
-
-function msg_float(x) {
-
-    offset = x;
-    bang();
-}
-
-function oscin(target,value) {
+function oscin(target, value) 
+{
 	
-	if (target == filter) {
-        oscval = value;
-	}
-    
-    bang();
-    
+   var targetvalue = target.substr(target.lastIndexOf("/") + 1);
+   var targetobject = target.match('xparticle'+'/'+id);
+	
+   if (targetobject) {
+
+   var currenttarget = t.getnamed(targetvalue);
+   currenttarget.message(value);
+   }
+   
 }
 
-function bang() {
-    var result = offset + oscval;
-    outlet(0, result); 
-
+function loadbang() {
+   id = t.box.varname;
+   post('module '+id+' created');
 }
-
- 
-
-

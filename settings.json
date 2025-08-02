@@ -5,15 +5,15 @@
 			"1" : 			{
 				"id" : 1,
 				"data" : 				{
-					"windowborder" : [ 1 ],
-					"fps" : [ 3 ],
+					"windowborder" : [ 0 ],
+					"fps" : [ 0 ],
 					"fpsinfo" : [ 1 ],
 					"hidecursor" : [ 0 ],
 					"windowwidth" : [ 1920 ],
 					"windowheight" : [ 1080 ],
-					"previewchoice" : [ 4 ],
-					"windowposy" : [ 0 ],
-					"windowposx" : [ 1400 ]
+					"previewchoice" : [ 0 ],
+					"windowposy" : [ 116 ],
+					"windowposx" : [ 6 ]
 				}
 
 			}

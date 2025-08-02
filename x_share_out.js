@@ -13,26 +13,25 @@ function checksystem() {
 	return currentsystem;
 	}
 
-function init() {
+function create(x) {
 	
 	// if we know the system we create a GL Share object depening on System
 	checksystem();
 	var videoin = t.getnamed('finalout');
+	var share_name = x;
 
 	if (currentsystem == 'windows') {
 		
-		destroy()
 		glshare = t.newdefault(400, 3060, "jit.gl.spoutsender","XPARTICLE");
-		glshare.setattr('name','gl-share');
-		glshare.setattr('sendername','spout_XPARTICLE');
+		glshare.setattr('name',share_name);
+		glshare.setattr('sendername',share_name);
 		post('spout created');
 
 	} else {
 
-		destroy();
 		glshare = t.newdefault(400, 3060, "jit.gl.syphonserver","XPARTICLE");
-		glshare.setattr('name','gl-share');
-		glshare.setattr('servername','syphon_XPARTICLE');
+		glshare.setattr('name',share_name);
+		glshare.setattr('servername',share_name);
 		post('syphon server created');
 	}
 
@@ -47,6 +46,5 @@ function destroy() {
 	}
 		
 function loadbang() {
-	destroy();
-	init();
+	
 	}

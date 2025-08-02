@@ -256,10 +256,12 @@ void main() {
 
 	// FLOW1 : FORCE AND ACCELERATION	
 	vec4 flow = texture(opticalFlow, texcoord); //iColor.xy * texDim);
-	vec3 flowdir = vec3(flow.x - flow.y, flow.z-flow.w,flow.z - flow.y - flow.x);
+	//vec3 flowdir = vec3(flow.x - flow.y, flow.z-flow.w,flow.z - flow.y - flow.x);
+	vec3 flowdir = vec3(flow.x-flow.y, flow.z-flow.w,0.0);
 	vec3 acc = vec3(0.0);
 	
-	acc = vec3(flowdir.xy * (uForceFlow.xy * 0.001), flowdir.z * (uForceFlow.z * -0.001));
+	//acc = vec3(flowdir.xy * (uForceFlow.xy * 0.001), flowdir.z * (uForceFlow.z * -0.001));
+	if (luma1 > 0.001) { acc = flowdir * (uForceFlow * 0.001); } 
 	if (uLumaToAcc == 1) { acc *= mass;	}
 	
 	// FLOW2 : FORCE AND ACCELERATION	
@@ -267,7 +269,7 @@ void main() {
 	vec3 flowdir2 = vec3(flow2.x - flow2.y, flow2.z-flow2.w,flow2.z - flow2.y - flow2.x);
 	vec3 acc2 = vec3(0.0);
 	
-	acc2 = flowdir2 * (uForceFlow2 * 0.001);
+	if (luma2 > 0.001) {acc2 = flowdir2 * (uForceFlow2 * 0.001); }
 	if (uLumaToAcc == 1) { acc2 *= mass; }
 
 	// FORCE TO ORIGIN
@@ -304,13 +306,17 @@ void main() {
 	// friction += mass * 0.1 // 0.005 - 0.1
 
 	if(age > 1.0) {
-
+		age = 0.0;
+		if (luma1 > 0.001) {oPosition = iOrigin;}
+		
+		mass = mass;
 		//oVelocity = vec3(0.0) * uFriction;
 		oVelocity = iVelocity * uFriction;
-		age = 0.0;
+		oVelocity += accOrigin;
+		oVelocity += (acc + acc2);
+
 		
-		oPosition = iOrigin;
-		mass = mass;
+
 		
 	} else {
 		age += (uAging * mass) * 0.001;

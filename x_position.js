@@ -1,15 +1,9 @@
 inlets = 1;
 outlets = 4;
 
-var t;
+var t = this.patcher;;
 var mov_ms;
 var mov_fps;
-
-var nextTP;
-declareattribute('nextTP');
-
-var id;
-declareattribute('id');
 
 function normalize(unscaledNum, minAllowed, maxAllowed, newmin, newmax) {
 	
@@ -21,42 +15,59 @@ function tickstoms(ticks) {
 	var ms = 60000 / (120*480) * ticks;
 	return ms;
 	}
+
+function start() {
+	// when File starts, start the askMovie Function to get Position and stuff 
 	
+	//askMovie.interval = 100;
+	//askMovie.repeat();	
+
+}
+
+function stop() {
+	//askMovie.cancel();
+}
+
+
 function fileread() {
 
-	t = this.patcher;
 	mov 	= t.getnamed('movie');
-	mov_ms	= mov.getattr('milliseconds');
-	mov_fps = mov.getattr('fps');
+	
+	var d_movfps 	= t.getnamed('display_moviefps');
+	var d_movname 	= t.getnamed('display_moviename');
+		
+	// ask values
+	var mov_fps 	= mov.getattr('fps');
+	var mov_name 	= mov.getattr('moviefile');
+	var mov_size 	= mov.getattr('dim');
+	var mov_ms		= mov.getattr('milliseconds');
+
+	// show file info 
+	d_movname.message('set', mov_name);
+	d_movfps.message('set','FPS:', mov_fps);
+
+	outlet(1,'fps', mov_fps);
+	outlet(2, mov_ms);
 	}
 
-function position(ms) {	
-	 
-	
-	var p = Math.floor(ms);
-	var s = Math.floor(ms / 1000) % 60;
-	var m = Math.floor(ms / 1000 / 60) % 60;
-	var h = Math.floor(ms / 1000 / 3600) % 24;
-	var f = Math.ceil(ms / 1000 * mov_fps);
+// -------------------------------------------------
+// JS BANG FUNCTIONS
+// -------------------------------------------------
 
-	var hh = ("0" + h).slice(-2);
-	var mm = ("0" + m).slice(-2);
-	var ss = ("0" + s).slice(-2);
-	
-	var hhmmss = [hh, mm, ss].join(':');
+var askMovie = new Task(getinfo,this);
 
-	if (hhmmss == nextTP) {
-		outlet(2, 'changescene');
-		post('\n', 'next scene at', nextTP );
-	}
+// ask current position
+function getinfo() {
+	var getmsec = t.getnamed('getmsec');
+	getmsec.message('bang');
+}
 
-	if (p > 1) {
-		outlet(0,'set',hhmmss);
-		outlet(1,'set', f);
-		outlet(3,'set', nextTP);
-		}
-	}
-	
+function bang() {
+	var getmsec = t.getnamed('getmsec');
+	getmsec.message('bang');
+}
+
+
 function loadbang() {
 	//scrubber = t.getnamed('scrubber');
 	//m = t.getnamed('movie');	

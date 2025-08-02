@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 3,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -14,6 +14,41 @@
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"filename" : "x_osc.js",
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1659.0, 372.0, 68.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0
+					}
+,
+					"text" : "v8 x_osc.js",
+					"textfile" : 					{
+						"filename" : "x_osc.js",
+						"flags" : 0,
+						"embed" : 0,
+						"autowatch" : 1
+					}
+
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1651.0, 319.0, 35.0, 22.0 ],
+					"text" : "r osc"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Consolas",
 					"fontsize" : 10.0,
@@ -365,8 +400,8 @@
 					"restore" : 					{
 						"displaceamount1" : [ 0.5 ],
 						"displaceamount2" : [ 0.5 ],
-						"displacemix" : [ 0.5 ],
-						"displaceself" : [ 0.5 ],
+						"displacemix" : [ 0.0 ],
+						"displaceself" : [ 0.47 ],
 						"zshift1" : [ 0.5 ],
 						"zshift2" : [ 0.5 ]
 					}
@@ -619,7 +654,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -658,8 +693,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-80"
+ ]
 					}
 ,
 					"patching_rect" : [ 750.0, 651.0, 173.0, 22.0 ],
@@ -679,7 +713,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -718,8 +752,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-82"
+ ]
 					}
 ,
 					"patching_rect" : [ 584.0, 651.0, 173.0, 22.0 ],
@@ -751,7 +784,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -844,8 +877,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-84"
+ ]
 					}
 ,
 					"patching_rect" : [ 586.0, 773.0, 173.0, 22.0 ],
@@ -867,7 +899,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 3,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -984,8 +1016,7 @@
 								}
 
 							}
- ],
-						"originid" : "pat-86"
+ ]
 					}
 ,
 					"patching_rect" : [ 584.0, 582.0, 146.0, 18.0 ],
@@ -1256,6 +1287,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
 					"source" : [ "obj-17", 0 ]
 				}
@@ -1519,7 +1557,6 @@
 
 			}
  ],
-		"originid" : "pat-78",
 		"styles" : [ 			{
 				"name" : "dsx.flonum",
 				"default" : 				{

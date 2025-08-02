@@ -112,7 +112,7 @@ function setcolor(r,g,b,a)
 }
 
 function setfontsize(f) {
-    f = normalize(f,0.,0.1,0.,1.);
+    f = normalize(f,0.,1.0,0.,1.);
     fontsize = [f,f,0.0];
 
     if(linecount > 0) {
@@ -178,6 +178,8 @@ function makeTextModules(i) {
     textModules[i].depth_enable = 0;
     textModules[i].automatic = 1;
     textModules[i].layer  = 100;
+    
+
 
     }
 

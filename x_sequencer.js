@@ -58,39 +58,39 @@ function read(f)
     var filename = f.substr(0,f.lastIndexOf("."));
     
     // PattrStorage Paths in Max
-    var in_movie1 = 'x_input1::x_movie::';
-    var in_movie2 = 'x_input2::x_movie::';
-    var in_pencil = 'x_input1::x_pencil::';
-    var in_noise1 = 'x_input1::x_noise::';
-    var in_noise2 = 'x_input2::x_noise::';
-    var in_colmap = 'x_input2::x_colmap::';
-    var in_camera = 'x_input1::x_camera::';
-    var in_imgseq = 'x_input1::x_imgseq::';
-    var in_shared1 = 'x_input1::x_sharedctx::';
-    var in_shared2 = 'x_input2::x_sharedctx::';
+    var in_movie1 = 'x_input1::movie1::';
+    var in_movie2 = 'x_input2::movie2::';
+    var in_pencil = 'x_input1::pencil::';
+    var in_noise1 = 'x_input1::noise1::';
+    var in_noise2 = 'x_input2::noise2::';
+    var in_camera = 'x_input1::camera::';
+    var in_imgseq = 'x_input1::imgseq::';
+    var in_shared1 = 'x_input1::sharedctx1::';
+    var in_shared2 = 'x_input2::sharedctx2::';
 
     // Inputs   
-    var inputvalues = new Array('input1', 'input2', 'input_mixmode','input_blendmode', 'input_blendamount');    
-    var movievalues = new Array(in_movie1+'recentFile',in_movie2+'recentFile',in_movie1+'volume',in_movie2+'volume',in_movie1+'ofsx',in_movie1+'ofsy',in_movie1+'scale',in_movie1+'scalemode',in_movie2+'ofsx',in_movie2+'ofsy',in_movie2+'scale',in_movie2+'scalemode');
+    var inputvalues = new Array('input1', 'input2', 'input_mixmode','input_blendmode', 'input_blendamount','in1_scalemode','in1_scale','in1_ofsx','in1_ofsy','in2_scalemode','in2_scale','in2_ofsx','in2_ofsy');    
+    var movievalues = new Array(in_movie1+'recentFile',in_movie2+'recentFile',in_movie1+'volume',in_movie2+'volume',in_movie1+'scalemode',in_movie2+'scalemode');
     var noisevalues1 = new Array(in_noise1+'noisesize',in_noise1+'noisespeed',in_noise1+'noisebrightness',in_noise1+'noisecontrast',in_noise1+'noiseratio',in_noise1+'noisevariant');
     var noisevalues2 = new Array(in_noise2+'noisesize',in_noise2+'noisespeed',in_noise2+'noisebrightness',in_noise2+'noisecontrast',in_noise2+'noiseratio',in_noise2+'noisevariant');
     var pencilvalues = new Array(in_pencil+'ipad_port',in_pencil+'interpolation',in_pencil+'decay',in_pencil+'dyn_size',in_pencil+'dyn_softness',in_pencil+'dyn_color',in_pencil+'dyn_saturation',in_pencil+'dyn_brightness',in_pencil+'size',in_pencil+'size2',in_pencil+'softness',in_pencil+'softness2',in_pencil+'color',in_pencil+'color2',in_pencil+'saturation',in_pencil+'saturation2',in_pencil+'brightness',in_pencil+'brightness2');
-    var colmapvalues = new Array(in_colmap+'mode',in_colmap+'size',in_colmap+'gradientsize',in_colmap+'positionx',in_colmap+'positiony',in_colmap+'invert',in_colmap+'color',in_colmap+'saturation');
-    var cameravalues = new Array(in_camera+'colormode',in_camera+'mirror',in_camera+'ofsx',in_camera+'ofsy',in_camera+'scale',in_camera+'scalemode');
-    var ingseqvalues = new Array(in_imgseq+'recentFolder',in_imgseq+'blendmode',in_imgseq+'easingfunction',in_imgseq+'framehold',in_imgseq+'transition',in_imgseq+'loopmode',in_imgseq+'ofsx',in_imgseq+'ofsy',in_imgseq+'scale',in_imgseq+'scalemode');
+    
+    var cameravalues = new Array(in_camera+'colormode',in_camera+'mirror',in_camera+'scalemode');
+    var ingseqvalues = new Array(in_imgseq+'recentFolder',in_imgseq+'blendmode',in_imgseq+'easingfunction',in_imgseq+'framehold',in_imgseq+'transition',in_imgseq+'loopmode',in_imgseq+'scalemode');
     var sharedvalues = new Array(in_shared1+'mode',in_shared2+'mode',in_shared1+'scale',in_shared2+'scale',in_shared1+'ofsx',in_shared2+'ofsx',in_shared1+'ofsy',in_shared2+'ofsy',in_shared1+'scalemode',in_shared2+'scalemode');
     
     // Processing Values
     var flow1values = new Array('flow1_scale','flow1_offset','flow1_lambda','flow1_decay','flow1_source','flow1_bypass');
     var flow2values = new Array('flow2_scale','flow2_offset','flow2_lambda','flow2_decay', 'flow2_bypass');
     var threshvalues = new Array('thresh_amount','thres_hmix','thresh_invert', 'thresh_scale', 'thresh_source','thresh_preblur','thresh_postblur');
-    var partvalues = new Array('attpx','attpy','attpz','px','py','pz','accelx','accely','accelz','accelx2','accely2','accelz2','attx','atty','attz');
+    var partvalues = new Array('attpx','attpy','attpz','px','py','pz','flow1_accx','flow1_accy','flow1_accz','flow2_accx','flow2_accy','flow2_accz','attx','atty','attz');
     //var blurvalues = new Array('in1_preblur','in1_flowblur', 'in2_flowblur');
     
-    var globalpartvalues = new Array('drawmode','draw_softness','colormode','colorinput','countmode','count','delmode','size','friction','aging','rotatey','rotatez','depth_factor','depth_source','movementtobrightness','filter_movement');
+    var globalpartvalues = new Array('drawmode','draw_softness','colormode','colorinput','countmode','count','delmode','size','friction','aging','rotatey','rotatez','depth_factor','depth_source','movementtobrightness','movementStrength', 'filter_movement');
     var lumavalues = new Array('luma_source','luma_invert','luma_tosize','luma_toalpha','luma_todepth','luma_toorigin','luma_toacc','luma_topoint','luma_filter');
     var stereovalues = new Array('x_stereo::stereomode','x_stereo::displaceamount1', 'x_stereo::displaceamount2', 'x_stereo::displacemix','x_stereo::displaceself', 'x_stereo::zshift');
     var postvalues = new Array('x_post::gamma','x_post::brightness','x_post::contrast','x_post::tintamount','x_post::tintr','x_post::tintg','x_post::tintb','x_post::saturation','final_border','final_blur_bypass','final_blur_blendmode', 'final_bluramount', 'final_decay_bypass','final_decayup', 'final_decaydown', 'final_blendsource', 'final_blendamount','final_blendmode','final_blend');
+    var gradientvalues = new Array('gradient::enable','gradient::mode','gradient::size','gradient::gradientsize','gradient::positionx','gradient::positiony','gradient::invert','gradient::color','gradient::saturation');
 
     // subscribe values to PattrStorage
     sequencer.message('subscribe', inputvalues);
@@ -98,7 +98,7 @@ function read(f)
     sequencer.message('subscribe', noisevalues1);
     sequencer.message('subscribe', noisevalues2);
     sequencer.message('subscribe', pencilvalues);
-    sequencer.message('subscribe', colmapvalues);
+    sequencer.message('subscribe', gradientvalues);
     sequencer.message('subscribe', sharedvalues);
     sequencer.message('subscribe', cameravalues);
     sequencer.message('subscribe', ingseqvalues);

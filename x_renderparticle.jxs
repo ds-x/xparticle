@@ -15,6 +15,7 @@
 	<param name="hsv" type="vec3" default="1.0 1.0 1.0" />
 
 	<param name="useMovement" type="int" default="0" /> 
+	<param name="uMovementStrength" type="float" default="1.0" />
 	<param name="uMovement" type="float" default="0.0" />
 	<param name="uLuminance" type="float" default="0.0" />  
 	<param name="uColormode" type="int" default="0" /> 
@@ -38,7 +39,8 @@
 		<bind param="pointSize" program="vp" />
 		<bind param="hsv" program="fp" />
 		
-		<bind param="useMovement" program="fp" /> 
+		<bind param="useMovement" program="fp" />
+		<bind param="uMovementStrength" program="fp" />
 		<bind param="uMovement" program="fp" />
 		<bind param="uLuminance" program="fp" />  
 		<bind param="uColormode" program="fp" />
@@ -120,7 +122,8 @@ out vec4 color;
 uniform sampler2DRect tex0;
 uniform vec3 hsv;
 
-uniform int useMovement; 
+uniform int useMovement;
+uniform float uMovementStrength;
 uniform int uColormode;
 uniform float uMovement;
 uniform float uLuminance;
@@ -190,13 +193,18 @@ void main() {
 
 	}
 
+	float movefactor = uMovementStrength * 1000.0;
+	float movement = length(jit_in.velocity) * movefactor;
+	//movement = clamp(movement,0.0,1.0);
+
+	vec4 movementcolor = vec4(vec3(movement), 1.0);
+	movementcolor *= texColor;
 	
-	float movementcolor = length(jit_in.velocity) * 1000.0;
-	
-	texColor = useMovement == 0 ? texColor : texColor * movementcolor;
+	texColor = useMovement == 0 ? texColor : movementcolor;
 	color = texColor;
 
-	
+
+
 
 	float len = length(gl_PointCoord - 0.5);
 
@@ -218,7 +226,7 @@ void main() {
 	}
 
 	
-	if (movementcolor < uMovement) discard;
+	if (movement < uMovement) discard;
 	if (luminance < uLuminance) discard;
 
 	
