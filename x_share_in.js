@@ -26,6 +26,7 @@ function init() {
 	if (currentsystem == 'windows') {
 		
 		destroy();
+		gllayer = t.newdefault(677,600, "jit.gl.layer @layer -1 @depth_enable 1");
 		glshare = t.newdefault(677, 524, "jit.gl.spoutreceiver");
 		glshare.message('getavailablesenders');
 		outlet(2,'set','sendername');
@@ -45,6 +46,7 @@ function init() {
 	}
 
 	t.connect(gate_draw,0,glshare,0);
+	t.connect(glshare,0,gllayer,0,);
 	t.connect(mes_getserver,0,glshare,0);
 	t.connect(mes_servername,0,glshare,0);
 	t.connect(glshare,0,switch_output,2);
@@ -55,6 +57,7 @@ function init() {
 function destroy() {
 	if (glshare) {
 		t.remove(glshare);
+		t.remove(gllayer);
 		} 
 	}
 		
