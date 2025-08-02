@@ -33,6 +33,7 @@ function init() {
 		outlet(1,'set','getavailablesenders');
 		outlet(0,'SpoutSender');
 		post('spout client created');
+		t.connect(glshare,0,gllayer,0,);
 
 	} else {
 
@@ -46,7 +47,7 @@ function init() {
 	}
 
 	t.connect(gate_draw,0,glshare,0);
-	t.connect(glshare,0,gllayer,0,);
+	
 	t.connect(mes_getserver,0,glshare,0);
 	t.connect(mes_servername,0,glshare,0);
 	t.connect(glshare,0,switch_output,2);
