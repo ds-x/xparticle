@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 787.0, 146.0, 2312.0, 1175.0 ],
+		"rect" : [ 1021.0, 522.0, 2312.0, 1175.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
@@ -323,7 +323,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 392.0, 1140.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 121.0, 523.0, 19.0 ],
+					"presentation_rect" : [ 1.0, 121.0, 273.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -622,7 +622,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 969.0, 27.0, 38.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 393.0, 141.0, 24.0, 20.0 ],
+					"presentation_rect" : [ 393.0, 121.0, 24.0, 20.0 ],
 					"text" : "",
 					"textcolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
 					"texton" : "",
@@ -803,7 +803,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 1065.5, 131.0, 25.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 478.5, 141.5, 44.0, 18.0 ],
+					"presentation_rect" : [ 484.0, 121.5, 40.0, 18.0 ],
 					"style" : "dsx.integer",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"tricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
@@ -822,7 +822,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 305.0, 1285.0, 128.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 418.5, 142.5, 57.0, 16.0 ],
+					"presentation_rect" : [ 418.5, 122.5, 57.0, 16.0 ],
 					"text" : "CURRENT",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ]
 				}
@@ -1135,7 +1135,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1390,7 +1390,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 161.0, 1138.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 141.0, 522.0, 19.0 ],
+					"presentation_rect" : [ 275.0, 121.0, 249.0, 19.0 ],
 					"proportion" : 0.5,
 					"rounded" : 2
 				}

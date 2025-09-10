@@ -4,23 +4,61 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 6,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 276.0, 151.0, 1527.0, 1048.0 ],
+		"rect" : [ 928.0, 166.0, 1800.0, 1048.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 373.0, 372.0, 29.5, 22.0 ],
+					"text" : "!- 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
+					"bgoncolor" : [ 0.780392156862745, 0.564705882352941, 0.019607843137255, 1.0 ],
+					"fontface" : 1,
+					"fontname" : "Consolas",
+					"fontsize" : 10.0,
+					"id" : "obj-460",
+					"maxclass" : "textbutton",
+					"mode" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 373.0, 335.0, 68.0, 24.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 1.0, 1.0, 24.0, 19.0 ],
+					"text" : "[o]",
+					"textcolor" : [ 0.780392156862745, 0.564705882352941, 0.019607843137255, 1.0 ],
+					"texton" : "[o]",
+					"textoncolor" : [ 0.90017, 0.90017, 0.90017, 1.0 ],
+					"usebgoncolor" : 1,
+					"varname" : "textbutton[14]"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"filename" : "x_osc.js",
 					"id" : "obj-13",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1659.0, 372.0, 68.0, 22.0 ],
+					"patching_rect" : [ 1364.0, 211.0, 68.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0
 					}
@@ -43,7 +81,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1651.0, 319.0, 35.0, 22.0 ],
+					"patching_rect" : [ 1364.0, 168.0, 35.0, 22.0 ],
 					"text" : "r osc"
 				}
 
@@ -316,7 +354,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 65.0, 876.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 202.0, 41.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 202.0, 41.0, 324.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -334,7 +372,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 50.0, 861.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 202.0, 61.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 202.0, 61.0, 324.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -352,7 +390,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 35.0, 846.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 202.0, 81.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 202.0, 81.0, 324.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -370,7 +408,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 20.0, 831.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 202.0, 101.0, 200.0, 19.0 ],
+					"presentation_rect" : [ 202.0, 101.0, 324.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -402,6 +440,7 @@
 						"displaceamount2" : [ 0.5 ],
 						"displacemix" : [ 0.0 ],
 						"displaceself" : [ 0.47 ],
+						"textbutton[14]" : [ 0 ],
 						"zshift1" : [ 0.5 ],
 						"zshift2" : [ 0.5 ]
 					}
@@ -439,24 +478,6 @@
 			}
 , 			{
 				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"bordercolor" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 0.0 ],
-					"id" : "obj-442",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 5.0, 816.0, 128.0, 128.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 202.0, 121.0, 200.0, 19.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bgcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 0.0 ],
 					"bubbleusescolors" : 1,
 					"fontface" : 1,
@@ -466,9 +487,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 347.90002400000003, 402.100097999999889, 97.0, 16.0 ],
+					"patching_rect" : [ 270.0, 399.0, 97.0, 16.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 2.5, 146.0, 16.0 ],
+					"presentation_rect" : [ 28.0, 2.5, 146.0, 16.0 ],
 					"text" : "STEREOSCOPIC",
 					"textcolor" : [ 0.780392156862745, 0.564705882352941, 0.019607843137255, 1.0 ]
 				}
@@ -486,7 +507,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 261.0, 30.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 1.0, 401.0, 19.0 ],
+					"presentation_rect" : [ 24.0, 1.0, 502.0, 19.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -564,20 +585,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 277.70556600000009, 371.0, 94.0, 22.0 ],
+					"patching_rect" : [ 373.0, 404.0, 94.0, 22.0 ],
 					"text" : "prepend bypass"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-443",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 277.70556600000009, 338.0, 33.0, 22.0 ],
-					"text" : "== 0"
 				}
 
 			}
@@ -616,15 +625,15 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 139.70556600000009, 274.0, 182.0, 24.0 ],
+					"patching_rect" : [ 140.0, 274.0, 338.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 68.0, 21.0, 334.0, 19.0 ],
+					"presentation_rect" : [ 68.0, 21.0, 458.0, 19.0 ],
 					"rounded" : 0.0,
 					"spacing_x" : 1.0,
 					"spacing_y" : 1.0,
 					"style" : "dsx.tab3",
 					"tabcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"tabs" : [ "Off", "R/C", "G/M", "INTERLACE", "SBS", "SBS R/C", "SBS G/M" ],
+					"tabs" : [ "R/C", "G/M", "INTERLACE", "SBS", "SBS R/C", "SBS G/M" ],
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ],
 					"varname" : "tab"
 				}
@@ -654,7 +663,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -713,7 +722,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -784,13 +793,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "jit.gen",
-						"rect" : [ 1668.0, 144.0, 1147.0, 1239.0 ],
+						"rect" : [ 1668.0, 116.0, 1147.0, 1239.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbars_unpinned_last_save" : 2,
 						"boxes" : [ 							{
@@ -819,7 +828,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "// https://wiki.delphigl.com/index.php/shader_Stereoscopy#Code\r\n// original = sample(in3,norm);\r\n\r\n// koordinaten single Screen Stereo\r\n\r\nsinglelefteye = norm;\r\nsinglerighteye = norm;\t\r\n\r\n/* koordinaten side by side */\r\n\r\nmaskleft = step(0.5,norm.x);\r\nmaskright = 1-step(0.5,norm.x);\r\n\r\nduallefteye = vec(norm.x*2-1, norm.y);\r\ndualrighteye = vec(norm.x*2+1,norm.y);\r\n\r\n\r\nsl = sample(in1,singlelefteye,boundmode=\"wrap\");\r\nsr = sample(in2,singlerighteye,boundmode=\"wrap\");\r\n\r\ndl = sample(in1,duallefteye,boundmode=\"wrap\");\r\ndr = sample(in2,dualrighteye,boundmode=\"wrap\");\r\n\r\n\r\nif(stereomode == 1) {\r\n\tout1 = vec(sr,sl,sl,1); // red/cyan\r\n\t}\r\n\r\n\r\nelse if (stereomode == 2) {\r\n\tout1 = vec(sr,sl,sr,1);\r\n\t}\r\n\r\n\r\nelse if(stereomode == 3) {\r\n\tm = mod(cell.y,1.999); // why not 2?\r\n\tif (m <= 1) {\r\n\t\tout1 = sr; // show texture on even lines\r\n\t}\t\r\n\telse {\r\n \t\tout1 = sl; // show black on odd lines\r\n\t}\r\n\t}\r\n\t\r\nelse if(stereomode == 4) {\r\n\t//out1 = vec(dl,dl,dl)* maskright + vec(dr,dr,dr) * maskleft;\r\n\tout1 = dl * maskright + dr * maskleft;\r\n\t}\r\n\t\r\n\r\nelse if(stereomode == 5) {\r\n\tout1 = vec(dl,0,0)* maskright+vec(0,dr,dr)* maskleft;\r\n\t//out1 = dl.gb * maskright + dr.r * maskleft;\r\n\t}\r\n\r\n\r\nelse if(stereomode == 6) {\r\n\tout1 = vec(0,dl,0)* maskright+vec(dr,0,dr)* maskleft;\r\n\t}\r\n\t\r\nelse if(stereomode == 7) {\r\n\tx1 = vec(sr,0,0);\r\n\tx2 = vec(0,sl,sl);\r\n\tm1 = mix(0.5*sr+x1,0.5*sl+x2,0.5);\r\n\r\n\tout1 = m1;\r\n\t}\r\n\t\r\nelse {}\r\n\t",
+									"code" : "// https://wiki.delphigl.com/index.php/shader_Stereoscopy#Code\r\n// original = sample(in3,norm);\r\n\r\n// koordinaten single Screen Stereo\r\n\r\nsinglelefteye = norm;\r\nsinglerighteye = norm;\t\r\n\r\n/* koordinaten side by side */\r\n\r\nmaskleft = step(0.5,norm.x);\r\nmaskright = 1-step(0.5,norm.x);\r\n\r\nduallefteye = vec(norm.x*2-1, norm.y);\r\ndualrighteye = vec(norm.x*2+1,norm.y);\r\n\r\n\r\nsl = sample(in1,singlelefteye,boundmode=\"wrap\");\r\nsr = sample(in2,singlerighteye,boundmode=\"wrap\");\r\n\r\ndl = sample(in1,duallefteye,boundmode=\"wrap\");\r\ndr = sample(in2,dualrighteye,boundmode=\"wrap\");\r\n\r\n\r\nif(stereomode == 0) {\r\n\tout1 = vec(sr,sl,sl,1); // red/cyan\r\n\t}\r\n\r\n\r\nelse if (stereomode == 1) {\r\n\tout1 = vec(sr,sl,sr,1);\r\n\t}\r\n\r\n\r\nelse if(stereomode == 2) {\r\n\tm = mod(cell.y,1.999); // why not 2?\r\n\tif (m <= 1) {\r\n\t\tout1 = sr; // show texture on even lines\r\n\t}\t\r\n\telse {\r\n \t\tout1 = sl; // show black on odd lines\r\n\t}\r\n\t}\r\n\t\r\nelse if(stereomode == 3) {\r\n\t//out1 = vec(dl,dl,dl)* maskright + vec(dr,dr,dr) * maskleft;\r\n\tout1 = dl * maskright + dr * maskleft;\r\n\t}\r\n\t\r\n\r\nelse if(stereomode == 4) {\r\n\tout1 = vec(dl,0,0)* maskright+vec(0,dr,dr)* maskleft;\r\n\t//out1 = dl.gb * maskright + dr.r * maskleft;\r\n\t}\r\n\r\n\r\nelse if(stereomode == 5) {\r\n\tout1 = vec(0,dl,0)* maskright+vec(dr,0,dr)* maskleft;\r\n\t}\r\n\t\r\nelse if(stereomode == 6) {\r\n\tx1 = vec(sr,0,0);\r\n\tx2 = vec(0,sl,sl);\r\n\tm1 = mix(0.5*sr+x1,0.5*sl+x2,0.5);\r\n\r\n\tout1 = m1;\r\n\t}\r\n\t\r\nelse {}\r\n\t",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 11.0,
@@ -899,7 +908,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1247,23 +1256,6 @@
 				"box" : 				{
 					"angle" : 0.0,
 					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
-					"id" : "obj-372",
-					"maxclass" : "panel",
-					"mode" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 130.20556600000009, 68.0, 128.0, 128.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 121.0, 200.0, 19.0 ],
-					"proportion" : 0.39,
-					"rounded" : 0
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"angle" : 0.0,
-					"bgcolor" : [ 0.356862745098039, 0.356862745098039, 0.356862745098039, 1.0 ],
 					"id" : "obj-433",
 					"maxclass" : "panel",
 					"mode" : 0,
@@ -1289,6 +1281,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-452", 0 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -1391,16 +1390,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-338", 0 ],
-					"order" : 1,
-					"source" : [ "obj-288", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-443", 0 ],
-					"midpoints" : [ 149.20556600000009, 304.600097999999889, 287.20556600000009, 304.600097999999889 ],
-					"order" : 0,
 					"source" : [ "obj-288", 0 ]
 				}
 
@@ -1512,13 +1501,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-452", 0 ],
-					"source" : [ "obj-443", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-228", 0 ],
 					"order" : 3,
 					"source" : [ "obj-452", 0 ]
@@ -1546,6 +1528,13 @@
 					"destination" : [ "obj-355", 0 ],
 					"order" : 1,
 					"source" : [ "obj-452", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-460", 0 ]
 				}
 
 			}

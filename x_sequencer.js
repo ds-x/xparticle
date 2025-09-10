@@ -91,6 +91,7 @@ function read(f)
     var stereovalues = new Array('x_stereo::stereomode','x_stereo::displaceamount1', 'x_stereo::displaceamount2', 'x_stereo::displacemix','x_stereo::displaceself', 'x_stereo::zshift');
     var postvalues = new Array('x_post::gamma','x_post::brightness','x_post::contrast','x_post::tintamount','x_post::tintr','x_post::tintg','x_post::tintb','x_post::saturation','final_border','final_blur_bypass','final_blur_blendmode', 'final_bluramount', 'final_decay_bypass','final_decayup', 'final_decaydown', 'final_blendsource', 'final_blendamount','final_blendmode','final_blend');
     var gradientvalues = new Array('gradient::enable','gradient::mode','gradient::size','gradient::gradientsize','gradient::positionx','gradient::positiony','gradient::invert','gradient::color','gradient::saturation');
+    var maskvalues = new Array('mask::enable','mask::mode','mask::count','mask::xd','mask::xw','mask::xo','mask::ds');
 
     // subscribe values to PattrStorage
     sequencer.message('subscribe', inputvalues);
@@ -111,7 +112,7 @@ function read(f)
     sequencer.message('subscribe', globalpartvalues);
     sequencer.message('subscribe', stereovalues);
     sequencer.message('subscribe', postvalues);
-
+    sequencer.message('subscribe', maskvalues);
     
     //sequencer.message('read', './sequencer.json');
     sequencer.message('read', file);

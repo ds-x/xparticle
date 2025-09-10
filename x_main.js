@@ -131,9 +131,10 @@ function init() {
 	var settings = t.getnamed('settings');
 	var setvalues = 	new Array('run','windowposx', 'windowposy', 'windowwidth', 'windowheight',
 							'fpsinfo', 'fps', 'windowborder','previewchoice','oscpport');
+	var bordervalues = new Array('border_size','border_color','border_saturation','border_brightness');
 
 	settings.message('subscribe', setvalues);
-
+	sequencer.message('subscribe', bordervalues);
 }
 /*	
 function loadbang() {

@@ -278,7 +278,7 @@ void main() {
 	vec3 normDirOrigin = clamp(normalize(dirOrigin), vec3(-1.0), vec3(1.0));
 	float distOrigin =  clamp(length(dirOrigin),0.0,1.0);
 	vec3 accOrigin = (normDirOrigin * distOrigin) * (uForceOrigin * 0.01);
-	if (uLumaToOrigin == 1) { accOrigin *= mass; }
+	if (uLumaToOrigin == 1) { accOrigin *= (1.0-mass); }
 
 	// FORCE TO POINT
 	float randx = iAgeNoise.z * 2.0 - 1.0;
