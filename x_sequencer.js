@@ -68,7 +68,8 @@ function read(f)
     var in_shared1 = 'x_input1::sharedctx1::';
     var in_shared2 = 'x_input2::sharedctx2::';
 
-    // Inputs   
+    // Inputs  
+    var subpatchers = new Array('x_input1','x_input2'); 
     var inputvalues = new Array('input1', 'input2', 'input_mixmode','input_blendmode', 'input_blendamount','in1_scalemode','in1_scale','in1_ofsx','in1_ofsy','in2_scalemode','in2_scale','in2_ofsx','in2_ofsy');    
     var movievalues = new Array(in_movie1+'recentFile',in_movie2+'recentFile',in_movie1+'volume',in_movie2+'volume',in_movie1+'scalemode',in_movie2+'scalemode');
     var noisevalues1 = new Array(in_noise1+'noisesize',in_noise1+'noisespeed',in_noise1+'noisebrightness',in_noise1+'noisecontrast',in_noise1+'noiseratio',in_noise1+'noisevariant');
@@ -88,12 +89,13 @@ function read(f)
     
     var globalpartvalues = new Array('drawmode','draw_softness','colormode','colorinput','countmode','count','delmode','size','friction','aging','rotatey','rotatez','depth_factor','depth_source','movementtobrightness','movementStrength', 'filter_movement');
     var lumavalues = new Array('luma_source','luma_invert','luma_tosize','luma_toalpha','luma_todepth','luma_toorigin','luma_toacc','luma_topoint','luma_filter');
-    var stereovalues = new Array('x_stereo::stereomode','x_stereo::displaceamount1', 'x_stereo::displaceamount2', 'x_stereo::displacemix','x_stereo::displaceself', 'x_stereo::zshift');
-    var postvalues = new Array('x_post::gamma','x_post::brightness','x_post::contrast','x_post::tintamount','x_post::tintr','x_post::tintg','x_post::tintb','x_post::saturation','final_border','final_blur_bypass','final_blur_blendmode', 'final_bluramount', 'final_decay_bypass','final_decayup', 'final_decaydown', 'final_blendsource', 'final_blendamount','final_blendmode','final_blend');
+    var stereovalues = new Array('stereo::stereomode','stereo::displaceamount1', 'stereo::displaceamount2', 'stereo::displacemix','stereo::displaceself', 'stereo::zshift');
+    var postvalues = new Array('post::gamma','post::brightness','post::contrast','post::tintamount','post::tintr','post::tintg','post::tintb','post::saturation','final_border','final_blur_bypass','final_blur_blendmode', 'final_bluramount', 'final_decay_bypass','final_decayup', 'final_decaydown', 'final_blendsource', 'final_blendamount','final_blendmode','final_blend');
     var gradientvalues = new Array('gradient::enable','gradient::mode','gradient::size','gradient::gradientsize','gradient::positionx','gradient::positiony','gradient::invert','gradient::color','gradient::saturation');
-    var maskvalues = new Array('mask::enable','mask::mode','mask::count','mask::xd','mask::xw','mask::xo','mask::ds');
+    var maskvalues = new Array('mask::enable','mask::mode','mask::count','mask::xd','mask::xw','mask::xo','mask::ds','mask::blur');
 
     // subscribe values to PattrStorage
+    sequencer.message('subscribe', subpatchers);
     sequencer.message('subscribe', inputvalues);
     sequencer.message('subscribe', movievalues);
     sequencer.message('subscribe', noisevalues1);

@@ -132,21 +132,20 @@ function init() {
 	var setvalues = 	new Array('run','windowposx', 'windowposy', 'windowwidth', 'windowheight',
 							'fpsinfo', 'fps', 'windowborder','previewchoice','oscpport');
 	var bordervalues = new Array('border_size','border_color','border_saturation','border_brightness');
-
-	settings.message('subscribe', setvalues);
-	sequencer.message('subscribe', bordervalues);
-}
-/*	
-function loadbang() {
+	var textvalues = new Array('text::enable','text::file','text::file2','text::color','text::size','text::font','text::align','text::saturation','text::brightness','text::alpha','text::fadein','text::fadeout','text::distance','text::posx','text::posy','text::pos2x','text::pos2y','text::maxlines','text::excludeline');
 	
-	var settings = t.getnamed('settings');
-	var settingsmodules = 	new Array('windowposx', 'windowposy', 'windowwidth', 'windowheight',
-							'displaysync', 'fpsinfo', 'fps', 'windowborder', 'playlistenable', 'loopmode',
-							'hidecursor');
+	settings.message('subscribe', setvalues);
+	settings.message('subscribe', bordervalues);
+	settings.message('subscribe', textvalues);
+	
+}
 
-	settings.message('subscribe', settingsmodules);
 
+	
+function loadbang() {
+
+	init();
 
 	}
 
-	*/
+	
