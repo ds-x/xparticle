@@ -92,7 +92,7 @@ function read(f)
     var stereovalues = new Array('stereo::stereomode','stereo::displaceamount1', 'stereo::displaceamount2', 'stereo::displacemix','stereo::displaceself', 'stereo::zshift');
     var postvalues = new Array('post::gamma','post::brightness','post::contrast','post::tintamount','post::tintr','post::tintg','post::tintb','post::saturation','final_border','final_blur_bypass','final_blur_blendmode', 'final_bluramount', 'final_decay_bypass','final_decayup', 'final_decaydown', 'final_blendsource', 'final_blendamount','final_blendmode','final_blend');
     var gradientvalues = new Array('gradient::enable','gradient::mode','gradient::size','gradient::gradientsize','gradient::positionx','gradient::positiony','gradient::invert','gradient::color','gradient::saturation');
-    var maskvalues = new Array('mask::enable','mask::mode','mask::count','mask::xd','mask::xw','mask::xo','mask::ds','mask::blur');
+    var maskvalues = new Array('mask::enable','mask::mode','mask::count','mask::xd','mask::xw','mask::xo','mask::ds','mask::blur','mask::mode');
 
     // subscribe values to PattrStorage
     sequencer.message('subscribe', subpatchers);
