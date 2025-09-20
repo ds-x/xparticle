@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1269.0, 126.0, 1876.0, 1120.0 ],
+		"rect" : [ 306.0, 122.0, 1098.0, 799.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
@@ -21,8 +21,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 291.0, 882.0, 50.0, 49.0 ],
-					"text" : "dim 1440 1280"
+					"patching_rect" : [ 291.0, 882.0, 50.0, 50.0 ],
+					"text" : "dim 1920 1080"
 				}
 
 			}
@@ -62,7 +62,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -181,7 +181,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -299,7 +299,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -417,7 +417,7 @@
 					"patching_rect" : [ 519.0, 470.0, 115.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 234.5, 42.0, 116.0, 19.0 ],
-					"text" : "0 3 23",
+					"text" : "0 0 0",
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"textjustification" : 1
 				}
@@ -555,9 +555,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 698.0, 249.319640999999933, 109.0, 16.0 ],
+					"patching_rect" : [ 698.0, 249.319640999999933, 109.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 2.0, 87.0, 69.0, 16.0 ],
+					"presentation_rect" : [ 2.0, 87.0, 69.0, 18.0 ],
 					"text" : "Resolution",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -701,9 +701,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 653.0, 204.319640999999933, 111.0, 16.0 ],
+					"patching_rect" : [ 653.0, 204.319640999999933, 111.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 240.0, 65.5, 54.0, 16.0 ],
+					"presentation_rect" : [ 240.0, 65.5, 54.0, 18.0 ],
 					"text" : "Volume",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -719,10 +719,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 798.333333333333371, 578.0, 108.0, 16.0 ],
+					"patching_rect" : [ 798.333333333333371, 578.0, 108.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 72.0, 66.0, 143.0, 16.0 ],
-					"text" : "LENGTH: 0 4 3",
+					"presentation_rect" : [ 72.0, 66.0, 143.0, 18.0 ],
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
 
@@ -737,10 +736,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 897.0, 518.95043899999996, 111.0, 16.0 ],
+					"patching_rect" : [ 897.0, 518.95043899999996, 111.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 66.0, 69.0, 16.0 ],
-					"text" : "FPS: 30.00",
+					"presentation_rect" : [ 1.0, 66.0, 69.0, 18.0 ],
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"varname" : "display_moviefps"
 				}
@@ -756,10 +754,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 918.0, 542.0, 111.0, 16.0 ],
+					"patching_rect" : [ 918.0, 542.0, 111.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 45.0, 303.0, 16.0 ],
-					"text" : "water_slow1.mov",
+					"presentation_rect" : [ 1.0, 45.0, 303.0, 18.0 ],
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"varname" : "display_moviename"
 				}
@@ -830,9 +827,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1251.0, 596.0, 59.0, 18.0 ],
+					"patching_rect" : [ 1251.0, 596.0, 59.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 298.5, 65.0, 46.0, 18.0 ],
+					"presentation_rect" : [ 298.5, 65.0, 46.0, 20.0 ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"tricolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ],
 					"triscale" : 0.5,
@@ -919,7 +916,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -944,6 +941,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-102",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
@@ -956,6 +954,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-100",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -968,6 +967,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-99",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -980,6 +980,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
@@ -1181,7 +1182,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
 					"patching_rect" : [ 393.0, 696.0, 768.0, 22.0 ],
-					"text" : "jit.movie @adapt 1 @autostart 0 @loop 0 @engine viddll @output_texture 1 @drawto XPARTICLE @cache_size 0.1 @unique 1 @automatic 0",
+					"text" : "jit.movie @adapt 1 @autostart 0 @loop 0 @engine viddll @output_texture 1 @drawto XPARTICLE @cache_size 0.1 @unique 0 @automatic 0",
 					"varname" : "movie"
 				}
 
@@ -1376,7 +1377,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 1063.0, 557.0, 162.0, 18.0 ],
+					"patching_rect" : [ 1063.0, 557.0, 195.0, 20.0 ],
 					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 715.0, 173.0, 1456.0, 848.0 ],
+		"rect" : [ 82.0, 149.0, 1456.0, 848.0 ],
 		"openinpresentation" : 1,
 		"gridsize" : [ 6.0, 2.0 ],
 		"gridsnaponopen" : 2,
@@ -20,12 +20,24 @@
 		"enablevscroll" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-671",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 6,
+					"outlettype" : [ "signal", "bang", "int", "float", "", "list" ],
+					"patching_rect" : [ 2550.0, -110.0, 168.0, 22.0 ],
+					"text" : "typeroute~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-241",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1842.0, 194.0, 29.5, 22.0 ],
+					"patching_rect" : [ 1854.0, 90.0, 29.5, 22.0 ],
 					"text" : "init"
 				}
 
@@ -124,7 +136,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2790.0, -74.0, 71.0, 22.0 ],
+					"patching_rect" : [ 2670.0, -78.0, 71.0, 22.0 ],
 					"text" : "fromsymbol"
 				}
 
@@ -440,10 +452,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 337.0, 1127.0, 116.0, 30.0 ],
+					"patching_rect" : [ 337.0, 1127.0, 124.0, 30.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 98.0, 349.5, 163.0, 18.0 ],
-					"text" : "Resolution In:  1280 720",
+					"text" : "Resolution In:  1920 1080",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
 
@@ -612,7 +624,7 @@
 					"patching_rect" : [ 1422.0, 1205.0, 116.0, 30.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 490.0, 349.5, 163.0, 18.0 ],
-					"text" : "Resolution In:  1280 720",
+					"text" : "Resolution In:  1920 1080",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
 
@@ -1556,7 +1568,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1657.0, 1033.0, 221.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1999,7 +2011,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2784.0, 8.0, 37.0, 22.0 ],
+					"patching_rect" : [ 2736.0, 2.0, 37.0, 22.0 ],
 					"text" : "s osc"
 				}
 
@@ -2051,7 +2063,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 534.0, 1610.0, 222.0, 22.0 ],
-					"restore" : [ 0.65 ],
+					"restore" : [ 4.1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2082,7 +2094,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 3282.0, 306.0, 204.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 4 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2134,7 +2146,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2784.0, -30.0, 84.0, 22.0 ],
+					"patching_rect" : [ 2737.0, -28.0, 84.0, 22.0 ],
 					"text" : "prepend oscin"
 				}
 
@@ -2788,7 +2800,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ -231.0, 2015.0, 255.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3689,7 +3701,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ -18.0, 1654.578489065170288, 209.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4307,7 +4319,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 234.0, 727.0, 213.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4395,7 +4407,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 429.373046875, 1763.2890625, 213.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4483,7 +4495,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1213.0, 1791.0, 196.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4570,7 +4582,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 524.0, 2374.0, 235.0, 22.0 ],
-					"restore" : [ 4 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4736,7 +4748,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1122.0, 1616.0, 218.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -5504,7 +5516,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 362.0, 2403.0, 229.0, 22.0 ],
-					"restore" : [ 3 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6389,7 +6401,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1035.0, 350.0, 217.0, 22.0 ],
-					"restore" : [ 2 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -6979,7 +6991,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 509.0, 17.0, 173.0, 22.0 ],
-					"restore" : [ 5 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -9561,7 +9573,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1122.0, 600.0, 233.0, 22.0 ],
-					"restore" : [ 3 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10027,32 +10039,32 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 1938.0, -145.0, 58.0, 22.0 ],
 					"restore" : 					{
-						"aging" : [ 4.0 ],
-						"attpx" : [ 0.3 ],
-						"attpy" : [ 0.0 ],
+						"aging" : [ 4.01 ],
+						"attpx" : [ 0.0 ],
+						"attpy" : [ 0.018 ],
 						"attpz" : [ 0.0 ],
-						"attx" : [ 0.02 ],
-						"atty" : [ 0.114 ],
+						"attx" : [ 0.059 ],
+						"atty" : [ 0.101 ],
 						"attz" : [ 0.2 ],
-						"border_brightness" : [ 0.0 ],
+						"border_brightness" : [ 1.0 ],
 						"border_color" : [ 0.97 ],
 						"border_saturation" : [ 1.0 ],
 						"border_size" : [ 0.0 ],
-						"count" : [ 458.0 ],
+						"count" : [ 24.010000000000002 ],
 						"depth_factor" : [ 0.0 ],
 						"editor" : [ "" ],
 						"filter_movement" : [ 0.0 ],
 						"final_blend" : [ 1.0 ],
 						"final_blendamount" : [ 0.0 ],
-						"final_bluramount" : [ 0.008 ],
-						"final_decaydown" : [ 0.04 ],
-						"final_decayup" : [ 0.82 ],
-						"flow1_accx" : [ 0.0 ],
-						"flow1_accy" : [ 0.0 ],
+						"final_bluramount" : [ 0.05 ],
+						"final_decaydown" : [ 0.0 ],
+						"final_decayup" : [ 0.27 ],
+						"flow1_accx" : [ 0.74 ],
+						"flow1_accy" : [ 0.7 ],
 						"flow1_accz" : [ 0.0 ],
-						"flow1_decay" : [ 0.9 ],
+						"flow1_decay" : [ 0.83 ],
 						"flow1_lambda" : [ 0.01 ],
-						"flow1_offset" : [ 0.02 ],
+						"flow1_offset" : [ 0.3 ],
 						"flow1_scale" : [ 1.0 ],
 						"flow2_accx" : [ 0.0 ],
 						"flow2_accy" : [ 0.0 ],
@@ -10065,13 +10077,13 @@
 						"in1_ofsx" : [ 0.0 ],
 						"in1_ofsy" : [ 0.0 ],
 						"in1_scale" : [ 1.0 ],
-						"in2_ofsx" : [ 0.5 ],
+						"in2_ofsx" : [ 0.0 ],
 						"in2_ofsy" : [ 0.0 ],
 						"in2_scale" : [ 1.0 ],
-						"input_blendamount" : [ 0.0 ],
+						"input_blendamount" : [ 1.0 ],
 						"luma_filter" : [ 0.0 ],
-						"px" : [ -0.61 ],
-						"py" : [ 0.0 ],
+						"px" : [ 0.0 ],
+						"py" : [ -1.08 ],
 						"pz" : [ 0.0 ],
 						"rotatey" : [ 0.5 ],
 						"rotatez" : [ 0.5 ],
@@ -10080,9 +10092,9 @@
 						"tab[17]" : [ 0 ],
 						"textbutton[1]" : [ -1 ],
 						"textbutton[2]" : [ -1 ],
-						"thresh_amount" : [ 1.0 ],
-						"thresh_mix" : [ 1.0 ],
-						"thresh_postblur" : [ 0.018 ],
+						"thresh_amount" : [ 0.41 ],
+						"thresh_mix" : [ 0.0 ],
+						"thresh_postblur" : [ 0.03 ],
 						"thresh_preblur" : [ 0.0 ],
 						"thresh_scale" : [ 0.333 ]
 					}
@@ -10156,7 +10168,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 2651.0, -256.0, 190.0, 20.0 ],
-					"restore" : [ 8000 ],
+					"restore" : [ 8001 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -10164,18 +10176,6 @@
 ,
 					"text" : "pattr oscport @default_interp off",
 					"varname" : "oscport"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-125",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "OSCTimeTag" ],
-					"patching_rect" : [ 2736.0, -124.0, 111.0, 22.0 ],
-					"text" : "OpenSoundControl"
 				}
 
 			}
@@ -10229,8 +10229,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 2736.0, -156.0, 107.0, 20.0 ],
-					"text" : "udpreceive 0 CNMAT"
+					"patching_rect" : [ 2736.0, -156.0, 74.0, 20.0 ],
+					"text" : "udpreceive 0"
 				}
 
 			}
@@ -10312,7 +10312,7 @@
 					"patching_rect" : [ 2287.943908999999621, 1465.369506999999885, 107.0, 18.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 860.0, 2.5, 44.0, 18.0 ],
-					"text" : "49.81",
+					"text" : "49.95",
 					"textcolor" : [ 0.901960784313726, 0.901960784313726, 0.901960784313726, 1.0 ]
 				}
 
@@ -10407,7 +10407,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 789.0, 2012.0, 206.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -14050,7 +14050,7 @@
 					"presentation_rect" : [ 932.0, 41.0, 522.0, 406.0 ],
 					"rowhead" : 1,
 					"rowheight" : 21,
-					"rows" : 13,
+					"rows" : 8,
 					"sccolor" : [ 0.6, 0.6, 0.6, 1.0 ],
 					"selmode" : 3,
 					"selsync" : 0,
@@ -14214,7 +14214,7 @@
 						"storage_rect" : [ 100, 159, 1730, 1118 ]
 					}
 ,
-					"subscribe" : [ "blendmode", "in1_preblur", "in1_scale", "dyn_size", "x_input2::gradient::size", "mask::yo3", "x_input2::sharedctx2::ofsy", "x_stereo::displaceamount2", "x_input1::camera::ofsx", "border_brightness", "x_input2::x_noise::noisecontrast", "softness", "flow2_bypass", "x_input1::x_camera::ofsx", "mask::ds", "noisesize", "x_stereo::stereomode", "luma_filter", "x_input1::x_pencil::softness", "x_input1::noise1::noisevariant", "x_input2::_x_movie::recentFile2", "x_input2::noise2::noisebrightness", "tintamount", "noisemode", "accely2", "post::saturation", "x_input1::sharedctx1::ofsy", "x_input1::x_noise::noiseratio", "final_blend", "noisevariant", "thresh_source", "x_input2::x_sharedctx::ofsy", "x_post::tintr", "rotatez", "threshmix", "del_movement", "mask::w2", "displaceamount1", "x_post::brightness", "gradient::mode", "mask::h1", "x_input::x_pencil::dyn_color", "x_input1::imgseq::loopmode", "preblur", "flow1_accx", "x_input2::sharedctx2::mode", "in2_scalemode", "x_input1::x_camera::scale", "x_post::finalborder", "thresh_amount", "x_input2::x_movie::ofsy", "movementtobrightness", "in1_flowdecay", "x_input1::pencil::color2", "x_input::x_pencil::dyn_size", "x_input::x_movie::recentFile", "finaldecaydown", "flow1_offset", "x_input1::pencil::dyn_saturation", "threshinvert", "x_input1::noise1::noisecontrast", "luma_invert", "x_input::x_pencil::softness2", "mask::xo", "brightness", "input_blendmode", "x_input2::x_sharedctx::scale", "x_input1::pencil::size2", "x_stereo::displaceamount1", "accelx2", "del_brightness", "flow2_decay", "final_tint", "x_input::x_pencil::size2", "x_input1::movie1::recentFile", "aging", "x_input2::x_colmap::mode", "luma_tosize", "x_stereo::displacemix", "gradient::invert", "x_input::x_pencil::dyn_softness", "x_input1::x_imgseq::ofsx", "x_post::contrast", "in1_ofsx", "input2", "dyn_softness", "x_input1::x_imgseq::easingfunction", "x_input1::x_pencil::color2", "x_input2::x_colmap::gradientsize", "x_input1::movie1::volume", "atty", "x_input1::x_sharedctx::ofsx", "offset", "saturation2", "luma_topoint", "x_input2::x_movie::scale", "noisecontrast", "nf_vel2", "in1_flowsource", "in2_scale", "x_input1::sharedctx1::scalemode", "finalborder", "mask::h2", "volume", "x_input::x_pencil::saturation", "post::contrast", "x_input1::x_imgseq::scalemode", "depth_factor", "x_input2::x_colmap::positionx", "final_blur_bypass", "x_input1::camera::scale", "x_input2::movie2::ofsy", "recentFile", "pz", "x_input1::imgseq::scalemode", "x_input2::gradient::mode", "x_input2::x_colmap::invert", "x_input2::noise2::noisesize", "x_input1::movie1::scale", "post::tintg", "thres_hmix", "x_input1::imgseq::framehold", "final_decaydown", "accely", "final_blur_blendmode", "in1_flowblur", "mask::mode", "x_post::finalblend", "x_stereo::zshift", "in2_flowblur", "x_input1::pencil::brightness2", "x_input::x_pencil::brightness2", "x_input1::x_pencil::softness2", "x_input1::x_pencil::ipad_port", "flow1_decay", "x_input1::pencil::dyn_softness", "in2_flowlambda", "mask::h3", "lambda", "x_input2::gradient::color", "thresh_preblur", "saturation", "colorinput", "x_input1::x_movie::ofsy", "x_input1::pencil::saturation2", "x_input2::x_colmap::color", "x_input1::x_noise::noisebrightness", "x_input::x_pencil::size", "border_color", "flow2_accy", "x_input1::pencil::ipad_port", "x_input2::x_noise::noisemode", "mask::yo2", "x_input1::noise1::noisespeed", "x_input2::movie2::recentFile", "gradient::color", "x_input1::x_imgseq::blendmode", "flow1_source", "x_input1::x_pencil::color", "scale", "x_input2::x_noise::noisedrifty", "x_input2::x_movie::scalemode", "x_input1::x_movie::scale", "flow2_scale", "nf_lambda", "dyn_color", "x_input::x_pencil::ipad_port", "stereo::displacemix", "blendtoinput", "colormode", "x_input2::movie2::volume", "gradient::saturation", "nf_gradientscale", "attpz", "luma_toacc", "x_post::gamma", "final_color", "x_input::x_movie::volume", "x_input1::x_pencil::brightness2", "in2_ofsx", "x_input2::_x_movie::recentFile", "x_input1::camera::colormode", "x_input1::x_camera::mirror", "x_input2::_x_movie::volume", "x_input2::sharedctx2::scale", "noisespeed", "accelz", "x_input1::x_pencil::saturation", "border_saturation", "softness2", "x_input2::x_noise::noisesize", "luma_source", "x_input2::noise2::noisecontrast", "x_input1::x_movie::recentFile", "px", "velocitygain", "x_input1::imgseq::blendmode", "gamma", "x_input::x_pencil::softness", "x_input1::x_pencil::saturation2", "rotate", "post::tintamount", "x_input1::x_pencil::size2", "x_input2::x_noise::noisebrightness", "x_input1::sharedctx1::scale", "final_blendamount", "x_input1::x_imgseq::framehold", "input_mixmode", "displaceamount2", "noisedriftx", "gradient::enable", "x_input1::movie1::ofsx", "x_input1::x_imgseq::recentFolder", "x_input::_x_movie::volume", "x_input2::movie2::scale", "x_input2::gradient::saturation", "mask::w1", "flow1_accy", "x_input2::noise2::noisevariant", "x_input1::x_sharedctx::scale", "x_input1::imgseq::recentFolder", "x_input1::pencil::decay", "x_input2::x_movie::recentFile", "x_input2::x_movie::ofsx", "delmode", "nf_offset", "x_input2::x_sharedctx::scalemode", "x_input2::x_sharedctx::mode", "x_input1::x_pencil::dyn_color", "flow1_scale", "x_input1::pencil::dyn_brightness", "in1_flowscale", "x_input1::noise1::noiseratio", "x_input1::pencil::softness", "nf_velgain", "x_input1::x_pencil::dyn_size", "countmode", "x_input::_x_movie::recentFile", "x_input::x_pencil::dyn_saturation", "nf_vel1", "x_input1::camera::scalemode", "x_input1::x_pencil::dyn_saturation", "flow2_lambda", "x_post::tintcolor", "dyn_saturation", "x_input1::x_camera::colormode", "stereo::displaceamount1", "gradient::positionx", "color2", "x_input1::x_pencil::dyn_brightness", "x_input::x_pencil::dyn_brightness", "attpx", "draw_softness", "in2_flowoffset", "in1_flowlambda", "x_input2::sharedctx2::ofsx", "x_input1::imgseq::ofsy", "velocity2", "movementStrength", "in1_ofsy", "gradientscale", "x_post::tintb", "accelx", "mask::blur", "x_input1::x_sharedctx::ofsy", "in1_flowoffset", "attz", "size2", "flow1_bypass", "x_input1::x_sharedctx::scalemode", "finalblur", "x_input2::gradient::gradientsize", "input_blendamount", "x_input2::x_colmap::saturation", "x_input1::sharedctx1::mode", "zsource", "contrast", "post::gamma", "brightnesstoalpha", "x_input1::x_imgseq::transition", "x_input1::sharedctx1::ofsx", "finalblendmode", "filter_movement", "final_decay_bypass", "x_input2::noise2::noisespeed", "x_input2::x_sharedctx::ofsx", "accelz2", "rotatey", "x_input1::x_pencil::decay", " filter_movement", "post::tintr", "in2_flowdecay", "x_input2::x_colmap::positiony", "x_input::x_pencil::color2", "x_input1::imgseq::transition", "x_input1::x_noise::noisecontrast", "final_decayup", "x_input2::sharedctx2::scalemode", "in1_scalemode", "x_input1::pencil::color", "x_input1::x_pencil::size", "mask::count", "x_input1::x_sharedctx::mode", "x_input1::camera::ofsy", "x_post::saturation", "x_input1::noise1::noisebrightness", "mask::xw", "x_post::tintamount", "postblur", "flow1_lambda", "x_input1::pencil::dyn_color", "ipad_port", "x_input1::pencil::size", "mask::xo2", "threshold", "mask::w3", "thresh_scale", "mask::yo1", "thresh_invert", "velocity1", "stereo::stereomode", "x_input1::x_pencil::brightness", "x_input::x_pencil::color", "recentFile2", "flow2_accz", "x_input1::movie1::scalemode", "dyn_brightness", "x_input::x_pencil::interpolation", "gradient::gradientsize", "x_input1::imgseq::ofsx", "x_input1::x_noise::noisespeed", "drawmode", "nf_scale", "stereo::displaceself", "x_input2::gradient::invert", "finalblendamount", "finalluminance", "mask::xo1", "friction", "luma_toorigin", "count", "final_border", "noisebrightness", "gradient::size", "mask::xd", "attx", "finaldecayup", "brightness2", "x_input1::camera::mirror", "mask::yo4", "blendsource", "zfactor", "x_input2::x_noise::noisezoom", "x_input1", "x_stereo::displaceself", "fluidthreshold", "in2_ofsy", "post::brightness", "depth_source", "noisezoom", "x_input1::x_camera::ofsy", "x_input1::x_imgseq::loopmode", "border_size", "x_input1::imgseq::easingfunction", "x_post::tintg", "x_input2::noise2::noiseratio", "in2_flowscale", "noisedrifty", "stereo::zshift", "py", "threshscale", "post::tintb", "luma_todepth", "x_input1::x_pencil::dyn_softness", "x_input2::movie2::scalemode", "x_input2::x_noise::noisevariant", "x_input2", "x_input::x_pencil::saturation2", "final_bluramount", "x_input2::x_colmap::size", "x_input1::pencil::brightness", "displacemix", "x_input1::x_imgseq::ofsy", "mask::enable", "x_input1::x_pencil::interpolation", "x_input2::x_movie::volume", "x_input1::x_movie::volume", "color", "x_input1::x_noise::noisesize", "zshift", "x_input1::x_movie::scalemode", "x_input1::pencil::dyn_size", "flow1_accz", "input1", "luma_toalpha", "x_input2::gradient::positionx", "x_input1::pencil::saturation", "mask::h4", "x_input::x_pencil::decay", "thresh_postblur", "x_input1::pencil::interpolation", "flow2_accx", " filter_luminance", "size", "interpolation", "x_input1::x_noise::noisevariant", "x_input1::noise1::noisesize", "x_input2::x_noise::noisespeed", "x_input2::movie2::ofsx", "final_blendmode", "decay", "x_input::x_pencil::brightness", "x_input1::pencil::softness2", "tintcolor", "x_input2::gradient::positiony", "flow2_offset", "mask::xo3", "x_input1::imgseq::scale", "stereo::displaceamount2", "x_input1::movie1::ofsy", "x_input1::x_camera::scalemode", "x_input1::x_imgseq::scale", "attpy", "final_blendsource", "x_input1::x_movie::ofsx", "x_input2::x_noise::noiseratio", "gradient::positiony", "x_input2::x_noise::noisedriftx" ],
+					"subscribe" : [ "in1_flowdecay", "x_input2::movie2::scalemode", "x_input1::x_imgseq::framehold", "x_input1::noise1::noisebrightness", "x_input2::_x_movie::recentFile2", "final_bluramount", "x_input::x_pencil::dyn_color", "mask::yo3", "displacemix", "x_input1::pencil::size", "x_input1::x_noise::noisesize", "thresh_invert", "x_post::saturation", "x_input::x_pencil::saturation", "x_input1::pencil::dyn_softness", "finalblur", "stereo::stereomode", "x_input1::x_camera::ofsy", "brightness", "flow1_accz", "noisespeed", "dyn_size", "x_input2::x_colmap::positionx", "x_stereo::zshift", "threshmix", "gradient::gradientsize", "x_input2::x_colmap::size", "drawmode", "thresh_postblur", "mask::xo", "softness", "x_input2::x_movie::scale", "x_stereo::displaceself", "stereo::displaceself", "x_input1::pencil::ipad_port", "x_input2::gradient::size", "flow2_accx", "lambda", "x_input::x_pencil::decay", "x_input1::x_camera::colormode", "gradient::size", "in1_flowblur", "luma_toorigin", "x_stereo::displaceamount1", "x_input2::_x_movie::recentFile", "x_input1::x_pencil::interpolation", "post::brightness", "x_input1::camera::mirror", "accelz2", "flow2_offset", "x_input1::x_sharedctx::ofsy", "velocity1", "nf_vel2", "gradientscale", "depth_source", "attpy", "mask::yo4", " filter_movement", "x_input2::x_sharedctx::scale", "x_input2::noise2::noiseratio", "post::tintb", "x_input1::imgseq::easingfunction", "x_post::tintamount", "mask::h4", "in1_scale", "x_input2::x_movie::volume", "x_input2::x_noise::noisedriftx", "x_input::x_pencil::size2", "x_stereo::displaceamount2", "luma_todepth", "border_brightness", "mask::xo1", "threshold", "x_input2::gradient::color", "x_input::x_pencil::color", "tintamount", "x_input1::pencil::brightness", "mask::enable", "nf_offset", "luma_filter", "x_input2::gradient::mode", "input2", "in2_flowoffset", "noisedriftx", "final_blend", "in2_flowblur", "recentFile2", "offset", "x_input2::x_noise::noisesize", "displaceamount1", "x_input1::pencil::saturation", "luma_toalpha", "x_input1::movie1::scale", "rotatez", "x_post::finalborder", "dyn_softness", "x_input2::noise2::noisevariant", "x_input1::x_imgseq::scale", "x_input1::camera::ofsy", "x_input1::noise1::noisesize", "saturation", "flow1_accx", "x_input1::x_imgseq::recentFolder", "saturation2", "accelx2", "in2_flowscale", "x_input1::pencil::softness2", "final_blendmode", "x_input2::gradient::gradientsize", "thresh_amount", "x_input1::x_imgseq::easingfunction", "x_input1::x_movie::scalemode", "x_input2::x_noise::noisemode", "stereo::displaceamount2", "x_input1::pencil::dyn_brightness", "flow1_offset", "x_input1::x_camera::scalemode", "x_input1::x_movie::scale", "volume", "blendsource", "x_input2::x_noise::noisespeed", "gradient::positiony", "final_blendsource", "mask::yo1", "color2", "x_input1::x_pencil::dyn_brightness", "x_input2::x_sharedctx::ofsx", "x_input1::x_pencil::color2", "x_input2::sharedctx2::ofsy", "x_input1::camera::scalemode", "final_tint", "flow2_decay", "mask::h1", "x_input2::x_sharedctx::ofsy", "mask::ds", "x_input1::x_imgseq::ofsx", "flow2_bypass", "aging", "x_input::x_pencil::interpolation", "x_input1::x_pencil::brightness", "x_input2::x_movie::ofsx", "x_input2::noise2::noisebrightness", "post::saturation", "x_input1::noise1::noisevariant", "x_input2::movie2::ofsx", "in1_ofsx", "atty", "x_input1::x_movie::ofsy", "x_input2", "x_post::finalblend", "x_input2::x_sharedctx::mode", "x_input1::sharedctx1::ofsy", "x_input1::x_imgseq::ofsy", "thresh_source", "in2_scale", "noisezoom", "x_input2::x_movie::recentFile", "x_input1::x_sharedctx::ofsx", "x_input2::_x_movie::volume", "gradient::mode", "x_post::tintcolor", "x_input2::gradient::invert", "depth_factor", "in2_flowdecay", "x_input::x_pencil::brightness", "x_input1::imgseq::loopmode", "x_post::tintb", "in2_scalemode", "pz", "in1_flowlambda", "x_input2::x_colmap::saturation", "x_input2::x_colmap::positiony", "x_input1::pencil::color2", "movementtobrightness", "x_input1::x_movie::volume", "final_decaydown", "noisebrightness", "dyn_color", "x_input2::x_noise::noisezoom", "x_input2::sharedctx2::scalemode", "x_input1::x_pencil::color", "x_input1::noise1::noisecontrast", "x_input::x_pencil::color2", "x_input1", "nf_scale", "x_input2::x_noise::noiseratio", "x_input1::x_pencil::dyn_softness", "x_input1::pencil::size2", "input_blendmode", "in1_flowoffset", "flow1_decay", "gamma", "x_input1::x_imgseq::scalemode", "recentFile", "x_input::x_movie::volume", "in1_flowscale", "x_input1::pencil::dyn_color", "thresh_preblur", "x_input1::x_pencil::dyn_color", "softness2", "accelz", "nf_vel1", "x_input1::movie1::recentFile", "gradient::invert", "luma_tosize", "finalblendamount", "flow2_accy", "x_input2::movie2::ofsy", "x_input1::x_imgseq::blendmode", "x_input::x_pencil::dyn_softness", "luma_topoint", "x_input::x_pencil::ipad_port", "x_input1::imgseq::scale", "scale", "x_input1::x_pencil::brightness2", "x_input1::movie1::volume", "x_input1::sharedctx1::scalemode", "x_input::x_pencil::saturation2", "flow2_scale", "x_input1::x_pencil::decay", "x_input1::movie1::ofsy", "post::contrast", "x_input1::x_noise::noisecontrast", "x_input::_x_movie::recentFile", "final_blur_bypass", "attpz", "x_input2::gradient::saturation", "mask::w2", "noisedrifty", "x_input1::imgseq::scalemode", "preblur", "in2_ofsx", "x_input::x_pencil::dyn_size", "x_input1::x_camera::mirror", "x_input::x_pencil::softness2", "x_input2::noise2::noisesize", "post::tintg", "finaldecayup", "mask::h3", "final_blur_blendmode", "border_saturation", "x_input1::imgseq::ofsx", "x_stereo::stereomode", "zsource", "x_input1::imgseq::framehold", "mask::mode", "x_input2::x_sharedctx::scalemode", "px", "x_input1::x_camera::scale", "rotate", "x_input1::x_pencil::size2", "luma_invert", "x_input1::pencil::brightness2", "x_input1::x_pencil::saturation", "final_blendamount", "x_input1::x_noise::noisebrightness", "dyn_saturation", "finalluminance", "velocitygain", "x_input1::pencil::saturation2", "colorinput", "velocity2", "x_input1::movie1::ofsx", "fluidthreshold", "blendmode", "displaceamount2", "x_input1::noise1::noisespeed", "x_input2::movie2::recentFile", "nf_gradientscale", "flow1_accy", "x_input1::x_pencil::size", "noisesize", "in1_flowsource", "x_input1::pencil::dyn_size", "x_input::x_pencil::size", "gradient::color", "flow1_source", "mask::xo2", "threshinvert", "size2", "del_brightness", "stereo::displacemix", "x_input2::movie2::volume", "nf_velgain", "x_input1::pencil::interpolation", "flow1_scale", "in2_flowlambda", "mask::xo3", "noisemode", "gradient::saturation", "luma_toacc", "x_input1::x_noise::noisevariant", "x_input2::x_colmap::invert", "x_input2::x_noise::noisebrightness", "x_input2::sharedctx2::scale", "x_input1::imgseq::ofsy", "x_input1::camera::colormode", "flow2_lambda", "final_border", "x_input1::x_pencil::dyn_size", "x_input::x_pencil::dyn_saturation", "luma_source", "x_input1::x_sharedctx::scalemode", "decay", "attpx", "x_input1::x_noise::noisespeed", "finalblendmode", "x_input2::x_colmap::mode", "x_input2::noise2::noisecontrast", "post::tintamount", "x_input1::imgseq::blendmode", "in1_ofsy", "x_input1::x_imgseq::loopmode", "x_input1::x_pencil::softness2", "mask::w3", "x_input::_x_movie::volume", "x_input2::x_colmap::gradientsize", "x_input1::sharedctx1::scale", "input_mixmode", "x_input2::x_colmap::color", "attz", "tintcolor", "ipad_port", "x_input2::x_noise::noisevariant", "colormode", "contrast", "x_post::brightness", "gradient::enable", "mask::xw", "input_blendamount", "x_input1::x_noise::noiseratio", "x_input1::x_camera::ofsx", "x_input1::x_movie::recentFile", "x_input1::imgseq::recentFolder", "thres_hmix", "filter_movement", "x_input1::x_pencil::dyn_saturation", "dyn_brightness", "accely2", "del_movement", "x_input1::pencil::decay", "delmode", "x_post::tintg", "rotatey", "x_input1::x_sharedctx::mode", "zfactor", "x_input1::noise1::noiseratio", "finaldecaydown", "final_decayup", "noisecontrast", "x_input2::gradient::positiony", "x_input2::sharedctx2::mode", "x_input2::x_movie::scalemode", "noisevariant", "threshscale", "x_input1::x_pencil::ipad_port", "x_input1::pencil::softness", "countmode", "finalborder", "brightness2", "x_stereo::displacemix", "mask::yo2", "stereo::displaceamount1", "x_input1::pencil::dyn_saturation", "x_input::x_movie::recentFile", "flow1_lambda", "x_input1::x_pencil::saturation2", "mask::w1", "in1_preblur", "gradient::positionx", "draw_softness", "stereo::zshift", "thresh_scale", "border_color", "mask::xd", "x_input2::x_movie::ofsy", "x_input2::sharedctx2::ofsx", "x_post::contrast", "x_input1::movie1::scalemode", "flow2_accz", "x_input::x_pencil::softness", "x_post::tintr", "movementStrength", "zshift", "mask::blur", "flow1_bypass", "blendtoinput", "x_input::x_pencil::brightness2", "color", "x_input2::gradient::positionx", "post::gamma", "x_input1::camera::ofsx", "x_input1::sharedctx1::mode", "friction", "x_input::x_pencil::dyn_brightness", "input1", "x_input2::x_noise::noisecontrast", "x_post::gamma", "count", "x_input2::x_noise::noisedrifty", "x_input1::sharedctx1::ofsx", "final_decay_bypass", "accely", "attx", "brightnesstoalpha", "size", "final_color", "x_input2::noise2::noisespeed", "post::tintr", "accelx", "in2_ofsy", "mask::h2", "postblur", "x_input1::x_imgseq::transition", "x_input1::x_movie::ofsx", " filter_luminance", "x_input1::imgseq::transition", "in1_scalemode", "nf_lambda", "border_size", "interpolation", "x_input1::camera::scale", "x_input1::x_sharedctx::scale", "x_input1::pencil::color", "x_input1::x_pencil::softness", "mask::count", "py", "x_input2::movie2::scale" ],
 					"text" : "pattrstorage sequencer @subscribemode 1 @changemode 1 @fileusagemode 1",
 					"varname" : "sequencer"
 				}
@@ -14375,7 +14375,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1798.943908999999621, 892.830688000000009, 316.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1920 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -15038,7 +15038,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 2442.443908249999367, 912.5, 58.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 3 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -15158,7 +15158,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 20.0, 284.0, 50.0, 20.0 ],
-									"text" : "50"
+									"text" : "-2"
 								}
 
 							}
@@ -15429,7 +15429,7 @@
 						"storage_rect" : [ 100, 159, 1730, 1118 ]
 					}
 ,
-					"subscribe" : [ "windowborder", "border_brightness", "text::fadeout", "oscpport", "windowwidth", "text::pos2x", "text::size", "text::maxlines", "displaysync", "text::font", "windowposy", "text::color", "run", "text::posy", "border_color", "fps", "text::align", "border_saturation", "text::file", "texT::posx", "windowheight", "text::alpha", "text::pos2y", "loopmode", "text::fadein", "outputchoice", "text::file2", "windowposx", "text::distance", "hidecursor", "text::saturation", "text::enable", "playlistenable", "border_size", "text::excludeline", "fpsinfo", "previewchoice", "text::brightness", "text::posx" ],
+					"subscribe" : [ "text::saturation", "playlistenable", "text::enable", "text::excludeline", "border_brightness", "text::brightness", "previewchoice", "text::posx", "loopmode", "windowborder", "text::fadeout", "windowwidth", "text::pos2x", "text::size", "fps", "oscpport", "text::maxlines", "displaysync", "text::font", "border_saturation", "windowposy", "text::color", "fpsinfo", "text::posy", "outputchoice", "text::align", "text::file", "text::alpha", "windowheight", "text::pos2y", "border_color", "run", "text::fadein", "hidecursor", "texT::posx", "text::file2", "border_size", "text::distance", "windowposx" ],
 					"text" : "pattrstorage settings @savemode 3 @greedy 0 @fileusagemode 1 @subscribemode 1",
 					"varname" : "settings"
 				}
@@ -15513,7 +15513,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 80.0, 3160.0, 333.0, 20.0 ],
+					"patching_rect" : [ 84.0, 3126.0, 333.0, 20.0 ],
 					"text" : "jit.gl.videoplane XPARTICLE @transform_reset 2 @automatic 0"
 				}
 
@@ -16219,7 +16219,7 @@
 					"name" : "x_input2.maxpat",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"offset" : [ 0.0, -750.0 ],
+					"offset" : [ 0.0, -150.0 ],
 					"outlettype" : [ "jit_gl_texture" ],
 					"patching_rect" : [ 452.0, 110.0, 352.0, 184.0 ],
 					"presentation" : 1,
@@ -16648,13 +16648,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-97", 0 ],
 					"source" : [ "obj-123", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-477", 0 ],
-					"source" : [ "obj-125", 1 ]
 				}
 
 			}
@@ -18347,7 +18340,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-125", 0 ],
+					"destination" : [ "obj-671", 0 ],
+					"midpoints" : [ 2745.5, -131.0, 2559.5, -131.0 ],
 					"source" : [ "obj-382", 0 ]
 				}
 
@@ -19995,6 +19989,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
 					"source" : [ "obj-67", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-477", 0 ],
+					"source" : [ "obj-671", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-600", 0 ],
+					"source" : [ "obj-671", 5 ]
 				}
 
 			}
