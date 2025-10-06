@@ -106,7 +106,7 @@ function setcolor(r,g,b,a)
     if(linecount > 0) {
         for (var i = 0; i<linecount;i++) {
             textModules[i].color = color;
-            post(textModules[i].color,'\n')
+            //post(textModules[i].color,'\n')
         }
     }   
 }
@@ -146,7 +146,7 @@ function setcontent(id, txt)
 {
     id = modulo(id);
     content[id] = txt;
-    post('\n', 'content'+[id], 'is: ', content[id] );
+    //post('\n', 'content'+[id], 'is: ', content[id] );
 }
 
 function setLineCount(x) 
@@ -186,7 +186,7 @@ function makeTextModules(i) {
 function modulo(x) {
     lc = linecount;
     var modx = x % linecount;
-    post(modx);
+    //post(modx);
     return modx;
 }
 
